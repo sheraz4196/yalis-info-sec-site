@@ -247,7 +247,7 @@ input,
 select,
 textarea {
   outline: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #eaeaea !important;
   border-radius: 2px;
   color: #434343;
   display: block;
@@ -258,7 +258,7 @@ select:invalid {
   color: #8e9fa9 !important;
 }
 select:valid {
-  color: #434343;
+  color: #434343 !important;
 }
 
 .menu-icon-span {
