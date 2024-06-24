@@ -3,6 +3,8 @@ import { handleSubmit } from "@/components/common/handleSubmit";
 import Link from "next/link";
 import GoogleRecaptcha from "@/components/common/GoogleRecaptcha";
 import { useState } from "react";
+import { toast } from "react-toastify";
+import { sendMail } from "@/lib/sendMail";
 export default function ServiceForm() {
   function onChange(value) {
     setFormData({ ...formData, recaptcha: value });
@@ -29,11 +31,25 @@ export default function ServiceForm() {
     }));
     setLoadReptcha(true);
   };
+  async function submitForm() {
+    setLoading(true);
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const res = await sendMail({
+      subject: `${data.formTitle} form submission`,
+      text: mailText,
+    });
+    if (res.messageId) {
+      toast.success("Mail sent Successfully.");
+    } else {
+      toast.error("Error Sending Mail");
+    }
+  }
   return (
     <form
       class="w-full p-8 bg-red-900"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
+        await submitForm();
         handleSubmit(
           setLoading,
           setShowRegexError,
