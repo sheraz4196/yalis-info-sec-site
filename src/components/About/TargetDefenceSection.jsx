@@ -26,7 +26,7 @@ export default function TargetDefenceSection({ data }) {
         </div>
         <div className="w-full lg:w-1/2">
           {data?.staffCertificateImage?.fields?.file?.url && (
-            <Image
+            <img
               src={data?.staffCertificateImage?.fields?.file?.url}
               alt="Image"
               className="w-full"
