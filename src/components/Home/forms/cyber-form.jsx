@@ -121,7 +121,7 @@ export default function CyberForm({ data }) {
         value={formData?.info}
         onChange={handleChange}
       ></textarea>
-      <label for="check-box" className="text-sm text-half-black">
+      <label htmlFor="check-box" className="text-sm text-half-black">
         {/* <span className="w-max inline-block">
       <input
         className="mr-2.5 w-max"
