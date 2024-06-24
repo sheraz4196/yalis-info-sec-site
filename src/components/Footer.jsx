@@ -74,12 +74,13 @@ export default function Footer({ logo, serviceLinks }) {
                     {(item?.title === "Services"
                       ? serviceLinks
                       : item?.links
-                    )?.map((link) => {
+                    )?.map((link, index) => {
                       return (
                         <Link
                           href={link?.link || ""}
                           target={link?.target || "_self"}
                           className="w-full md:max-w-64 block"
+                          key={index}
                         >
                           {link?.text}
                         </Link>
@@ -93,11 +94,12 @@ export default function Footer({ logo, serviceLinks }) {
               <div className="w-full">
                 <h5>Policies</h5>
                 <div className="flex flex-col max-w-full">
-                  {policiesData?.map((item) => {
+                  {policiesData?.map((item, index) => {
                     return (
                       <Link
                         href={item?.fields?.slug || ""}
                         className="w-full md:max-w-64 block"
+                        key={index}
                       >
                         {item?.fields?.heroTitle}
                       </Link>
@@ -110,15 +112,16 @@ export default function Footer({ logo, serviceLinks }) {
               <h5>{addressTitle}</h5>
               <div className="flex flex-col gap-2">
                 <div className="flex items-center gap-3 mt-3">
-                  {socialMedia?.map((item) => {
+                  {socialMedia?.map((item, index) => {
                     return (
-                      <a
+                      <Link
                         href={item?.link}
                         target="_blank"
                         aria-label={item?.icon || "social media link"}
+                        key={index}
                       >
                         <i className={`${item?.icon} text-2xl`} />
-                      </a>
+                      </Link>
                     );
                   })}
                 </div>

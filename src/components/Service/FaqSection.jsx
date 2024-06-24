@@ -16,10 +16,10 @@ export default function FaqSection({ data }) {
       <h2 className="text-primary2 text-center pb-5 mb-16">{data?.title}</h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="flex flex-col gap-5">
-          {data?.faqs?.map((item, i) => {
-            if (i <= Math.ceil((data?.faqs?.length - 1) / 2))
+          {data?.faqs?.map((item, index) => {
+            if (index <= Math.ceil((data?.faqs?.length - 1) / 2))
               return (
-                <div className={`faq`}>
+                <div className={`faq`} key={index}>
                   <h4
                     className="faq-qestion"
                     onClick={() => handleShowQuestion(i)}
@@ -28,7 +28,7 @@ export default function FaqSection({ data }) {
                   </h4>
                   <div
                     className={`faq-answer ${
-                      showQuestion === i ? "show-answer" : ""
+                      showQuestion === index ? "show-answer" : ""
                     }`}
                   >
                     <Richtext data={item?.fields?.answer} />
