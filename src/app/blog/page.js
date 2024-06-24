@@ -11,8 +11,11 @@ export async function generateMetadata() {
 }
 
 export default async function Blogs() {
-  const data = await getPagesData("post");
-  const pageData = await getPagesData("mainBlogPage");
+  const [data, pageData] = await Promise.all([
+    getPagesData("post"),
+    getPagesData("mainBlogPage"),
+  ]);
+
   if (!data?.items) {
     notFound();
   }
