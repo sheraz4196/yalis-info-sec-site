@@ -16,7 +16,7 @@ export default function RequirmentsSection({ data }) {
             />
           </div>
         )}
-        <div className="w-full lg:w-[50%] text-center lg:text-left">
+        <div className="w-full lg:w-1/2 text-center lg:text-left">
           <h2 className="mb-8 text-primary2">{data?.title}</h2>
           {data?.description && (
             <div className="rich-text list-checked types-list two-column-ul">

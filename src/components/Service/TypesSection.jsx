@@ -22,7 +22,7 @@ export default function TypesSection({ data }) {
         {data?.list?.map((item) => {
           return (
             <div className="type-list-item-wrap">
-              <h3 className="text-2xl text-center text-blue leading-[1.4] mb-2.5">
+              <h3 className="text-2xl text-center text-blue mb-2.5">
                 {item?.fields?.title}
               </h3>
               <div className="rich-text different-type-list-description">

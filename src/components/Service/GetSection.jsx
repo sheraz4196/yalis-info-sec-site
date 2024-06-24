@@ -26,10 +26,10 @@ export default function GetSection({ data }) {
                     className="mx-auto mb-8"
                   />
                 )}
-                <h3 className="text-blue text-2xl leading-[1.4] text-center">
+                <h3 className="text-blue text-2xl text-center">
                   {item?.fields?.title}
                 </h3>
-                <p className="text-slate-40 text-2xl mb-2.5 leading-[1.4] font-extrabold text-center">
+                <p className="text-slate-40 text-2xl mb-2.5 font-extrabold text-center">
                   {item?.fields?.subHeading}
                 </p>
                 <div className="rich-text mb-2.5 text-lg">

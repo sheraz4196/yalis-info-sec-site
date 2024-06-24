@@ -26,7 +26,7 @@ export default function GetSectionList({ data }) {
                 selectedId === index
                   ? "bg-blue cursor-default"
                   : "bg-zinc-50 cursor-pointer"
-              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-lg leading-[1.3] min-h-16 p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
+              } w-full text-white rounded-t flex flex-col justify-center items-center text-lg min-h-16 p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
               style={{
                 boxShadow:
                   "0 5px 15px 0 rgba(160,160,160,0.2), 0 15px 35px 0 rgba(50,50,93,0.2)",
@@ -34,7 +34,7 @@ export default function GetSectionList({ data }) {
               onClick={() => handleSelectId(index)}
             >
               <div
-                className={`leading-[15.6px] w-max mx-auto rounded-[50px] text-xs mb-[8px] py-[2px] px-2.5 transition-[all_0.15s_ease-in-out]`}
+                className={`w-max mx-auto rounded-[50px] text-xs mb-2 py-0.5 px-2.5 transition-[all_0.15s_ease-in-out]`}
                 style={{
                   backgroundColor:
                     selectedId === index
@@ -64,7 +64,7 @@ export default function GetSectionList({ data }) {
         })}
       </div>
       <div
-        className="rounded-b-[2px] bg-white py-16 w-full z-[1] relative"
+        className="rounded-b-sm bg-white py-16 w-full z-10 relative"
         style={{
           boxShadow:
             "0 5px 15px 0 rgba(0,0,0,0.07), 0 15px 35px 0 rgba(0,0,0,0.07)",
@@ -94,9 +94,9 @@ export default function GetSectionList({ data }) {
         <div className="w-[90%] mx-auto">
           {content?.fields?.list?.length > 0 && (
             <ul className="list-checked types-list mb-5 columns-2">
-              {content?.fields?.list?.map((item, i) => {
+              {content?.fields?.list?.map((item, index) => {
                 return (
-                  <li key={i} className="text-lg leading-[2.0]">
+                  <li key={index} className="text-lg">
                     {item}
                   </li>
                 );
