@@ -9,7 +9,6 @@ export default function Hero({ title, bgImg }) {
   const pathname = usePathname();
   const [search, setSearch] = useState("");
   const [blogsList, setBlogsList] = useState([]);
-
   useEffect(() => {
     const handleSearch = async () => {
       const data = await searchBlogsData(search);
@@ -28,7 +27,7 @@ export default function Hero({ title, bgImg }) {
     >
       <div class="max-container pt-[80px] md:pt-[100px] lg:pt-[70px]">
         <div class="pt-[20px] pb-[50px] md:py-[150px] relative text-center">
-          <h1 class="text-white">{title}</h1>
+          <h1 class="text-white lg:text-8xl">{title}</h1>
           {pathname === "/blog" && (
             <div className="relative max-w-[400px] mx-auto mt-[30px]">
               <div className="w-full relative">
