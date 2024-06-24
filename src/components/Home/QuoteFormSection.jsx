@@ -34,8 +34,8 @@ export default function QuoteFormSection({ data }) {
 
   return (
     <section id="getQuote" className="bg-[#eaeaea] py-[30px] md:py-[60px]">
-      <div className="max-container my-[10px] md:my-[20px]">
-        <div className="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] my-[30px]">
+      <div className="max-container my-2.5 md:my-5">
+        <div className="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] my-8">
           <div
             style={{
               backgroundImage: `url(${data?.formImage?.fields?.file?.url})`,
@@ -43,11 +43,11 @@ export default function QuoteFormSection({ data }) {
             className="w-full min-h-full bg-cover bg-no-repeat bg-center hidden lg:block"
           ></div>
           <div className="w-full h-full">
-            <div className="bg-white p-[20px] md:p-[60px]">
+            <div className="bg-white p-5 md:p-[60px]">
               <h2 className="text-primary2 text-center md:text-left">
                 {data?.formTitle}
               </h2>
-              <p className="my-[30px] text-center md:text-left">
+              <p className="my-8 text-center md:text-left">
                 {data?.formDescription}
               </p>
               <form
@@ -61,7 +61,7 @@ export default function QuoteFormSection({ data }) {
                     initialFormData
                   );
                 }}
-                className="flex flex-wrap gap-[20px]"
+                className="flex flex-wrap gap-5"
               >
                 <input
                   type="text"
@@ -141,7 +141,7 @@ export default function QuoteFormSection({ data }) {
                 <label className="text-center">
                   {/* <span className="w-max inline-block">
                     <input
-                      className="mr-[10px] w-max"
+                      className="mr-2.5 w-max"
                       type="checkbox"
                       name="check"
                       required

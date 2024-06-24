@@ -43,7 +43,7 @@ export default function ContactForm() {
           initialFormData
         );
       }}
-      className="max-w-[776px] mx-auto mt-[30px] flex flex-wrap gap-[20px] about-quote-form"
+      className="max-w-[776px] mx-auto mt-8 flex flex-wrap gap-5 about-quote-form"
     >
       <div className="w-full md:w-[calc(65%-10px)]">
         <label htmlFor="name">Name</label>
@@ -131,7 +131,7 @@ export default function ContactForm() {
         {/* <label htmlFor="check">
       <span className="w-max inline-block">
         <input
-          className="mr-[10px] w-max"
+          className="mr-2.5 w-max"
           type="checkbox"
           id="check"
           name="check"
@@ -145,7 +145,7 @@ export default function ContactForm() {
       </span>
       <span>I agree to receive sales and marketing communication</span>
     </label> */}
-        <p className="text-[#8e9fa9] text-[16px] mt-[10px] text-center">
+        <p className="text-[#8e9fa9] text-[16px] mt-2.5 text-center">
           For more information about how we collect, process and retain your
           personal data, please see our{" "}
           <Link

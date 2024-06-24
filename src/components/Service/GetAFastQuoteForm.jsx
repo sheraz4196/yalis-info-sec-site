@@ -34,12 +34,12 @@ export default function GetAFastQuoteForm({ data }) {
 
   return (
     <section class="bg-[#324450] text-white py-[30px] md:py-[60px]">
-      <div class="max-container my-[10px] md:my-[20px]">
+      <div class="max-container my-2.5 md:my-5">
         <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] flex flex-col md:flex-row items-stretch">
           {(data?.title || data?.description) && (
             <div class="w-full p-[30px] bg-[rgb(34,39,43)] rounded-l-[8px]">
-              <div class="m-[10px]">
-                <h2 class="text-primary2 mb-[10px]">{data?.title}</h2>
+              <div class="m-2.5">
+                <h2 class="text-primary2 mb-2.5">{data?.title}</h2>
                 <div class="rich-text penetration-testing-form-description list-target">
                   <Richtext data={data?.description} />
                 </div>
@@ -48,7 +48,7 @@ export default function GetAFastQuoteForm({ data }) {
           )}
           {data?.showForm && (
             <div class="w-full p-[30px]">
-              <div class="m-[10px]">
+              <div class="m-2.5">
                 <form
                   onSubmit={(e) => {
                     e.preventDefault();
@@ -60,7 +60,7 @@ export default function GetAFastQuoteForm({ data }) {
                       initialFormData
                     );
                   }}
-                  class="flex flex-wrap gap-[20px]"
+                  class="flex flex-wrap gap-5"
                 >
                   <input
                     type="text"
@@ -131,7 +131,7 @@ export default function GetAFastQuoteForm({ data }) {
                   <label class="text-[14px] text-[#434343]">
                     {/* <span class="w-max inline-block">
                       <input
-                        class="w-max mr-[10px]"
+                        class="w-max mr-2.5"
                         type="checkbox"
                         name="check"
                         required

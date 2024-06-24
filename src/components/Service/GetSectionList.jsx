@@ -25,7 +25,7 @@ export default function GetSectionList({ data }) {
                 selectedId === index
                   ? "bg-blue cursor-default"
                   : "bg-[#fafafa] cursor-pointer"
-              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-[18px] leading-[1.3] min-h-[60px] p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
+              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-lg leading-[1.3] min-h-[60px] p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
               style={{
                 boxShadow:
                   "0 5px 15px 0 rgba(160,160,160,0.2), 0 15px 35px 0 rgba(50,50,93,0.2)",
@@ -49,13 +49,13 @@ export default function GetSectionList({ data }) {
                 {item?.fields?.service}
               </div>
               <p
-                className={`text-[18px] leading-[1.3] ${
+                className={`text-lg leading-[1.3] ${
                   selectedId === index ? "text-white" : "text-blue"
                 }`}
               >
                 {item?.fields?.shortTitle}
               </p>
-              <p className="text-[#324450] text-[18px]">
+              <p className="text-[#324450] text-lg">
                 {item?.fields?.shortSubHeading}
               </p>
             </div>
@@ -69,12 +69,12 @@ export default function GetSectionList({ data }) {
             "0 5px 15px 0 rgba(0,0,0,0.07), 0 15px 35px 0 rgba(0,0,0,0.07)",
         }}
       >
-        <div className="mb-[20px] w-[90%] mx-auto flex items-center justify-between gap-[40px]">
+        <div className="mb-5 w-[90%] mx-auto flex items-center justify-between gap-10">
           <div className="w-full">
             <h3 className="text-blue text-[32px] leading-[1.4]">
               {content?.fields?.title}
             </h3>
-            <p className="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-extrabold">
+            <p className="text-[#324450] text-2xl mb-2.5 leading-[1.4] font-extrabold">
               {content?.fields?.subHeading}
             </p>
             <div className="rich-text">
@@ -94,10 +94,10 @@ export default function GetSectionList({ data }) {
         </div>
         <div className="w-[90%] mx-auto">
           {content?.fields?.list?.length > 0 && (
-            <ul className="list-checked types-list mb-[20px] columns-2">
+            <ul className="list-checked types-list mb-5 columns-2">
               {content?.fields?.list?.map((item, i) => {
                 return (
-                  <li key={i} className="text-[18px] leading-[2.0]">
+                  <li key={i} className="text-lg leading-[2.0]">
                     {item}
                   </li>
                 );

@@ -33,8 +33,8 @@ export default function QuoteFormSection({ data }) {
 
   return (
     <section id="getQuote" class="bg-[#eaeaea] py-[30px] md:py-[60px]">
-      <div class="max-container my-[10px] md:my-[20px]">
-        <div class="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] my-[30px]">
+      <div class="max-container my-2.5 md:my-5">
+        <div class="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] my-8">
           {data?.image?.fields?.file?.url && (
             <div
               style={{
@@ -46,7 +46,7 @@ export default function QuoteFormSection({ data }) {
           <div class="w-full h-full">
             <div class="bg-white p-[30px] md:p-[60px]">
               <h2 class="text-primary2">{data?.title}</h2>
-              <p class="my-[30px]">{data?.description}</p>
+              <p class="my-8">{data?.description}</p>
               {data?.showQuoteSectionForm && (
                 <form
                   onSubmit={(e) => {
@@ -59,7 +59,7 @@ export default function QuoteFormSection({ data }) {
                       initialFormData
                     );
                   }}
-                  class="flex flex-wrap gap-[20px]"
+                  class="flex flex-wrap gap-5"
                 >
                   <input
                     type="text"
@@ -130,7 +130,7 @@ export default function QuoteFormSection({ data }) {
                   <label class="text-center">
                     {/* <span class="w-max inline-block">
                       <input
-                        class="mr-[10px] w-max"
+                        class="mr-2.5 w-max"
                         type="checkbox"
                         name="check"
                         required

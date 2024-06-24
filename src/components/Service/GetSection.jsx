@@ -5,17 +5,15 @@ import Link from "next/link";
 
 export default function GetSection({ data }) {
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px]">
-      <h2 class="text-secondary text-center pb-[20px] mb-[60px]">
-        {data?.title}
-      </h2>
+    <section class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5">
+      <h2 class="text-secondary text-center pb-5 mb-16">{data?.title}</h2>
       {data?.list?.length > 0 && (
         <div class="hidden md:block">
           <GetSectionList data={data?.list} />
         </div>
       )}
       {data?.list?.length > 0 && (
-        <div class="flex flex-col-reverse gap-[40px] md:hidden get-section-list">
+        <div class="flex flex-col-reverse gap-10 md:hidden get-section-list">
           {data?.list?.map((item) => {
             return (
               <div class="get-section-list-item">
@@ -25,24 +23,22 @@ export default function GetSection({ data }) {
                     alt="icon"
                     width={140}
                     height={140}
-                    class="mx-auto mb-[30px]"
+                    class="mx-auto mb-8"
                   />
                 )}
-                <h3 class="text-blue text-[24px] leading-[1.4] text-center">
+                <h3 class="text-blue text-2xl leading-[1.4] text-center">
                   {item?.fields?.title}
                 </h3>
-                <p class="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-extrabold text-center">
+                <p class="text-[#324450] text-2xl mb-2.5 leading-[1.4] font-extrabold text-center">
                   {item?.fields?.subHeading}
                 </p>
-                <div class="rich-text mb-[10px] text-[18px]">
+                <div class="rich-text mb-2.5 text-lg">
                   <Richtext data={item?.fields?.description} />
                 </div>
                 {item?.fields?.list?.length > 0 && (
-                  <ul class="list-checked types-list mb-[20px]">
+                  <ul class="list-checked types-list mb-5">
                     {item?.fields?.list?.map((listItem, i) => {
-                      return (
-                        <li class="text-[18px] leading-[2.0]">{listItem}</li>
-                      );
+                      return <li class="text-lg leading-[2.0]">{listItem}</li>;
                     })}
                   </ul>
                 )}

@@ -9,9 +9,9 @@ export default function QualificationsSection({ data }) {
       style={{ backgroundImage: `url(${bgImg.src})` }}
       class="bg-light bg-[center_bottom] bg-no-repeat py-[30px] md:py-[60px]"
     >
-      <div class="max-container my-[10px] md:my-[20px] text-center">
-        <h2 class="mb-[30px] text-primary2">{data?.title}</h2>
-        <div class="pb-[20px] mb-[60px] text-xl font-[300]">
+      <div class="max-container my-2.5 md:my-5 text-center">
+        <h2 class="mb-8 text-primary2">{data?.title}</h2>
+        <div class="pb-5 mb-16 text-xl font-[300]">
           <div class="rich-text">
             <Richtext data={data?.description} />
           </div>

@@ -4,8 +4,8 @@ import React from "react";
 export default function Boxes({ title, data }) {
   return (
     <div>
-      <div class="max-container my-[10px] md:my-[20px]">
-        <h2 class="text-secondary text-center pb-[20px] mb-[60px]">{title}</h2>
+      <div class="max-container my-2.5 md:my-5">
+        <h2 class="text-secondary text-center pb-5 mb-16">{title}</h2>
         <div class="flex flex-wrap gap-[30px]">
           {data?.map((item, i) => {
             return (

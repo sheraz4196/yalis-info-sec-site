@@ -37,7 +37,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
 
   return (
     <div className="max-container absolute z-10 bg-transparent top-[57px] left-1/2 -translate-x-1/2">
-      <div className="py-[20px] flex items-center justify-between lg:justify-center gap-[30px] header max-w-full relative">
+      <div className="py-5 flex items-center justify-between lg:justify-center gap-[30px] header max-w-full relative">
         <div>
           <Link href="/" className="block w-max mx-auto">
             <Image

@@ -33,9 +33,9 @@ export default function BenefitsSection({ data }) {
   return (
     <section
       ref={ref}
-      class="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px]"
+      class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5"
     >
-      <h2 class="text-[rgb(27,161,230)] text-center pb-[20px] mb-[60px]">
+      <h2 class="text-[rgb(27,161,230)] text-center pb-5 mb-16">
         {data?.title}
       </h2>
       <div class={`flex flex-wrap bemefits-list ${isVisible ? "on" : ""}`}>

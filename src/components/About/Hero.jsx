@@ -8,10 +8,10 @@ export default function Hero({ data }) {
       style={{ backgroundImage: `url(${data?.bgImage?.fields?.file?.url})` }}
       class={`bg-center bg-no-repeat bg-cover bg-[#324450]`}
     >
-      <div class="max-container pt-[80px] md:pt-[100px] lg:pt-[70px]">
+      <div class="max-container pt-[80px] md:pt-24 lg:pt-[70px]">
         <div class="pt-[20px] pb-[50px] md:py-[150px] relative text-center">
           <h1 class="text-white">{data?.title}</h1>
-          <p class="text-[#a2b7c5] mb-[30px]">{data?.description}</p>
+          <p class="text-[#a2b7c5] mb-8">{data?.description}</p>
           {data?.buttonText && (
             <Link
               href={data?.buttonLink || ""}

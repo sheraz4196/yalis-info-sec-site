@@ -3,7 +3,7 @@ import React from "react";
 
 export default function SecureSection({ data }) {
   return (
-    <section className="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px] flex flex-col md:flex-row items-center justify-between gap-[20px] xl:gap-[60px]">
+    <section className="max-container py-[30px] md:py-[60px] my-2.5 md:my-5 flex flex-col md:flex-row items-center justify-between gap-5 xl:gap-[60px]">
       <div className="w-full">
         <Image
           src={"https:" + data?.image?.fields?.file?.url || ""}
@@ -14,7 +14,7 @@ export default function SecureSection({ data }) {
         />
       </div>
       <div className="w-full">
-        <h2 className="mb-[30px] text-primary2">{data?.title}</h2>
+        <h2 className="mb-8 text-primary2">{data?.title}</h2>
         <p className="leading-[1.5]">{data?.description}</p>
       </div>
     </section>

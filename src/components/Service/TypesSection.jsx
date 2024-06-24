@@ -6,8 +6,8 @@ import Link from "next/link";
 
 export default function TypesSection({ data }) {
   return (
-    <section class="max-container py-[30px] md:py-[60px] mb-[60px] mt-[10px] md:mt-[20px]">
-      <h2 class="text-center text-primary2 pb-2.5 mb-[30px]">{data?.title}</h2>
+    <section class="max-container py-[30px] md:py-[60px] mb-16 mt-2.5 md:mt-5">
+      <h2 class="text-center text-primary2 pb-2.5 mb-8">{data?.title}</h2>
       {data?.description && (
         <div class="rich-text different-types-description">
           <Richtext data={data?.description} />
@@ -18,11 +18,11 @@ export default function TypesSection({ data }) {
           <TypesList data={data?.list} />
         </div>
       )}
-      <div class="flex flex-col md:hidden gap-[40px]">
+      <div class="flex flex-col md:hidden gap-10">
         {data?.list?.map((item) => {
           return (
             <div class="type-list-item-wrap">
-              <h3 class="text-[24px] text-center text-blue leading-[1.4] mb-[10px]">
+              <h3 class="text-2xl text-center text-blue leading-[1.4] mb-2.5">
                 {item?.fields?.title}
               </h3>
               <div class="rich-text different-type-list-description">

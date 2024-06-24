@@ -2,8 +2,8 @@ import React from "react";
 
 export default function TargetDefenceSection({ data }) {
   return (
-    <section class="max-container py-[40px] md:py-[70px]">
-      <div class="mb-[20px]">
+    <section class="max-container py-10 md:py-[70px]">
+      <div class="mb-5">
         <h2 class="text-primary2 text-center">{data?.title}</h2>
         <p class="">{data?.description}</p>
       </div>

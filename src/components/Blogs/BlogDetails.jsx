@@ -19,15 +19,15 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
   return (
     <div>
       <section class="bg-light py-[30px] md:py-[60px]">
-        <div class="max-w-[1024px] mx-auto my-[10px] md:my-[20px] px-[20px]">
+        <div class="max-w-[1024px] mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img
               src={data?.fields?.image?.fields?.file?.url}
               alt={data?.fields?.image?.fields?.title}
-              class="max-h-[100%] md:max-h-[500px] w-full mb-[30px] object-cover"
+              class="max-h-[100%] md:max-h-[500px] w-full mb-8 object-cover"
             />
           )}
-          <div className="flex items-center gap-4 mb-[10px]">
+          <div className="flex items-center gap-4 mb-2.5">
             <p class="">
               <i class="fa-regular fa-calendar mr-1"></i>
               {formattedDate}
@@ -41,7 +41,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
           <div class="rich-text blog-description">
             <Richtext data={data?.fields?.description} />
           </div>
-          <div class="mt-[30px] flex items-center gap-4">
+          <div class="mt-8 flex items-center gap-4">
             <h4>Share Post:</h4>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -49,7 +49,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-facebook text-[24px] hover:text-link-hover"
+              class="share-button-facebook text-2xl hover:text-link-hover"
             >
               <i class="fa-brands fa-facebook"></i>
             </a>
@@ -59,7 +59,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-twitter text-[24px] hover:text-link-hover"
+              class="share-button-twitter text-2xl hover:text-link-hover"
             >
               <i class="fa-brands fa-twitter"></i>
             </a>
@@ -69,18 +69,18 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-linkedin text-[24px] hover:text-link-hover"
+              class="share-button-linkedin text-2xl hover:text-link-hover"
             >
               <i class="fa-brands fa-linkedin"></i>
             </a>
           </div>
           {data?.fields?.tag?.length > 0 && (
-            <div className="flex flex-wrap items-center gap-4 mt-[30px]">
+            <div className="flex flex-wrap items-center gap-4 mt-8">
               {data?.fields?.tag?.map((item, i) => {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
-                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-[20px] py-[5px] rounded-full"
+                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-5 py-[5px] rounded-full"
                     key={i}
                   >
                     {item?.fields?.title}
@@ -90,12 +90,12 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
             </div>
           )}
           {author && (
-            <div class="flex flex-col mt-[30px] gap-[20px]">
+            <div class="flex flex-col mt-8 gap-5">
               {author?.fields?.avatar?.fields?.file?.url && (
                 <img
                   src={author?.fields?.avatar?.fields?.file?.url}
                   alt="avatar"
-                  class="w-[100px] rounded-full"
+                  class="w-24 rounded-full"
                 />
               )}
               <div>
@@ -110,7 +110,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                           target="_blank"
                           className="hover:text-link-hover"
                         >
-                          <i className={`${item?.icon} text-[24px]`} />
+                          <i className={`${item?.icon} text-2xl`} />
                         </a>
                       );
                     })}

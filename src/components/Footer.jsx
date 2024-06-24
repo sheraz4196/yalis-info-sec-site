@@ -46,7 +46,7 @@ export default function Footer({ logo, serviceLinks }) {
   } = data;
 
   return (
-    <footer className="bg-[#1d2224] py-[30px] md:pt-[60px] md:pb-[40px]">
+    <footer className="bg-[#1d2224] py-[30px] md:pt-[60px] md:pb-10">
       <div className="max-container">
         <div className="footer flex items-start flex-wrap justify-between gap-[30px] max-w-full w-full">
           <div className="w-full lg:w-[calc(30%-15px)] max-w-full lg:max-w-[calc(30%-15px)]">
@@ -117,7 +117,7 @@ export default function Footer({ logo, serviceLinks }) {
                         target="_blank"
                         aria-label={item?.icon || "social media link"}
                       >
-                        <i className={`${item?.icon} text-[24px]`} />
+                        <i className={`${item?.icon} text-2xl`} />
                       </a>
                     );
                   })}
@@ -126,7 +126,7 @@ export default function Footer({ logo, serviceLinks }) {
             </div>
           </div>
         </div>
-        <div className="mt-[30px] copyright text-[#7d909c] text-[12px] leading-[22px]">
+        <div className="mt-8 copyright text-[#7d909c] text-[12px] leading-[22px]">
           <Richtext data={copyright} />
         </div>
       </div>

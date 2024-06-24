@@ -500,7 +500,7 @@ select:valid {
   width: 100%;
 }
 .quote {
-  @apply text-lg lg:text-xl pt-[2.5rem] md:pt-0 md:pl-[5.25rem] relative;
+  @apply text-lg lg:text-xl pt-10 md:pt-0 md:pl-20 relative;
 }
 .quote::before {
   color: #1ba1e6;
@@ -825,7 +825,7 @@ select:valid {
   font-size: 1.25rem;
 }
 .different-types-description {
-  @apply pb-2.5 md:pb-[20px] mb-[30px] md:mb-[60px];
+  @apply pb-2.5 md:pb-5 mb-8 md:mb-16;
 }
 .different-type-list-description p {
   font-size: 18px;
@@ -838,7 +838,7 @@ select:valid {
   margin: 20px 0;
 }
 .penetration-testing-form-description p {
-  @apply text-[1.5rem] pb-2.5 mb-[30px];
+  @apply text-2xl pb-2.5 mb-8;
 }
 .penetration-testing-form-description ul p {
   padding-bottom: 0;

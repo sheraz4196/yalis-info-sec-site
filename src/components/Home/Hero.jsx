@@ -53,17 +53,17 @@ export default function Hero({ data }) {
           />
         </picture>
       )}
-      <div className="relative z-[1] max-container pt-[80px] md:pt-[100px] lg:pt-[20px]">
-        <div className="py-[60px] my-[20px] lg:my-[60px] flex flex-col lg:flex-row items-start justify-between gap-[50px]">
+      <div className="relative z-[1] max-container pt-[80px] md:pt-24 lg:pt-[20px]">
+        <div className="py-[60px] my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-[50px]">
           <div className="w-full lg:w-[55%]">
-            <h1 className="mb-[20px] text-white">{data?.title}</h1>
-            <p className="text-[#a2b7c5] text-[1.5rem] mb-[30px] leading-[1.5]">
+            <h1 className="mb-5 text-white">{data?.title}</h1>
+            <p className="text-[#a2b7c5] text-2xl mb-8 leading-[1.5]">
               {data?.description}
             </p>
           </div>
           <div className="w-full lg:w-[44%]">
-            <div className="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] p-[20px] md:p-[30px]">
-              <h3 className="text-primary2 font-extrabold leading-[1.3] text-center mb-[20px]">
+            <div className="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] p-5 md:p-[30px]">
+              <h3 className="text-primary2 font-extrabold leading-[1.3] text-center mb-5">
                 {data?.formTitle}
               </h3>
               <form
@@ -151,7 +151,7 @@ export default function Hero({ data }) {
                 >
                   {/* <span className="w-max inline-block">
                     <input
-                      className="mr-[10px] w-max"
+                      className="mr-2.5 w-max"
                       type="checkbox"
                       value={formData?.check}
                       checked={formData?.check}

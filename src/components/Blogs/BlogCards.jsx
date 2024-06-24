@@ -10,10 +10,8 @@ export default function BlogCards({ data, relatedBlogs }) {
         relatedBlogs ? "pb-[30px] md:pb-[60px]" : "py-[30px] md:py-[60px]"
       }`}
     >
-      <div
-        class={`max-container ${relatedBlogs ? "" : "my-[10px] md:my-[20px]"}`}
-      >
-        {relatedBlogs && <h2 class="text-primary2 mb-[30px]">Related Posts</h2>}
+      <div class={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>
+        {relatedBlogs && <h2 class="text-primary2 mb-8">Related Posts</h2>}
         <div class="blogs-cards">
           {data?.map((item) => {
             const date = item?.sys?.createdAt;
@@ -32,7 +30,7 @@ export default function BlogCards({ data, relatedBlogs }) {
                   />
                 )}
                 <div>
-                  <h3 class="text-primary2 mb-[10px]">{item?.fields?.title}</h3>
+                  <h3 class="text-primary2 mb-2.5">{item?.fields?.title}</h3>
                   <div className="flex items-center gap-4">
                     <p>
                       <i class="fa-regular fa-calendar mr-1" /> {formattedDate}

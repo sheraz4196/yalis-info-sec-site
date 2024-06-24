@@ -12,12 +12,10 @@ export default function FaqSection({ data }) {
     }
   };
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px]">
-      <h2 class="text-primary2 text-center pb-[20px] mb-[60px]">
-        {data?.title}
-      </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
-        <div className="flex flex-col gap-[20px]">
+    <section class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5">
+      <h2 class="text-primary2 text-center pb-5 mb-16">{data?.title}</h2>
+      <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        <div className="flex flex-col gap-5">
           {data?.faqs?.map((item, i) => {
             if (i <= Math.ceil((data?.faqs?.length - 1) / 2))
               return (
@@ -39,7 +37,7 @@ export default function FaqSection({ data }) {
               );
           })}
         </div>
-        <div className="flex flex-col gap-[20px]">
+        <div className="flex flex-col gap-5">
           {data?.faqs?.map((item, i) => {
             if (i > Math.ceil((data?.faqs?.length - 1) / 2))
               return (

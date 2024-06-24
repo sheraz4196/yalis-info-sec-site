@@ -41,11 +41,9 @@ export default function MethodologySection({ data }) {
 
   return (
     <section class="max-container py-[30px] md:py-[60px]">
-      <h2 class="text-primary2 mb-[30px] lg:mb-[60px] text-center">
-        {data?.title}
-      </h2>
+      <h2 class="text-primary2 mb-8 lg:mb-16 text-center">{data?.title}</h2>
       {data?.list?.length > 0 && (
-        <div className="methodology-list relative px-[20px] lg:px-0">
+        <div className="methodology-list relative px-5 lg:px-0">
           <ol>
             {data?.list?.map((item, i) => {
               const liRef = (element) => {
