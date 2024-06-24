@@ -1,6 +1,8 @@
+const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
+const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 const client = require("contentful").createClient({
-  space: "2w209vrtahje",
-  accessToken: "IU_ZmzUPQ7nlLxItOu79EpJysDRqQYdmIUBGeH7mNT4",
+  space: spaceId,
+  accessToken: accessToken,
   // accessToken: "cWP_gTbGR8lQ_a0f7DmN4GFZCkHPk0d36RCqgT-je7c",
   // host: "preview.contentful.com",
 });
@@ -52,12 +54,12 @@ export async function searchBlogsData(search) {
   // } catch (error) {
   //   console.error(`Error fetching posts: ${error.message}`);
   // }
-  const url = `https://cdn.contentful.com/spaces/2w209vrtahje/entries?content_type=post&query=${search}`;
+  const url = `https://cdn.contentful.com/spaces/${spaceId}/entries?content_type=post&query=${search}`;
 
   try {
     const response = await fetch(url, {
       headers: {
-        Authorization: `Bearer IU_ZmzUPQ7nlLxItOu79EpJysDRqQYdmIUBGeH7mNT4`,
+        Authorization: `Bearer ${accessToken}`,
       },
     });
     if (!response.ok) {
