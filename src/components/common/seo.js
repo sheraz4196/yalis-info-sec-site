@@ -1,12 +1,10 @@
 "use client";
 import React from "react";
 import { Helmet } from "react-helmet";
-import Head from "next/head";
 
 export default function Seo({ data }) {
   return (
-    <Helmet>
-      <title>{data?.title}</title>
+    <Helmet title={data?.title}>
       <meta name="description" content={data?.description} />
       <meta property="og:title" content={data?.title} />
       <meta property="og:description" content={data?.description} />
