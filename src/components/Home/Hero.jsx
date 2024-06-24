@@ -1,5 +1,5 @@
 import Image from "next/image";
-import CyberForm from "./cyber-form";
+import CyberForm from "./forms/cyber-form";
 
 export default function Hero({ data }) {
   return (

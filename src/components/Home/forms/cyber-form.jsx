@@ -1,8 +1,8 @@
 "use client";
-import GoogleRecaptcha from "../common/GoogleRecaptcha";
+import GoogleRecaptcha from "../../common/GoogleRecaptcha";
 import Link from "next/link";
 import { useState } from "react";
-import { handleSubmit } from "../common/handleSubmit";
+import { handleSubmit } from "../../common/handleSubmit";
 export default function CyberForm({ data }) {
   function onChange(value) {
     setFormData({ ...formData, recaptcha: value });
