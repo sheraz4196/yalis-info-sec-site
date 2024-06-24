@@ -21,7 +21,7 @@ export default function WhyChoose({ data }) {
                   />
                 )}
                 <h3 class="mb-5">{item?.fields?.title}</h3>
-                <p class="text-[rgb(34,39,42)]">{item?.fields?.description}</p>
+                <p class="text-brown-40">{item?.fields?.description}</p>
               </div>
             );
           })}

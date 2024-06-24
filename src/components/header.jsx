@@ -59,7 +59,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
         <button
           onClick={() => setShowMenu(!showMenu)}
           aria-label="menu"
-          className="bg-[#465f6f] p-2.5 rounded relative cursor-pointer lg:hidden"
+          className="bg-gray-cement p-2.5 rounded relative cursor-pointer lg:hidden"
         >
           <span className="menu-icon">
             <span className="menu-icon-span"></span>
@@ -88,7 +88,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                       {item?.text}
                     </button>
                     {showDropDowns.includes(i) && (
-                      <div className="flex flex-col bg-[#3c5160] pl-2.5">
+                      <div className="flex flex-col bg-slate-40 pl-2.5">
                         {(item?.text === "Services"
                           ? serviceLinks
                           : item?.children

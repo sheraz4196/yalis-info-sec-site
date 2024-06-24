@@ -38,7 +38,7 @@ export default function Hero({ data }) {
       // style={{
       //   backgroundImage: `url(${data?.bgImage?.fields?.file?.url})`,
       // }}
-      className={`bg-[#324450] relative`}
+      className={`bg-gray-cement relative`}
     >
       {data?.bgImage?.fields?.file?.url && (
         <picture>
@@ -57,7 +57,7 @@ export default function Hero({ data }) {
         <div className="py-16 my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="w-full lg:w-[55%]">
             <h1 className="mb-5 text-white">{data?.title}</h1>
-            <p className="text-[#a2b7c5] text-2xl mb-8 leading-[1.5]">
+            <p className="textgray-cement text-2xl mb-8 leading-[1.5]">
               {data?.description}
             </p>
           </div>
@@ -145,10 +145,7 @@ export default function Hero({ data }) {
                   value={formData?.info}
                   onChange={handleChange}
                 ></textarea>
-                <label
-                  for="check-box"
-                  className="text-sm text-[rgba(34,39,42,1)]"
-                >
+                <label for="check-box" className="text-sm text-half-black">
                   {/* <span className="w-max inline-block">
                     <input
                       className="mr-2.5 w-max"

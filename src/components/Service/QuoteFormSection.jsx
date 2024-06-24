@@ -32,7 +32,7 @@ export default function QuoteFormSection({ data }) {
   };
 
   return (
-    <section id="getQuote" class="bg-[#eaeaea] py-8 md:py-16">
+    <section id="getQuote" class="bg-zinc-50 py-8 md:py-16">
       <div class="max-container my-2.5 md:my-5">
         <div class="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg my-8">
           {data?.image?.fields?.file?.url && (

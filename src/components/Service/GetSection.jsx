@@ -29,7 +29,7 @@ export default function GetSection({ data }) {
                 <h3 class="text-blue text-2xl leading-[1.4] text-center">
                   {item?.fields?.title}
                 </h3>
-                <p class="text-[#324450] text-2xl mb-2.5 leading-[1.4] font-extrabold text-center">
+                <p class="text-slate-40 text-2xl mb-2.5 leading-[1.4] font-extrabold text-center">
                   {item?.fields?.subHeading}
                 </p>
                 <div class="rich-text mb-2.5 text-lg">

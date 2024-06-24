@@ -46,7 +46,7 @@ export default function Footer({ logo, serviceLinks }) {
   } = data;
 
   return (
-    <footer className="bg-[#1d2224] py-8 md:pt-16 md:pb-10">
+    <footer className="bg-neutral-900 py-8 md:pt-16 md:pb-10">
       <div className="max-container">
         <div className="footer flex items-start flex-wrap justify-between gap-8 max-w-full w-full">
           <div className="w-full lg:w-[calc(30%-15px)] max-w-full lg:max-w-[calc(30%-15px)]">
@@ -126,7 +126,7 @@ export default function Footer({ logo, serviceLinks }) {
             </div>
           </div>
         </div>
-        <div className="mt-8 copyright text-[#7d909c] text-xs">
+        <div className="mt-8 copyright text-gray-dark text-xs">
           <Richtext data={copyright} />
         </div>
       </div>

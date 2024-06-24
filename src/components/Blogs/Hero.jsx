@@ -23,7 +23,7 @@ export default function Hero({ title, bgImg }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg?.fields?.file?.url})` }}
-      class={`bg-center bg-no-repeat bg-cover bg-[#324450]`}
+      class={`bg-center bg-no-repeat bg-cover bg-gray-cement`}
     >
       <div class="max-container pt-20 md:pt-24 lg:pt-16">
         <div class="pt-5 pb-12 md:py-36 relative text-center">

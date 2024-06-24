@@ -24,7 +24,7 @@ export default function TypesList({ data }) {
               className={`${
                 selectedId === index
                   ? "bg-white"
-                  : "bg-[#EDF7FD] hover:bg-[#DEF3FF]"
+                  : "bg-zinc-100 hover:bg-cyan-100"
               } w-full shadow-[0px_-8px_52px_rgba(50,68,80,0.1)] rounded-t-[8px] flex flex-col justify-center items-center cursor-pointer text-lg leading-[1.3] min-h-16 py-5 px-[15px] transition-[background-color 0.25s ease]`}
               onClick={() => handleSelectId(index)}
             >
@@ -46,7 +46,7 @@ export default function TypesList({ data }) {
       <div className="rounded-b-[8px] shadow-[0px_15px_52px_rgba(50,68,80,0.14)] bg-white py-16 w-full">
         <div className="w-[90%] mx-auto">
           <div className="mr-10">
-            <h3 className="text-blue text-[32px] leading-[1.4] mb-2.5">
+            <h3 className="text-blue text-3xl mb-2.5">
               {content?.fields?.title}
             </h3>
             <div className="rich-text different-type-list-description">

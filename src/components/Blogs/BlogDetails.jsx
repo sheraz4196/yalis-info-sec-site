@@ -80,7 +80,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
-                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-5 py-1.5 rounded-full"
+                    className="bg-primary2 hover:bg-muted text-white font-[700] px-5 py-1.5 rounded-full"
                     key={i}
                   >
                     {item?.fields?.title}

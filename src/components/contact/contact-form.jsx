@@ -145,7 +145,7 @@ export default function ContactForm() {
       </span>
       <span>I agree to receive sales and marketing communication</span>
     </label> */}
-        <p className="text-[#8e9fa9] text-[16px] mt-2.5 text-center">
+        <p className="text-gray-light text-base mt-2.5 text-center">
           For more information about how we collect, process and retain your
           personal data, please see our{" "}
           <Link
@@ -167,7 +167,7 @@ export default function ContactForm() {
           <button
             type="button"
             disabled
-            className="w-[135px] mx-auto flex items-center justify-center text-xl py-3 px-8 bg-primary2 hover:bg-[#ef1532] text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
+            className="w-[135px] mx-auto flex items-center justify-center text-xl py-3 px-8 bg-primary2 hover:bg-muted text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             <div role="status">
               <svg
@@ -193,7 +193,7 @@ export default function ContactForm() {
         ) : (
           <button
             type="submit"
-            className="text-xl py-3 px-8 bg-primary2 hover:bg-[#ef1532] text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
+            className="text-xl py-3 px-8 bg-primary2 hover:bg-muted text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             Submit
           </button>

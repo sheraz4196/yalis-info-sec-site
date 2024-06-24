@@ -35,13 +35,13 @@ export default function Hero({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${data?.bgImage?.fields?.file?.url})` }}
-      class="bg-[#324450] bg-[center_100px] bg-no-repeat bg-cover py-5 lg:py-16"
+      class="bg-slate-40 bg-[center_100px] bg-no-repeat bg-cover py-5 lg:py-16"
     >
       <div class="max-container pt-20 md:pt-24 lg:pt-5">
         <div class="py-16 flex flex-col lg:flex-row items-start justify-between gap-12">
           <div class="w-full lg:w-[55%]">
             <h1 class="mb-5 text-white">{data?.title}</h1>
-            <p class="text-[#a2b7c5] text-2xl mb-8 leading-[1.5]">
+            <p class="textgray-cement text-2xl mb-8 leading-[1.5]">
               {data?.description}
             </p>
           </div>
@@ -129,7 +129,7 @@ export default function Hero({ data }) {
                   onChange={handleChange}
                   placeholder="Comments"
                 ></textarea>
-                <label for="check-box" class="text-sm text-[rgba(34,39,42,1)]">
+                <label for="check-box" class="text-sm text-half-black">
                   {/* <span class="w-max inline-block">
                     <input
                       class="mr-2.5 w-max"
