@@ -6,7 +6,7 @@ export default function Boxes({ title, data }) {
     <div>
       <div class="max-container my-2.5 md:my-5">
         <h2 class="text-secondary text-center pb-5 mb-16">{title}</h2>
-        <div class="flex flex-wrap gap-[30px]">
+        <div class="flex flex-wrap gap-8">
           {data?.map((item, i) => {
             return (
               <Link

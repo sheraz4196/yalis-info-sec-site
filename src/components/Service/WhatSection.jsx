@@ -3,8 +3,8 @@ import Richtext from "../common/Richtext";
 
 export default function WhatSection({ data }) {
   return (
-    <section class="bg-light py-[30px] md:py-[60px]">
-      <div class="max-container my-2.5 md:my-5 flex flex-col md:flex-row items-center justify-between gap-[50px]">
+    <section class="bg-light py-8 md:py-16">
+      <div class="max-container my-2.5 md:my-5 flex flex-col md:flex-row items-center justify-between gap-12">
         {data?.image?.fields?.file?.url && (
           <div class="w-full md:w-[calc(41%-25px)]">
             <img
@@ -12,7 +12,7 @@ export default function WhatSection({ data }) {
               alt={data?.image?.fields?.title}
               width={500}
               height={320}
-              class={"rounded-[5px]"}
+              class={"rounded-md"}
             />
           </div>
         )}

@@ -3,7 +3,7 @@ import Richtext from "../common/Richtext";
 
 export default function RequirmentsSection({ data }) {
   return (
-    <section class="bg-light py-[30px] md:py-[60px]">
+    <section class="bg-light py-8 md:py-16">
       <div class="max-container my-2.5 md:my-5 flex flex-col lg:flex-row items-center justify-between gap-5 lg:gap-[4%]">
         {data?.image?.fields?.file?.url && (
           <div class="w-full lg:w-[41%]">
@@ -12,7 +12,7 @@ export default function RequirmentsSection({ data }) {
               alt={"image"}
               width={500}
               height={320}
-              class={"rounded-[5px] w-full lg:w-auto"}
+              class={"rounded-md w-full lg:w-auto"}
             />
           </div>
         )}

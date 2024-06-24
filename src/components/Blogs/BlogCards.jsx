@@ -6,9 +6,7 @@ import { calculateReadingTime } from "../common/calculateReadingTime";
 export default function BlogCards({ data, relatedBlogs }) {
   return (
     <section
-      class={`bg-light ${
-        relatedBlogs ? "pb-[30px] md:pb-[60px]" : "py-[30px] md:py-[60px]"
-      }`}
+      class={`bg-light ${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}
     >
       <div class={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>
         {relatedBlogs && <h2 class="text-primary2 mb-8">Related Posts</h2>}

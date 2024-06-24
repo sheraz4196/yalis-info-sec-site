@@ -7,7 +7,7 @@ export default function QualificationsSection({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg.src})` }}
-      class="bg-light bg-[center_bottom] bg-no-repeat py-[30px] md:py-[60px]"
+      class="bg-light bg-[center_bottom] bg-no-repeat py-8 md:py-16"
     >
       <div class="max-container my-2.5 md:my-5 text-center">
         <h2 class="mb-8 text-primary2">{data?.title}</h2>
@@ -17,7 +17,7 @@ export default function QualificationsSection({ data }) {
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-[30px]">
+      <div class="flex flex-col gap-8">
         {data?.images1?.length > 0 && (
           <div class="horizontal-scrolling">
             <div class="horizontal-scrolling-inner">

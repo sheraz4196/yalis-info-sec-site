@@ -40,7 +40,7 @@ export default function MethodologySection({ data }) {
   }, [data?.list, isVisible]);
 
   return (
-    <section class="max-container py-[30px] md:py-[60px]">
+    <section class="max-container py-8 md:py-16">
       <h2 class="text-primary2 mb-8 lg:mb-16 text-center">{data?.title}</h2>
       {data?.list?.length > 0 && (
         <div className="methodology-list relative px-5 lg:px-0">
@@ -63,10 +63,10 @@ export default function MethodologySection({ data }) {
                         alt="icon"
                         width={130}
                         height={130}
-                        className="max-w-[70px] lg:max-w-[130px] mx-auto"
+                        className="max-w-16 lg:max-w-[130px] mx-auto"
                       />
                     )}
-                    <h3 className="text-lg text-blue mb-[5px]">
+                    <h3 className="text-lg text-blue mb-1.5">
                       {item?.fields?.title}
                     </h3>
                     <div className="rich-text">

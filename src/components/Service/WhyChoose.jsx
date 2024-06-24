@@ -2,7 +2,7 @@ import React from "react";
 
 export default function WhyChoose({ data }) {
   return (
-    <section class="bg-primary-rgb py-[30px] md:py-[60px]">
+    <section class="bg-primary-rgb py-8 md:py-16">
       <div class="max-container my-2.5 md:my-5">
         <h2 class="text-white text-center pb-2.5 md:pb-5 mb-8 md:mb-16">
           {data?.title}
@@ -10,7 +10,7 @@ export default function WhyChoose({ data }) {
         <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
           {data?.cards?.map((item) => {
             return (
-              <div class="w-full bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] text-center p-[30px] h-full">
+              <div class="w-full bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg text-center p-8 h-full">
                 {item?.fields?.image?.fields?.file?.url && (
                   <img
                     src={item?.fields?.image?.fields?.file?.url}

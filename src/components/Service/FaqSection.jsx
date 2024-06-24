@@ -12,7 +12,7 @@ export default function FaqSection({ data }) {
     }
   };
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5">
+    <section class="max-container py-8 md:py-16 my-2.5 md:my-5">
       <h2 class="text-primary2 text-center pb-5 mb-16">{data?.title}</h2>
       <div class="grid grid-cols-1 lg:grid-cols-2 gap-5">
         <div className="flex flex-col gap-5">

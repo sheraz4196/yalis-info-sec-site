@@ -31,10 +31,7 @@ export default function BenefitsSection({ data }) {
   }, []);
 
   return (
-    <section
-      ref={ref}
-      class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5"
-    >
+    <section ref={ref} class="max-container py-8 md:py-16 my-2.5 md:my-5">
       <h2 class="text-[rgb(27,161,230)] text-center pb-5 mb-16">
         {data?.title}
       </h2>
@@ -47,7 +44,7 @@ export default function BenefitsSection({ data }) {
               style={{ transitionDelay: `${i * 0.2}s` }}
             >
               <div>
-                <h5 className="text-[#434343] mb-[5px]">{item?.title}</h5>
+                <h5 className="text-[#434343] mb-1.5">{item?.title}</h5>
                 <p>{item?.description}</p>
               </div>
             </div>

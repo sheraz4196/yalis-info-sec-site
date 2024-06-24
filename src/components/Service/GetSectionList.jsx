@@ -16,7 +16,7 @@ export default function GetSectionList({ data }) {
 
   return (
     <>
-      <div className="flex flex-row-reverse gap-[5px]">
+      <div className="flex flex-row-reverse gap-1.5">
         {data?.map((item, index) => {
           return (
             <div
@@ -25,7 +25,7 @@ export default function GetSectionList({ data }) {
                 selectedId === index
                   ? "bg-blue cursor-default"
                   : "bg-[#fafafa] cursor-pointer"
-              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-lg leading-[1.3] min-h-[60px] p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
+              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-lg leading-[1.3] min-h-16 p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
               style={{
                 boxShadow:
                   "0 5px 15px 0 rgba(160,160,160,0.2), 0 15px 35px 0 rgba(50,50,93,0.2)",
@@ -33,7 +33,7 @@ export default function GetSectionList({ data }) {
               onClick={() => handleSelectId(index)}
             >
               <div
-                className={`leading-[15.6px] w-max mx-auto rounded-[50px] text-[12px] mb-[8px] py-[2px] px-2.5 transition-[all_0.15s_ease-in-out]`}
+                className={`leading-[15.6px] w-max mx-auto rounded-[50px] text-xs mb-[8px] py-[2px] px-2.5 transition-[all_0.15s_ease-in-out]`}
                 style={{
                   backgroundColor:
                     selectedId === index
@@ -63,7 +63,7 @@ export default function GetSectionList({ data }) {
         })}
       </div>
       <div
-        className="rounded-b-[2px] bg-white py-[70px] w-full z-[1] relative"
+        className="rounded-b-[2px] bg-white py-16 w-full z-[1] relative"
         style={{
           boxShadow:
             "0 5px 15px 0 rgba(0,0,0,0.07), 0 15px 35px 0 rgba(0,0,0,0.07)",

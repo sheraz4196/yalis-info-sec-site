@@ -25,8 +25,8 @@ export default function Hero({ title, bgImg }) {
       style={{ backgroundImage: `url(${bgImg?.fields?.file?.url})` }}
       class={`bg-center bg-no-repeat bg-cover bg-[#324450]`}
     >
-      <div class="max-container pt-[80px] md:pt-24 lg:pt-[70px]">
-        <div class="pt-[20px] pb-[50px] md:py-[150px] relative text-center">
+      <div class="max-container pt-20 md:pt-24 lg:pt-16">
+        <div class="pt-5 pb-12 md:py-36 relative text-center">
           <h1 class="text-white lg:text-8xl">{title}</h1>
           {pathname === "/blog" && (
             <div className="relative max-w-[400px] mx-auto mt-8">
@@ -57,7 +57,7 @@ export default function Hero({ title, bgImg }) {
                       <p>No search results found.</p>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-2 px-5 py-[5px] max-h-[250px] overflow-y-auto">
+                    <div className="flex flex-col gap-2 px-5 py-1.5 max-h-[250px] overflow-y-auto">
                       {blogsList?.map((item, i) => {
                         return (
                           <Link
@@ -67,7 +67,7 @@ export default function Hero({ title, bgImg }) {
                               setBlogsList([]);
                             }}
                             href={`/blog/${item?.fields?.slug}`}
-                            className="text-left py-[5px] border-b-[1px] last:border-none hover:text-link-hover"
+                            className="text-left py-1.5 border-b last:border-none hover:text-link-hover"
                           >
                             {item?.fields?.title}
                           </Link>

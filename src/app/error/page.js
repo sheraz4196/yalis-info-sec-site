@@ -5,7 +5,7 @@ import * as React from "react";
 const NotFound500Page = () => (
   <>
     <Seo title={"500 | Yalis"} />
-    <main className="max-container text-center pt-[200px]">
+    <main className="max-container text-center pt-52">
       <h1>Error 500 : Something went wrong</h1>
       <p>
         The page you are looking for might have been removed had its name

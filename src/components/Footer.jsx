@@ -46,9 +46,9 @@ export default function Footer({ logo, serviceLinks }) {
   } = data;
 
   return (
-    <footer className="bg-[#1d2224] py-[30px] md:pt-[60px] md:pb-10">
+    <footer className="bg-[#1d2224] py-8 md:pt-16 md:pb-10">
       <div className="max-container">
-        <div className="footer flex items-start flex-wrap justify-between gap-[30px] max-w-full w-full">
+        <div className="footer flex items-start flex-wrap justify-between gap-8 max-w-full w-full">
           <div className="w-full lg:w-[calc(30%-15px)] max-w-full lg:max-w-[calc(30%-15px)]">
             <div className="max-w-[350px]">
               {image?.fields?.file.url && (
@@ -58,14 +58,14 @@ export default function Footer({ logo, serviceLinks }) {
                     alt="logo"
                     width={350}
                     height={100}
-                    className="max-w-[200px] md:max-w-full"
+                    className="max-w-52 md:max-w-full"
                   />
                 </Link>
               )}
-              {/* <p className="mt-5 text-white text-[14px]">{description}</p> */}
+              {/* <p className="mt-5 text-white text-sm">{description}</p> */}
             </div>
           </div>
-          <div className="flex flex-col md:flex-row gap-[30px] items-start justify-between w-full lg:w-[calc(65%-15px)] max-w-full lg:max-w-[calc(65%-15px)]">
+          <div className="flex flex-col md:flex-row gap-8 items-start justify-between w-full lg:w-[calc(65%-15px)] max-w-full lg:max-w-[calc(65%-15px)]">
             {links?.map((item) => {
               return (
                 <div className="w-full">
@@ -126,7 +126,7 @@ export default function Footer({ logo, serviceLinks }) {
             </div>
           </div>
         </div>
-        <div className="mt-8 copyright text-[#7d909c] text-[12px] leading-[22px]">
+        <div className="mt-8 copyright text-[#7d909c] text-xs">
           <Richtext data={copyright} />
         </div>
       </div>

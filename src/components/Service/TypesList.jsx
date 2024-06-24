@@ -16,7 +16,7 @@ export default function TypesList({ data }) {
 
   return (
     <>
-      <div className="flex gap-[5px]">
+      <div className="flex gap-1.5">
         {data?.map((item, index) => {
           return (
             <div
@@ -25,7 +25,7 @@ export default function TypesList({ data }) {
                 selectedId === index
                   ? "bg-white"
                   : "bg-[#EDF7FD] hover:bg-[#DEF3FF]"
-              } w-full shadow-[0px_-8px_52px_rgba(50,68,80,0.1)] rounded-t-[8px] flex flex-col justify-center items-center cursor-pointer text-lg leading-[1.3] min-h-[60px] py-5 px-[15px] transition-[background-color 0.25s ease]`}
+              } w-full shadow-[0px_-8px_52px_rgba(50,68,80,0.1)] rounded-t-[8px] flex flex-col justify-center items-center cursor-pointer text-lg leading-[1.3] min-h-16 py-5 px-[15px] transition-[background-color 0.25s ease]`}
               onClick={() => handleSelectId(index)}
             >
               <div className="mb-5">
@@ -43,7 +43,7 @@ export default function TypesList({ data }) {
           );
         })}
       </div>
-      <div className="rounded-b-[8px] shadow-[0px_15px_52px_rgba(50,68,80,0.14)] bg-white py-[70px] w-full">
+      <div className="rounded-b-[8px] shadow-[0px_15px_52px_rgba(50,68,80,0.14)] bg-white py-16 w-full">
         <div className="w-[90%] mx-auto">
           <div className="mr-10">
             <h3 className="text-blue text-[32px] leading-[1.4] mb-2.5">

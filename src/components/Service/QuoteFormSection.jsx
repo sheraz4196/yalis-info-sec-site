@@ -32,9 +32,9 @@ export default function QuoteFormSection({ data }) {
   };
 
   return (
-    <section id="getQuote" class="bg-[#eaeaea] py-[30px] md:py-[60px]">
+    <section id="getQuote" class="bg-[#eaeaea] py-8 md:py-16">
       <div class="max-container my-2.5 md:my-5">
-        <div class="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] my-8">
+        <div class="flex bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg my-8">
           {data?.image?.fields?.file?.url && (
             <div
               style={{
@@ -44,7 +44,7 @@ export default function QuoteFormSection({ data }) {
             ></div>
           )}
           <div class="w-full h-full">
-            <div class="bg-white p-[30px] md:p-[60px]">
+            <div class="bg-white p-8 md:p-16">
               <h2 class="text-primary2">{data?.title}</h2>
               <p class="my-8">{data?.description}</p>
               {data?.showQuoteSectionForm && (

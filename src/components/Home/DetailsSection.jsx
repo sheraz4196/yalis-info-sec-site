@@ -3,12 +3,12 @@ import React from "react";
 
 export default function DetailsSection({ data }) {
   return (
-    <section className="max-container py-[30px] md:py-[60px] my-2.5 md:my-5 flex flex-col gap-[30px] md:gap-[60px]">
+    <section className="max-container py-8 md:py-16 my-2.5 md:my-5 flex flex-col gap-8 md:gap-16">
       {data?.map((item, i) => {
         return (
           <div
             key={i}
-            className="flex flex-col-reverse md:flex-row even:md:flex-row-reverse items-center justify-between gap-[30px] md:gap-[60px]"
+            className="flex flex-col-reverse md:flex-row even:md:flex-row-reverse items-center justify-between gap-8 md:gap-16"
           >
             <div className="w-full md:max-w-[50%]">
               <h2 className="mb-8 text-primary2">{item?.fields?.title}</h2>

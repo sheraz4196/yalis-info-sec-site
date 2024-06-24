@@ -18,7 +18,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
 
   return (
     <div>
-      <section class="bg-light py-[30px] md:py-[60px]">
+      <section class="bg-light py-8 md:py-16">
         <div class="max-w-[1024px] mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img
@@ -80,7 +80,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
-                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-5 py-[5px] rounded-full"
+                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-5 py-1.5 rounded-full"
                     key={i}
                   >
                     {item?.fields?.title}

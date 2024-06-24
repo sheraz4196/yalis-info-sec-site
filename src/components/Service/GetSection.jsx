@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function GetSection({ data }) {
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-2.5 md:my-5">
+    <section class="max-container py-8 md:py-16 my-2.5 md:my-5">
       <h2 class="text-secondary text-center pb-5 mb-16">{data?.title}</h2>
       {data?.list?.length > 0 && (
         <div class="hidden md:block">

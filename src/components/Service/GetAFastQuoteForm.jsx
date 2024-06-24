@@ -33,11 +33,11 @@ export default function GetAFastQuoteForm({ data }) {
   };
 
   return (
-    <section class="bg-[#324450] text-white py-[30px] md:py-[60px]">
+    <section class="bg-[#324450] text-white py-8 md:py-16">
       <div class="max-container my-2.5 md:my-5">
-        <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] flex flex-col md:flex-row items-stretch">
+        <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg flex flex-col md:flex-row items-stretch">
           {(data?.title || data?.description) && (
-            <div class="w-full p-[30px] bg-[rgb(34,39,43)] rounded-l-[8px]">
+            <div class="w-full p-8 bg-[rgb(34,39,43)] rounded-l-[8px]">
               <div class="m-2.5">
                 <h2 class="text-primary2 mb-2.5">{data?.title}</h2>
                 <div class="rich-text penetration-testing-form-description list-target">
@@ -47,7 +47,7 @@ export default function GetAFastQuoteForm({ data }) {
             </div>
           )}
           {data?.showForm && (
-            <div class="w-full p-[30px]">
+            <div class="w-full p-8">
               <div class="m-2.5">
                 <form
                   onSubmit={(e) => {
@@ -128,7 +128,7 @@ export default function GetAFastQuoteForm({ data }) {
                     onChange={handleChange}
                     placeholder="Comments *"
                   ></textarea>
-                  <label class="text-[14px] text-[#434343]">
+                  <label class="text-sm text-[#434343]">
                     {/* <span class="w-max inline-block">
                       <input
                         class="w-max mr-2.5"

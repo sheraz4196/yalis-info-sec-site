@@ -35,10 +35,10 @@ export default function Hero({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${data?.bgImage?.fields?.file?.url})` }}
-      class="bg-[#324450] bg-[center_100px] bg-no-repeat bg-cover py-5 lg:py-[60px]"
+      class="bg-[#324450] bg-[center_100px] bg-no-repeat bg-cover py-5 lg:py-16"
     >
-      <div class="max-container pt-[80px] md:pt-24 lg:pt-[20px]">
-        <div class="py-[60px] flex flex-col lg:flex-row items-start justify-between gap-[50px]">
+      <div class="max-container pt-20 md:pt-24 lg:pt-5">
+        <div class="py-16 flex flex-col lg:flex-row items-start justify-between gap-12">
           <div class="w-full lg:w-[55%]">
             <h1 class="mb-5 text-white">{data?.title}</h1>
             <p class="text-[#a2b7c5] text-2xl mb-8 leading-[1.5]">
@@ -46,7 +46,7 @@ export default function Hero({ data }) {
             </p>
           </div>
           <div class="w-full lg:w-[44%]">
-            <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] p-5 md:p-[30px]">
+            <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg p-5 md:p-8">
               <h3 class="text-primary2 font-extrabold leading-[1.3] text-center mb-5">
                 {data?.formTitle}
               </h3>
@@ -129,10 +129,7 @@ export default function Hero({ data }) {
                   onChange={handleChange}
                   placeholder="Comments"
                 ></textarea>
-                <label
-                  for="check-box"
-                  class="text-[14px] text-[rgba(34,39,42,1)]"
-                >
+                <label for="check-box" class="text-sm text-[rgba(34,39,42,1)]">
                   {/* <span class="w-max inline-block">
                     <input
                       class="mr-2.5 w-max"

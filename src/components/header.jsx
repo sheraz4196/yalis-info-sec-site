@@ -37,7 +37,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
 
   return (
     <div className="max-container absolute z-10 bg-transparent top-[57px] left-1/2 -translate-x-1/2">
-      <div className="py-5 flex items-center justify-between lg:justify-center gap-[30px] header max-w-full relative">
+      <div className="py-5 flex items-center justify-between lg:justify-center gap-8 header max-w-full relative">
         <div>
           <Link href="/" className="block w-max mx-auto">
             <Image
@@ -45,21 +45,21 @@ const Header = ({ logo, headerList, serviceLinks }) => {
               alt="logo"
               width={300}
               height={84}
-              className="max-w-[160px] md:max-w-full hidden md:block"
+              className="max-w-40 md:max-w-full hidden md:block"
             />
             <Image
               src={"https:" + logo}
               alt="logo"
               width={160}
               height={40}
-              className="max-w-[160px] md:hidden"
+              className="max-w-40 md:hidden"
             />
           </Link>
         </div>
         <button
           onClick={() => setShowMenu(!showMenu)}
           aria-label="menu"
-          className="bg-[#465f6f] p-2.5 rounded-[4px] relative cursor-pointer lg:hidden"
+          className="bg-[#465f6f] p-2.5 rounded relative cursor-pointer lg:hidden"
         >
           <span className="menu-icon">
             <span className="menu-icon-span"></span>
@@ -80,7 +80,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                 return (
                   <div className="block" key={i}>
                     <button
-                      className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-[rgba(255,255,255,0.1)] ${
                         i === 0 ? "border-none" : ""
                       } p-2.5 text-left w-full`}
                       onClick={() => handleMenuDropDowns(i)}
@@ -119,7 +119,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                     onClick={() => setShowMenu(false)}
                   >
                     <button
-                      className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-[rgba(255,255,255,0.1)] ${
                         i === 0 ? "border-none" : ""
                       } p-2.5 text-left w-full`}
                     >

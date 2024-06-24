@@ -53,8 +53,8 @@ export default function Hero({ data }) {
           />
         </picture>
       )}
-      <div className="relative z-[1] max-container pt-[80px] md:pt-24 lg:pt-[20px]">
-        <div className="py-[60px] my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-[50px]">
+      <div className="relative z-[1] max-container pt-20 md:pt-24 lg:pt-5">
+        <div className="py-16 my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="w-full lg:w-[55%]">
             <h1 className="mb-5 text-white">{data?.title}</h1>
             <p className="text-[#a2b7c5] text-2xl mb-8 leading-[1.5]">
@@ -62,7 +62,7 @@ export default function Hero({ data }) {
             </p>
           </div>
           <div className="w-full lg:w-[44%]">
-            <div className="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] p-5 md:p-[30px]">
+            <div className="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg p-5 md:p-8">
               <h3 className="text-primary2 font-extrabold leading-[1.3] text-center mb-5">
                 {data?.formTitle}
               </h3>
@@ -147,7 +147,7 @@ export default function Hero({ data }) {
                 ></textarea>
                 <label
                   for="check-box"
-                  className="text-[14px] text-[rgba(34,39,42,1)]"
+                  className="text-sm text-[rgba(34,39,42,1)]"
                 >
                   {/* <span className="w-max inline-block">
                     <input

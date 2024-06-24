@@ -8,8 +8,8 @@ export default function Navbar({ headerList, serviceLinks, button }) {
     <nav style={{ display: "unset" }}>
       <div class="sticky top-0 z-50 bg-[#22272a] py-3 shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-[56px] flex items-center">
         <div class="max-container">
-          <div class="flex items-center justify-between gap-[30px] w-full">
-            <div className="hidden lg:flex items-center gap-[30px]">
+          <div class="flex items-center justify-between gap-8 w-full">
+            <div className="hidden lg:flex items-center gap-8">
               {headerList?.map((item, i) => {
                 if (item?.children?.length > 0 || item?.text === "Services") {
                   return (
@@ -78,7 +78,7 @@ export default function Navbar({ headerList, serviceLinks, button }) {
                     key={i}
                     href={`${item?.link || ""}`}
                     target={`${item?.target}`}
-                    class="text-[#8e9fa9] text-[14px] transition-colors duration-150 ease-in-out hover:text-white"
+                    class="text-[#8e9fa9] text-sm transition-colors duration-150 ease-in-out hover:text-white"
                   >
                     {item?.text}
                   </Link>

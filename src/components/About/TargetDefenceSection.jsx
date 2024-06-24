@@ -2,7 +2,7 @@ import React from "react";
 
 export default function TargetDefenceSection({ data }) {
   return (
-    <section class="max-container py-10 md:py-[70px]">
+    <section class="max-container py-10 md:py-16">
       <div class="mb-5">
         <h2 class="text-primary2 text-center">{data?.title}</h2>
         <p class="">{data?.description}</p>
@@ -10,7 +10,7 @@ export default function TargetDefenceSection({ data }) {
       <div class="flex flex-col md:flex-row items-start">
         {/* <div class="w-full lg:w-[31.25%] mr-[3.125%]">
           <h4 class="text-primary2">Yalis is:</h4>
-          <ul class="pl-[2rem] mb-[1rem] list-disc">
+          <ul class="pl-8 mb-4 list-disc">
             {data?.targetDefenceList?.map((item) => {
               return <li>{item}</li>;
             })}
@@ -18,7 +18,7 @@ export default function TargetDefenceSection({ data }) {
         </div> */}
         <div class="w-full lg:w-1/2">
           <h4 class="text-primary2">Our staff are:</h4>
-          <ul class="pl-[2rem] mb-[1rem] list-disc">
+          <ul class="pl-8 mb-4 list-disc">
             {data?.staffList?.map((item) => {
               return <li>{item}</li>;
             })}
