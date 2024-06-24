@@ -80,7 +80,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                 return (
                   <div className="block" key={i}>
                     <button
-                      className={`border-t border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-white/10 ${
                         i === 0 ? "border-none" : ""
                       } p-2.5 text-left w-full`}
                       onClick={() => handleMenuDropDowns(i)}
@@ -119,7 +119,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                     onClick={() => setShowMenu(false)}
                   >
                     <button
-                      className={`border-t border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-white/10 ${
                         i === 0 ? "border-none" : ""
                       } p-2.5 text-left w-full`}
                     >

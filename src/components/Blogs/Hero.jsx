@@ -29,7 +29,7 @@ export default function Hero({ title, bgImg }) {
         <div class="pt-5 pb-12 md:py-36 relative text-center">
           <h1 class="text-white lg:text-8xl">{title}</h1>
           {pathname === "/blog" && (
-            <div className="relative max-w-[400px] mx-auto mt-8">
+            <div className="relative max-w-lg mx-auto mt-8">
               <div className="w-full relative">
                 <input
                   type="text"
@@ -57,7 +57,7 @@ export default function Hero({ title, bgImg }) {
                       <p>No search results found.</p>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-2 px-5 py-1.5 max-h-[250px] overflow-y-auto">
+                    <div className="flex flex-col gap-2 px-5 py-1.5 max-h-64 overflow-y-auto">
                       {blogsList?.map((item, i) => {
                         return (
                           <Link

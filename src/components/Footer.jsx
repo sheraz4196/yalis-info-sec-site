@@ -50,7 +50,7 @@ export default function Footer({ logo, serviceLinks }) {
       <div className="max-container">
         <div className="footer flex items-start flex-wrap justify-between gap-8 max-w-full w-full">
           <div className="w-full lg:w-[calc(30%-15px)] max-w-full lg:max-w-[calc(30%-15px)]">
-            <div className="max-w-[350px]">
+            <div className="max-w-80">
               {image?.fields?.file.url && (
                 <Link href="/">
                   <Image
@@ -79,7 +79,7 @@ export default function Footer({ logo, serviceLinks }) {
                         <Link
                           href={link?.link || ""}
                           target={link?.target || "_self"}
-                          className="w-full md:max-w-[250px] block"
+                          className="w-full md:max-w-64 block"
                         >
                           {link?.text}
                         </Link>
@@ -97,7 +97,7 @@ export default function Footer({ logo, serviceLinks }) {
                     return (
                       <Link
                         href={item?.fields?.slug || ""}
-                        className="w-full md:max-w-[250px] block"
+                        className="w-full md:max-w-64 block"
                       >
                         {item?.fields?.heroTitle}
                       </Link>

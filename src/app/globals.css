@@ -457,7 +457,7 @@ select:valid {
 }
 
 .btn1 {
-  @apply text-xl md:py-3 px-5 md:px-8 bg-primary2 hover:bg-muted text-white;
+  @apply text-xl md:py-3 px-5 md:px-8 bg-primary2 hover:bg-muted-red text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -468,7 +468,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn2 {
-  @apply px-6 px-2 bg-primary2 hover:bg-muted text-white;
+  @apply px-6 px-2 bg-primary2 hover:bg-muted-red text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -479,7 +479,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn3 {
-  @apply text-xl w-max mx-auto px-8 py-3 bg-primary2 hover:bg-muted text-white rounded-sm font-extrabold;
+  @apply text-xl w-max mx-auto px-8 py-3 bg-primary2 hover:bg-muted-red text-white rounded-sm font-extrabold;
 }
 
 .type-list-item-wrap {

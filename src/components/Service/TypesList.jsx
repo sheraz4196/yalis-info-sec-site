@@ -43,7 +43,7 @@ export default function TypesList({ data }) {
           );
         })}
       </div>
-      <div className="rounded-b-[8px] shadow-[0px_15px_52px_rgba(50,68,80,0.14)] bg-white py-16 w-full">
+      <div className="rounded-b-lg shadow-[0px_15px_52px_rgba(50,68,80,0.14)] bg-white py-16 w-full">
         <div className="w-[90%] mx-auto">
           <div className="mr-10">
             <h3 className="text-blue text-3xl mb-2.5">

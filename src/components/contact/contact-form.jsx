@@ -43,7 +43,7 @@ export default function ContactForm() {
           initialFormData
         );
       }}
-      className="max-w-[776px] mx-auto mt-8 flex flex-wrap gap-5 about-quote-form"
+      className="max-w-screen-md mx-auto mt-8 flex flex-wrap gap-5 about-quote-form"
     >
       <div className="w-full md:w-[calc(65%-10px)]">
         <label htmlFor="name">Name</label>
@@ -167,7 +167,7 @@ export default function ContactForm() {
           <button
             type="button"
             disabled
-            className="w-[135px] mx-auto flex items-center justify-center text-xl py-3 px-8 bg-primary2 hover:bg-muted text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
+            className="w-36 mx-auto flex items-center justify-center text-xl py-3 px-8 bg-primary2 hover:bg-muted-red text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             <div role="status">
               <svg
@@ -193,7 +193,7 @@ export default function ContactForm() {
         ) : (
           <button
             type="submit"
-            className="text-xl py-3 px-8 bg-primary2 hover:bg-muted text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
+            className="text-xl py-3 px-8 bg-primary2 hover:bg-muted-red text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             Submit
           </button>

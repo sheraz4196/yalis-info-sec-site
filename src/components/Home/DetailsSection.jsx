@@ -10,7 +10,7 @@ export default function DetailsSection({ data }) {
             key={i}
             className="flex flex-col-reverse md:flex-row even:md:flex-row-reverse items-center justify-between gap-8 md:gap-16"
           >
-            <div className="w-full md:max-w-[50%]">
+            <div className="w-full md:max-w-1/2">
               <h2 className="mb-8 text-primary2">{item?.fields?.title}</h2>
               <p>{item?.fields?.description}</p>
             </div>

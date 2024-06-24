@@ -25,7 +25,7 @@ export default async function Contact() {
   const contactData = data?.items[0]?.fields;
   return (
     <>
-      <main class="bg-muted-brown pt-16 lg:pt-24">
+      <main class="bg-muted-red-brown pt-16 lg:pt-24">
         <QuoteSection
           title={contactData?.formTitle}
           description={contactData?.formDescription}

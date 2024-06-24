@@ -11,7 +11,7 @@ export default function QualificationsSection({ data }) {
     >
       <div class="max-container my-2.5 md:my-5 text-center">
         <h2 class="mb-8 text-primary2">{data?.title}</h2>
-        <div class="pb-5 mb-16 text-xl font-[300]">
+        <div class="pb-5 mb-16 text-xl font-light">
           <div class="rich-text">
             <Richtext data={data?.description} />
           </div>

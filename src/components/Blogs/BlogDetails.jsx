@@ -19,12 +19,12 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
   return (
     <div>
       <section class="bg-light py-8 md:py-16">
-        <div class="max-w-[1024px] mx-auto my-2.5 md:my-5 px-5">
+        <div class="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img
               src={data?.fields?.image?.fields?.file?.url}
               alt={data?.fields?.image?.fields?.title}
-              class="max-h-[100%] md:max-h-[500px] w-full mb-8 object-cover"
+              class="max-h-full md:max-h-[500px] w-full mb-8 object-cover"
             />
           )}
           <div className="flex items-center gap-4 mb-2.5">
@@ -80,7 +80,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
-                    className="bg-primary2 hover:bg-muted text-white font-[700] px-5 py-1.5 rounded-full"
+                    className="bg-primary2 hover:bg-muted-red text-white font-bold px-5 py-1.5 rounded-full"
                     key={i}
                   >
                     {item?.fields?.title}
