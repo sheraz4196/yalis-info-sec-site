@@ -43,7 +43,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
           </div>
           <div className="mt-8 flex items-center gap-4">
             <h4>Share Post:</h4>
-            <a
+            <Link
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
@@ -52,8 +52,8 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               className="share-button-facebook text-2xl hover:text-link-hover"
             >
               <i className="fa-brands fa-facebook"></i>
-            </a>
-            <a
+            </Link>
+            <Link
               href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
@@ -62,8 +62,8 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               className="share-button-twitter text-2xl hover:text-link-hover"
             >
               <i className="fa-brands fa-twitter"></i>
-            </a>
-            <a
+            </Link>
+            <Link
               href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
@@ -72,16 +72,16 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               className="share-button-linkedin text-2xl hover:text-link-hover"
             >
               <i className="fa-brands fa-linkedin"></i>
-            </a>
+            </Link>
           </div>
           {data?.fields?.tag?.length > 0 && (
             <div className="flex flex-wrap items-center gap-4 mt-8">
-              {data?.fields?.tag?.map((item, i) => {
+              {data?.fields?.tag?.map((item, index) => {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
                     className="bg-primary2 hover:bg-muted-red text-white font-bold px-5 py-1.5 rounded-full"
-                    key={i}
+                    key={index}
                   >
                     {item?.fields?.title}
                   </Link>
@@ -105,13 +105,13 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                   <div className="flex items-center gap-3 mt-3">
                     {author?.fields?.socialMedia?.map((item) => {
                       return (
-                        <a
+                        <Link
                           href={item?.link}
                           target="_blank"
                           className="hover:text-link-hover"
                         >
                           <i className={`${item?.icon} text-2xl`} />
-                        </a>
+                        </Link>
                       );
                     })}
                   </div>

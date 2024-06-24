@@ -1,8 +1,7 @@
-"use client";
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
-
+import Link from "next/link";
 export default function Richtext({ data }) {
   const options = {
     renderMark: {
@@ -21,9 +20,13 @@ export default function Richtext({ data }) {
         );
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
-        <a target="_blank" href={data?.uri} className="max-w-full break-words">
+        <Link
+          target="_blank"
+          href={data?.uri}
+          className="max-w-full break-words"
+        >
           {children}
-        </a>
+        </Link>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => {
         return <p>{children}</p>;
