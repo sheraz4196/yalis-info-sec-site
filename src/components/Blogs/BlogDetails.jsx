@@ -18,30 +18,30 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
 
   return (
     <div>
-      <section class="bg-light py-8 md:py-16">
-        <div class="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
+      <section className="bg-light py-8 md:py-16">
+        <div className="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img
               src={data?.fields?.image?.fields?.file?.url}
               alt={data?.fields?.image?.fields?.title}
-              class="max-h-full md:max-h-[500px] w-full mb-8 object-cover"
+              className="max-h-full md:max-h-[500px] w-full mb-8 object-cover"
             />
           )}
           <div className="flex items-center gap-4 mb-2.5">
-            <p class="">
-              <i class="fa-regular fa-calendar mr-1"></i>
+            <p className="">
+              <i className="fa-regular fa-calendar mr-1"></i>
               {formattedDate}
             </p>
             <p className="">
-              <i class="fa-solid fa-stopwatch mr-1"></i>{" "}
+              <i className="fa-solid fa-stopwatch mr-1"></i>{" "}
               {calculateReadingTime(data?.fields?.description?.content)} min
               read
             </p>
           </div>
-          <div class="rich-text blog-description">
+          <div className="rich-text blog-description">
             <Richtext data={data?.fields?.description} />
           </div>
-          <div class="mt-8 flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-4">
             <h4>Share Post:</h4>
             <a
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
@@ -49,9 +49,9 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-facebook text-2xl hover:text-link-hover"
+              className="share-button-facebook text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-facebook"></i>
+              <i className="fa-brands fa-facebook"></i>
             </a>
             <a
               href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
@@ -59,9 +59,9 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-twitter text-2xl hover:text-link-hover"
+              className="share-button-twitter text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-twitter"></i>
+              <i className="fa-brands fa-twitter"></i>
             </a>
             <a
               href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
@@ -69,9 +69,9 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-linkedin text-2xl hover:text-link-hover"
+              className="share-button-linkedin text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-linkedin"></i>
+              <i className="fa-brands fa-linkedin"></i>
             </a>
           </div>
           {data?.fields?.tag?.length > 0 && (
@@ -90,12 +90,12 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
             </div>
           )}
           {author && (
-            <div class="flex flex-col mt-8 gap-5">
+            <div className="flex flex-col mt-8 gap-5">
               {author?.fields?.avatar?.fields?.file?.url && (
                 <img
                   src={author?.fields?.avatar?.fields?.file?.url}
                   alt="avatar"
-                  class="w-24 rounded-full"
+                  className="w-24 rounded-full"
                 />
               )}
               <div>

@@ -86,12 +86,12 @@ export default async function Home() {
           title={threatManagementTitle}
           cardsData={threatManagementCards}
         />
-        <hr class="text-gray-medium" />
+        <hr className="text-gray-medium" />
         <DataProtectionSection
           title={dataProtectionTitle}
           cardsData={dataProtectionCards}
         /> */}
-        <hr class="text-gray-medium" />
+        <hr className="text-gray-medium" />
         <DetailsSection data={detailsSection} />
         <QualificationsSection data={qualificationSectionData} />
         <QuoteFormSection

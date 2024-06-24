@@ -4,18 +4,18 @@ import React from "react";
 export default function Boxes({ title, data }) {
   return (
     <div>
-      <div class="max-container my-2.5 md:my-5">
-        <h2 class="text-secondary text-center pb-5 mb-16">{title}</h2>
-        <div class="flex flex-wrap gap-8">
+      <div className="max-container my-2.5 md:my-5">
+        <h2 className="text-secondary text-center pb-5 mb-16">{title}</h2>
+        <div className="flex flex-wrap gap-8">
           {data?.map((item, i) => {
             return (
               <Link
                 key={i}
                 href={item?.fields?.buttonLink || ""}
                 target={item?.fields?.buttonTarget}
-                class="box"
+                className="box"
               >
-                <div class="box-icon-circle">
+                <div className="box-icon-circle">
                   <img
                     src={item?.fields?.icon?.fields?.file?.url || ""}
                     alt={item?.fields?.icon?.fields?.title || "icon"}
@@ -23,10 +23,10 @@ export default function Boxes({ title, data }) {
                     height={100}
                   />
                 </div>
-                <h3 class="box-title">{item?.fields?.title}</h3>
-                <p class="box-sub-title">{item?.fields?.subTitle}</p>
-                <p class="box-description">{item?.fields?.description}</p>
-                <button class="box-btn">{item?.fields?.buttonText}</button>
+                <h3 className="box-title">{item?.fields?.title}</h3>
+                <p className="box-sub-title">{item?.fields?.subTitle}</p>
+                <p className="box-description">{item?.fields?.description}</p>
+                <button className="box-btn">{item?.fields?.buttonText}</button>
               </Link>
             );
           })}

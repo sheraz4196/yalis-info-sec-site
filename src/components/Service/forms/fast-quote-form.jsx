@@ -57,7 +57,7 @@ export default function FastQuoteForm({ data }) {
           initialFormData
         );
       }}
-      class="flex flex-wrap gap-2.5"
+      className="flex flex-wrap gap-2.5"
     >
       <input
         type="text"
@@ -66,7 +66,7 @@ export default function FastQuoteForm({ data }) {
         name="name"
         value={formData?.name}
         onChange={handleChange}
-        class="w-full md:w-[calc(50%-5px)]"
+        className="w-full md:w-[calc(50%-5px)]"
       />
       <input
         type="email"
@@ -75,7 +75,7 @@ export default function FastQuoteForm({ data }) {
         name="email"
         value={formData?.email}
         onChange={handleChange}
-        class="w-full md:w-[calc(50%-5px)]"
+        className="w-full md:w-[calc(50%-5px)]"
       />
       <input
         type="text"
@@ -84,7 +84,7 @@ export default function FastQuoteForm({ data }) {
         name="company"
         value={formData?.company}
         onChange={handleChange}
-        class="w-full md:w-[calc(50%-5px)]"
+        className="w-full md:w-[calc(50%-5px)]"
       />
       <input
         type="tel"
@@ -93,7 +93,7 @@ export default function FastQuoteForm({ data }) {
         name="phone"
         value={formData?.phone}
         onChange={handleChange}
-        class="w-full md:w-[calc(50%-5px)]"
+        className="w-full md:w-[calc(50%-5px)]"
       />
       <select
         className="w-full"
@@ -116,15 +116,15 @@ export default function FastQuoteForm({ data }) {
         id=""
         cols="30"
         rows="3"
-        class="w-full"
+        className="w-full"
         value={formData?.info}
         onChange={handleChange}
         placeholder="Comments"
       ></textarea>
-      <label for="check-box" class="text-sm text-half-black">
-        {/* <span class="w-max inline-block">
+      <label for="check-box" className="text-sm text-half-black">
+        {/* <span className="w-max inline-block">
       <input
-        class="mr-2.5 w-max"
+        className="mr-2.5 w-max"
         type="checkbox"
         name="check"
         required
@@ -141,7 +141,7 @@ export default function FastQuoteForm({ data }) {
           For more information about how we collect, process and retain your
           personal data, please see our{" "}
         </span>
-        <Link target="_blank" href="/privacy" class="underline">
+        <Link target="_blank" href="/privacy" className="underline">
           privacy policy
         </Link>
         .
@@ -159,7 +159,7 @@ export default function FastQuoteForm({ data }) {
           <div role="status">
             <svg
               aria-hidden="true"
-              class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+              className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -174,14 +174,14 @@ export default function FastQuoteForm({ data }) {
                 className="fill-blue"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </button>
       ) : (
         <input
           type="submit"
           value={data?.formButtonText}
-          class="text-xl py-3 px-8 bg-blue text-white rounded-sm font-extrabold cursor-pointer"
+          className="text-xl py-3 px-8 bg-blue text-white rounded-sm font-extrabold cursor-pointer"
         />
       )}
     </form>

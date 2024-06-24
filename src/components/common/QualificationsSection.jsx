@@ -7,20 +7,20 @@ export default function QualificationsSection({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg.src})` }}
-      class="bg-light bg-[center_bottom] bg-no-repeat py-8 md:py-16"
+      className="bg-light bg-[center_bottom] bg-no-repeat py-8 md:py-16"
     >
-      <div class="max-container my-2.5 md:my-5 text-center">
-        <h2 class="mb-8 text-primary2">{data?.title}</h2>
-        <div class="pb-5 mb-16 text-xl font-light">
-          <div class="rich-text">
+      <div className="max-container my-2.5 md:my-5 text-center">
+        <h2 className="mb-8 text-primary2">{data?.title}</h2>
+        <div className="pb-5 mb-16 text-xl font-light">
+          <div className="rich-text">
             <Richtext data={data?.description} />
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-8">
+      <div className="flex flex-col gap-8">
         {data?.images1?.length > 0 && (
-          <div class="horizontal-scrolling">
-            <div class="horizontal-scrolling-inner">
+          <div className="horizontal-scrolling">
+            <div className="horizontal-scrolling-inner">
               {data?.images1?.map((item) => {
                 return (
                   <div>
@@ -49,8 +49,8 @@ export default function QualificationsSection({ data }) {
           </div>
         )}
         {data?.images2?.length > 0 && (
-          <div class="horizontal-scrolling horizontal-scrolling-reverse">
-            <div class="horizontal-scrolling-inner">
+          <div className="horizontal-scrolling horizontal-scrolling-reverse">
+            <div className="horizontal-scrolling-inner">
               {data?.images2?.map((item) => {
                 return (
                   <div>
@@ -79,8 +79,8 @@ export default function QualificationsSection({ data }) {
           </div>
         )}
         {data?.images3?.length > 0 && (
-          <div class="horizontal-scrolling">
-            <div class="horizontal-scrolling-inner">
+          <div className="horizontal-scrolling">
+            <div className="horizontal-scrolling-inner">
               {data?.images3?.map((item) => {
                 return (
                   <div>

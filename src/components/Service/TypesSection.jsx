@@ -6,29 +6,29 @@ import Link from "next/link";
 
 export default function TypesSection({ data }) {
   return (
-    <section class="max-container py-8 md:py-16 mb-16 mt-2.5 md:mt-5">
-      <h2 class="text-center text-primary2 pb-2.5 mb-8">{data?.title}</h2>
+    <section className="max-container py-8 md:py-16 mb-16 mt-2.5 md:mt-5">
+      <h2 className="text-center text-primary2 pb-2.5 mb-8">{data?.title}</h2>
       {data?.description && (
-        <div class="rich-text different-types-description">
+        <div className="rich-text different-types-description">
           <Richtext data={data?.description} />
         </div>
       )}
       {data?.TypesList?.length > 0 && (
-        <div class="hidden md:block">
+        <div className="hidden md:block">
           <TypesList data={data?.list} />
         </div>
       )}
-      <div class="flex flex-col md:hidden gap-10">
+      <div className="flex flex-col md:hidden gap-10">
         {data?.list?.map((item) => {
           return (
-            <div class="type-list-item-wrap">
-              <h3 class="text-2xl text-center text-blue leading-[1.4] mb-2.5">
+            <div className="type-list-item-wrap">
+              <h3 className="text-2xl text-center text-blue leading-[1.4] mb-2.5">
                 {item?.fields?.title}
               </h3>
-              <div class="rich-text different-type-list-description">
+              <div className="rich-text different-type-list-description">
                 <Richtext data={item?.fields?.description} />
               </div>
-              <Link href="#getQuote" class="btn1">
+              <Link href="#getQuote" className="btn1">
                 Get a fast quote
               </Link>
             </div>

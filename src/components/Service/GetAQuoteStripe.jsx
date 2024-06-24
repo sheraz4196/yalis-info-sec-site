@@ -6,15 +6,15 @@ export default function GetAQuoteStripe({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg.src})` }}
-      class="bg-center bg-cover bg-no-repeat py-8"
+      className="bg-center bg-cover bg-no-repeat py-8"
     >
-      <div class="max-container flex flex-col md:flex-row items-center justify-center gap-5">
-        <h3 class="text-white text-center md:text-left">{data?.title}</h3>
+      <div className="max-container flex flex-col md:flex-row items-center justify-center gap-5">
+        <h3 className="text-white text-center md:text-left">{data?.title}</h3>
         {data?.button?.title && (
           <Link
             href={data?.button?.link || ""}
             target={data?.button?.target}
-            class="btn2"
+            className="btn2"
           >
             {data?.button?.title}
           </Link>

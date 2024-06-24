@@ -46,7 +46,7 @@ export default function ServiceForm() {
   }
   return (
     <form
-      class="w-full p-8 bg-red-900"
+      className="w-full p-8 bg-red-900"
       onSubmit={async (e) => {
         e.preventDefault();
         await submitForm();
@@ -59,8 +59,8 @@ export default function ServiceForm() {
         );
       }}
     >
-      <div class="m-2.5">
-        <div class="flex flex-wrap gap-5">
+      <div className="m-2.5">
+        <div className="flex flex-wrap gap-5">
           <input
             type="text"
             placeholder="Your name *"
@@ -68,13 +68,13 @@ export default function ServiceForm() {
             name="name"
             value={formData?.name}
             onChange={handleChange}
-            class="w-full"
+            className="w-full"
           />
           <input
             type="text"
             required
             placeholder="Email address *"
-            class="w-full"
+            className="w-full"
             name="email"
             value={formData?.email}
             onChange={handleChange}
@@ -83,7 +83,7 @@ export default function ServiceForm() {
             type="text"
             required
             placeholder="Company Name *"
-            class="w-full"
+            className="w-full"
             name="company"
             value={formData?.company}
             onChange={handleChange}
@@ -95,7 +95,7 @@ export default function ServiceForm() {
             name="phone"
             value={formData?.phone}
             onChange={handleChange}
-            class="w-full"
+            className="w-full"
           />
           <select
             className="w-full"
@@ -119,16 +119,16 @@ export default function ServiceForm() {
             name="info"
             id=""
             rows="4"
-            class="w-full"
+            className="w-full"
             required
             value={formData?.info}
             onChange={handleChange}
             placeholder="Comments *"
           ></textarea>
-          <label class="text-sm text-brown-40">
-            {/* <span class="w-max inline-block">
+          <label className="text-sm text-brown-40">
+            {/* <span className="w-max inline-block">
           <input
-            class="w-max mr-2.5"
+            className="w-max mr-2.5"
             type="checkbox"
             name="check"
             required
@@ -144,7 +144,7 @@ export default function ServiceForm() {
               For more information about how we collect, process and retain your
               personal data, please see our{" "}
             </span>
-            <Link target="_blank" href="/privacy" class="underline">
+            <Link target="_blank" href="/privacy" className="underline">
               privacy policy
             </Link>
             .
@@ -158,12 +158,12 @@ export default function ServiceForm() {
               style={{ backgroundColor: "#1ba1e6" }}
               type="button"
               disabled
-              class="btn3 bg-blue min-w-[197px] flex items-center justify-center"
+              className="btn3 bg-blue min-w-[197px] flex items-center justify-center"
             >
               <div role="status">
                 <svg
                   aria-hidden="true"
-                  class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+                  className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
                   viewBox="0 0 100 101"
                   fill="none"
                   xmlns="http://www.w3.org/2000/svg"
@@ -178,14 +178,14 @@ export default function ServiceForm() {
                     className="fill-blue"
                   />
                 </svg>
-                <span class="sr-only">Loading...</span>
+                <span className="sr-only">Loading...</span>
               </div>
             </button>
           ) : (
             <input
               type="submit"
               value="Get my quote"
-              class="cursor-pointer btn3"
+              className="cursor-pointer btn3"
               style={{ backgroundColor: "#1ba1e6" }}
             />
           )}

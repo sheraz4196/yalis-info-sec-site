@@ -40,8 +40,8 @@ export default function MethodologySection({ data }) {
   }, [data?.list, isVisible]);
 
   return (
-    <section class="max-container py-8 md:py-16">
-      <h2 class="text-primary2 mb-8 lg:mb-16 text-center">{data?.title}</h2>
+    <section className="max-container py-8 md:py-16">
+      <h2 className="text-primary2 mb-8 lg:mb-16 text-center">{data?.title}</h2>
       {data?.list?.length > 0 && (
         <div className="methodology-list relative px-5 lg:px-0">
           <ol>

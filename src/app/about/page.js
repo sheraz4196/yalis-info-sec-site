@@ -48,17 +48,17 @@ export default async function About() {
       <main>
         <Hero data={heroData} />
         <TargetDefenceSection data={targetDefenceData} />
-        {/* <hr class="text-gray-medium" /> */}
+        {/* <hr className="text-gray-medium" /> */}
         {/* <SecuritySection
           title={aboutData?.securitySectionTitle}
           description={aboutData?.securitySectionDescription}
         /> */}
-        {/* <hr class="text-gray-medium" />
+        {/* <hr className="text-gray-medium" />
         <InnovatingSection
           title={aboutData?.innovatingSectionTitle}
           description={aboutData?.innovatingSectionDescription}
         /> */}
-        {/* <hr class="text-gray-medium" /> */}
+        {/* <hr className="text-gray-medium" /> */}
         <CyberSecuritySection
           title={aboutData?.cyberSecuritySectionTitle}
           description={aboutData?.cyberSecuritySectionDescription}

@@ -57,7 +57,7 @@ export default function ServiceQuoteForm({ data }) {
           initialFormData
         );
       }}
-      class="flex flex-wrap gap-5 bg-black"
+      className="flex flex-wrap gap-5 bg-black"
     >
       <input
         type="text"
@@ -66,7 +66,7 @@ export default function ServiceQuoteForm({ data }) {
         name="name"
         value={formData?.name}
         onChange={handleChange}
-        class="w-full"
+        className="w-full"
       />
       <input
         type="tel"
@@ -75,13 +75,13 @@ export default function ServiceQuoteForm({ data }) {
         name="phone"
         value={formData?.phone}
         onChange={handleChange}
-        class="w-full"
+        className="w-full"
       />
       <input
         type="text"
         required
         placeholder="Company Name *"
-        class="w-full"
+        className="w-full"
         name="company"
         value={formData?.company}
         onChange={handleChange}
@@ -93,7 +93,7 @@ export default function ServiceQuoteForm({ data }) {
         name="email"
         value={formData?.email}
         onChange={handleChange}
-        class="w-full"
+        className="w-full"
       />
       <select
         className="w-full"
@@ -115,16 +115,16 @@ export default function ServiceQuoteForm({ data }) {
         name="info"
         id=""
         rows="3"
-        class="w-full"
+        className="w-full"
         required
         value={formData?.info}
         onChange={handleChange}
         placeholder="Information on your inquiry *"
       ></textarea>
-      <label class="text-center">
-        {/* <span class="w-max inline-block">
+      <label className="text-center">
+        {/* <span className="w-max inline-block">
       <input
-        class="mr-2.5 w-max"
+        className="mr-2.5 w-max"
         type="checkbox"
         name="check"
         required
@@ -140,7 +140,7 @@ export default function ServiceQuoteForm({ data }) {
           For more information about how we collect, process and retain your
           personal data, please see our{" "}
         </span>
-        <Link target="_blank" href="/privacy" class="underline">
+        <Link target="_blank" href="/privacy" className="underline">
           privacy policy
         </Link>
         .
@@ -152,13 +152,13 @@ export default function ServiceQuoteForm({ data }) {
       {loading ? (
         <button
           type="button"
-          class="btn3 min-w-[197px] flex items-center justify-center"
+          className="btn3 min-w-[197px] flex items-center justify-center"
           disabled
         >
           <div role="status">
             <svg
               aria-hidden="true"
-              class="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
+              className="w-8 h-8 text-gray-200 animate-spin dark:text-gray-600 fill-blue-600"
               viewBox="0 0 100 101"
               fill="none"
               xmlns="http://www.w3.org/2000/svg"
@@ -173,11 +173,15 @@ export default function ServiceQuoteForm({ data }) {
                 className="fill-primary2"
               />
             </svg>
-            <span class="sr-only">Loading...</span>
+            <span className="sr-only">Loading...</span>
           </div>
         </button>
       ) : (
-        <input type="submit" value={data?.button} class="btn3 cursor-pointer" />
+        <input
+          type="submit"
+          value={data?.button}
+          className="btn3 cursor-pointer"
+        />
       )}
     </form>
   );

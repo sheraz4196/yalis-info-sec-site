@@ -23,11 +23,11 @@ export default function Hero({ title, bgImg }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg?.fields?.file?.url})` }}
-      class={`bg-center bg-no-repeat bg-cover bg-gray-cement`}
+      className={`bg-center bg-no-repeat bg-cover bg-gray-cement`}
     >
-      <div class="max-container pt-20 md:pt-24 lg:pt-16">
-        <div class="pt-5 pb-12 md:py-36 relative text-center">
-          <h1 class="text-white lg:text-8xl">{title}</h1>
+      <div className="max-container pt-20 md:pt-24 lg:pt-16">
+        <div className="pt-5 pb-12 md:py-36 relative text-center">
+          <h1 className="text-white lg:text-8xl">{title}</h1>
           {pathname === "/blog" && (
             <div className="relative max-w-lg mx-auto mt-8">
               <div className="w-full relative">
@@ -46,7 +46,7 @@ export default function Hero({ title, bgImg }) {
                     }}
                     className="absolute right-2 top-1/2 -translate-y-1/2 text-xl"
                   >
-                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i className="fa-solid fa-circle-xmark"></i>
                   </button>
                 )}
               </div>

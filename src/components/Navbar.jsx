@@ -6,9 +6,9 @@ import Image from "next/image";
 export default function Navbar({ headerList, serviceLinks, button }) {
   return (
     <nav style={{ display: "unset" }}>
-      <div class="sticky top-0 z-50 bg-neutral-900 py-3 shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-14 flex items-center">
-        <div class="max-container">
-          <div class="flex items-center justify-between gap-8 w-full">
+      <div className="sticky top-0 z-50 bg-neutral-900 py-3 shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-14 flex items-center">
+        <div className="max-container">
+          <div className="flex items-center justify-between gap-8 w-full">
             <div className="hidden lg:flex items-center gap-8">
               {headerList?.map((item, i) => {
                 if (item?.children?.length > 0 || item?.text === "Services") {
@@ -78,7 +78,7 @@ export default function Navbar({ headerList, serviceLinks, button }) {
                     key={i}
                     href={`${item?.link || ""}`}
                     target={`${item?.target}`}
-                    class="text-gray-light text-sm transition-colors duration-150 ease-in-out hover:text-white"
+                    className="text-gray-light text-sm transition-colors duration-150 ease-in-out hover:text-white"
                   >
                     {item?.text}
                   </Link>
@@ -89,7 +89,7 @@ export default function Navbar({ headerList, serviceLinks, button }) {
               <Link
                 href={`${button?.buttonLink || ""}`}
                 target={`${button?.buttonTarget}`}
-                class="top-nav-btn"
+                className="top-nav-btn"
               >
                 {button?.buttonText}
               </Link>
