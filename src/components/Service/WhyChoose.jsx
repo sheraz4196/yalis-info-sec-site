@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 export default function WhyChoose({ data }) {
   return (
     <section className="bg-primary-rgb py-8 md:py-16">
@@ -12,7 +12,7 @@ export default function WhyChoose({ data }) {
             return (
               <div className="w-full bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg text-center p-8 h-full">
                 {item?.fields?.image?.fields?.file?.url && (
-                  <img
+                  <Image
                     src={item?.fields?.image?.fields?.file?.url}
                     alt="icon"
                     width={100}

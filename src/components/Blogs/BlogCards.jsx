@@ -20,7 +20,7 @@ export default function BlogCards({ data, relatedBlogs }) {
               day: "2-digit",
             });
             return (
-              <Link href={`/blog/${item?.fields?.slug}`} className="">
+              <Link href={`/blog/${item?.fields?.slug}`}>
                 {item?.fields?.image?.fields?.file?.url && (
                   <img
                     src={item?.fields?.image?.fields?.file?.url}

@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Richtext from "../common/Richtext";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function TypesList({ data }) {
   const [selectedId, setSelectedId] = useState(0);
@@ -29,7 +30,7 @@ export default function TypesList({ data }) {
               onClick={() => handleSelectId(index)}
             >
               <div className="mb-5">
-                <img
+                <Image
                   src={item?.fields?.icon?.fields?.file?.url}
                   alt="icon"
                   width={80}

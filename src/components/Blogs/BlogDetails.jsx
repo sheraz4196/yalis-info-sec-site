@@ -17,7 +17,7 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
   const siteUrl = "https://astro-stefan-ade.vercel.app";
 
   return (
-    <div>
+    <>
       <section className="bg-light py-8 md:py-16">
         <div className="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
@@ -122,6 +122,6 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
         </div>
       </section>
       {relatedBlogs && <BlogCards data={relatedBlogs} relatedBlogs={true} />}
-    </div>
+    </>
   );
 }

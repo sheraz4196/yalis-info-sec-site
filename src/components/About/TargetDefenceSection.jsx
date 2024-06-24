@@ -1,5 +1,5 @@
 import React from "react";
-
+import Image from "next/image";
 export default function TargetDefenceSection({ data }) {
   return (
     <section className="max-container py-10 md:py-16">
@@ -26,10 +26,12 @@ export default function TargetDefenceSection({ data }) {
         </div>
         <div className="w-full lg:w-1/2">
           {data?.staffCertificateImage?.fields?.file?.url && (
-            <img
+            <Image
               src={data?.staffCertificateImage?.fields?.file?.url}
               alt="Image"
               className="w-full"
+              width={200}
+              height={200}
             />
           )}
         </div>

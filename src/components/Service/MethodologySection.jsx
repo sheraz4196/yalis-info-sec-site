@@ -1,6 +1,7 @@
 "use client";
 import React, { useEffect, useRef, useState } from "react";
 import Richtext from "../common/Richtext";
+import Image from "next/image";
 
 export default function MethodologySection({ data }) {
   const liRefs = useRef([]);
@@ -58,7 +59,7 @@ export default function MethodologySection({ data }) {
                 >
                   <div>
                     {item?.fields?.icon?.fields?.file?.url && (
-                      <img
+                      <Image
                         src={item?.fields?.icon?.fields?.file?.url}
                         alt="icon"
                         width={130}

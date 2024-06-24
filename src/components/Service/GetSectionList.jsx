@@ -2,6 +2,7 @@
 import React, { useState } from "react";
 import Richtext from "../common/Richtext";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GetSectionList({ data }) {
   const [selectedId, setSelectedId] = useState(0);
@@ -81,7 +82,7 @@ export default function GetSectionList({ data }) {
           </div>
           {content?.fields?.icon?.fields?.file?.url && (
             <div className="flex-shrink-0">
-              <img
+              <Image
                 src={content?.fields?.icon?.fields?.file?.url}
                 alt="icon"
                 width={140}

@@ -1,5 +1,6 @@
 import React from "react";
 import Richtext from "../common/Richtext";
+import Image from "next/image";
 
 export default function WhyNeedSection({ data }) {
   return (
@@ -15,7 +16,7 @@ export default function WhyNeedSection({ data }) {
         </div>
         {data?.image?.fields?.file?.url && (
           <div className="w-full lg:max-w-[41%]">
-            <img
+            <Image
               src={data?.image?.fields?.file?.url}
               alt={"logo"}
               width={430}
