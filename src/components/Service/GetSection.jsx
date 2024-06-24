@@ -2,7 +2,7 @@ import React from "react";
 import Richtext from "../common/Richtext";
 import GetSectionList from "./GetSectionList";
 import Link from "next/link";
-
+import Image from "next/image";
 export default function GetSection({ data }) {
   return (
     <section className="max-container py-8 md:py-16 my-2.5 md:my-5">
@@ -14,11 +14,11 @@ export default function GetSection({ data }) {
       )}
       {data?.list?.length > 0 && (
         <div className="flex flex-col-reverse gap-10 md:hidden get-section-list">
-          {data?.list?.map((item) => {
+          {data?.list?.map((item, index) => {
             return (
-              <div className="get-section-list-item">
+              <div className="get-section-list-item" key={index}>
                 {item?.fields?.icon?.fields?.file?.url && (
-                  <img
+                  <Image
                     src={item?.fields?.icon?.fields?.file?.url}
                     alt="icon"
                     width={140}
@@ -37,9 +37,11 @@ export default function GetSection({ data }) {
                 </div>
                 {item?.fields?.list?.length > 0 && (
                   <ul className="list-checked types-list mb-5">
-                    {item?.fields?.list?.map((listItem, i) => {
+                    {item?.fields?.list?.map((listItem, index) => {
                       return (
-                        <li className="text-lg leading-[2.0]">{listItem}</li>
+                        <li className="text-lg" key={index}>
+                          {listItem}
+                        </li>
                       );
                     })}
                   </ul>
