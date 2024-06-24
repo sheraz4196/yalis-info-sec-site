@@ -44,7 +44,7 @@ export default function Hero({ title, bgImg }) {
                       setSearch("");
                       setBlogsList([]);
                     }}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-[20px]"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-xl"
                   >
                     <i class="fa-solid fa-circle-xmark"></i>
                   </button>

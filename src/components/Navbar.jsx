@@ -6,7 +6,7 @@ import Image from "next/image";
 export default function Navbar({ headerList, serviceLinks, button }) {
   return (
     <nav style={{ display: "unset" }}>
-      <div class="sticky top-0 z-50 bg-[#22272a] py-[12px] shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-[56px] flex items-center">
+      <div class="sticky top-0 z-50 bg-[#22272a] py-3 shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-[56px] flex items-center">
         <div class="max-container">
           <div class="flex items-center justify-between gap-[30px] w-full">
             <div className="hidden lg:flex items-center gap-[30px]">

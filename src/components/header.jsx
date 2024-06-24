@@ -59,7 +59,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
         <button
           onClick={() => setShowMenu(!showMenu)}
           aria-label="menu"
-          className="bg-[#465f6f] p-[10px] rounded-[4px] relative cursor-pointer lg:hidden"
+          className="bg-[#465f6f] p-2.5 rounded-[4px] relative cursor-pointer lg:hidden"
         >
           <span className="menu-icon">
             <span className="menu-icon-span"></span>
@@ -82,13 +82,13 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                     <button
                       className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
                         i === 0 ? "border-none" : ""
-                      } p-[10px] text-left w-full`}
+                      } p-2.5 text-left w-full`}
                       onClick={() => handleMenuDropDowns(i)}
                     >
                       {item?.text}
                     </button>
                     {showDropDowns.includes(i) && (
-                      <div className="flex flex-col bg-[#3c5160] pl-[10px]">
+                      <div className="flex flex-col bg-[#3c5160] pl-2.5">
                         {(item?.text === "Services"
                           ? serviceLinks
                           : item?.children
@@ -98,7 +98,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                               target={listItem?.target || "_self"}
                               href={listItem?.link || ""}
                               key={index}
-                              className="p-[10px] text-white"
+                              className="p-2.5 text-white"
                               onClick={() => setShowMenu(false)}
                             >
                               {listItem?.text}
@@ -121,7 +121,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                     <button
                       className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
                         i === 0 ? "border-none" : ""
-                      } p-[10px] text-left w-full`}
+                      } p-2.5 text-left w-full`}
                     >
                       {item?.text}
                     </button>

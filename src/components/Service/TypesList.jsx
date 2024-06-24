@@ -36,7 +36,7 @@ export default function TypesList({ data }) {
                   height={80}
                 />
               </div>
-              <p className="font-[800] text-[1.25rem] text-blue">
+              <p className="font-extrabold text-xl text-blue">
                 {item?.fields?.title}
               </p>
             </div>

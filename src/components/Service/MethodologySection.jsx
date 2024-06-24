@@ -68,7 +68,7 @@ export default function MethodologySection({ data }) {
                         className="max-w-[70px] lg:max-w-[130px] mx-auto"
                       />
                     )}
-                    <h3 className="text-[1.125rem] text-blue mb-[5px]">
+                    <h3 className="text-lg text-blue mb-[5px]">
                       {item?.fields?.title}
                     </h3>
                     <div className="rich-text">

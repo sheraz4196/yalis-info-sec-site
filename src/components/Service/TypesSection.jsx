@@ -7,9 +7,7 @@ import Link from "next/link";
 export default function TypesSection({ data }) {
   return (
     <section class="max-container py-[30px] md:py-[60px] mb-[60px] mt-[10px] md:mt-[20px]">
-      <h2 class="text-center text-primary2 pb-[10px] mb-[30px]">
-        {data?.title}
-      </h2>
+      <h2 class="text-center text-primary2 pb-2.5 mb-[30px]">{data?.title}</h2>
       {data?.description && (
         <div class="rich-text different-types-description">
           <Richtext data={data?.description} />

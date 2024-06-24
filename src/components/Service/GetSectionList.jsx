@@ -25,7 +25,7 @@ export default function GetSectionList({ data }) {
                 selectedId === index
                   ? "bg-blue cursor-default"
                   : "bg-[#fafafa] cursor-pointer"
-              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-[18px] leading-[1.3] min-h-[60px] p-[10px] text-center transition-[background-color_0.15s_ease-out]`}
+              } w-full text-white rounded-t-[3px] flex flex-col justify-center items-center text-[18px] leading-[1.3] min-h-[60px] p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
               style={{
                 boxShadow:
                   "0 5px 15px 0 rgba(160,160,160,0.2), 0 15px 35px 0 rgba(50,50,93,0.2)",
@@ -33,7 +33,7 @@ export default function GetSectionList({ data }) {
               onClick={() => handleSelectId(index)}
             >
               <div
-                className={`leading-[15.6px] w-max mx-auto rounded-[50px] text-[12px] mb-[8px] py-[2px] px-[10px] transition-[all_0.15s_ease-in-out]`}
+                className={`leading-[15.6px] w-max mx-auto rounded-[50px] text-[12px] mb-[8px] py-[2px] px-2.5 transition-[all_0.15s_ease-in-out]`}
                 style={{
                   backgroundColor:
                     selectedId === index
@@ -74,7 +74,7 @@ export default function GetSectionList({ data }) {
             <h3 className="text-blue text-[32px] leading-[1.4]">
               {content?.fields?.title}
             </h3>
-            <p className="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-[800]">
+            <p className="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-extrabold">
               {content?.fields?.subHeading}
             </p>
             <div className="rich-text">

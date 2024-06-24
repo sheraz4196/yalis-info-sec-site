@@ -31,7 +31,7 @@ export default function GetSection({ data }) {
                 <h3 class="text-blue text-[24px] leading-[1.4] text-center">
                   {item?.fields?.title}
                 </h3>
-                <p class="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-[800] text-center">
+                <p class="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-extrabold text-center">
                   {item?.fields?.subHeading}
                 </p>
                 <div class="rich-text mb-[10px] text-[18px]">

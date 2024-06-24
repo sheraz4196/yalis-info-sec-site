@@ -457,7 +457,7 @@ select:valid {
 }
 
 .btn1 {
-  @apply text-[20px] py-[10px] md:py-[12px] px-[22px] md:px-[32px] bg-primary2 hover:bg-[#ef1532] text-white;
+  @apply text-xl md:py-3 px-5 md:px-8 bg-primary2 hover:bg-[#ef1532] text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -468,7 +468,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn2 {
-  @apply px-[24px] py-[8px] bg-primary2 hover:bg-[#ef1532] text-white;
+  @apply px-6 px-2 bg-primary2 hover:bg-[#ef1532] text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -479,7 +479,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn3 {
-  @apply text-[20px] w-max mx-auto px-[32px] py-[12px] bg-primary2 hover:bg-[#ef1532] text-white rounded-[2px] font-[800];
+  @apply text-xl w-max mx-auto px-8 py-3 bg-primary2 hover:bg-[#ef1532] text-white rounded-sm font-extrabold;
 }
 
 .type-list-item-wrap {
@@ -500,7 +500,7 @@ select:valid {
   width: 100%;
 }
 .quote {
-  @apply text-[1.125rem] lg:text-[1.25rem] pt-[2.5rem] md:pt-0 md:pl-[5.25rem] relative;
+  @apply text-lg lg:text-xl pt-[2.5rem] md:pt-0 md:pl-[5.25rem] relative;
 }
 .quote::before {
   color: #1ba1e6;
@@ -825,7 +825,7 @@ select:valid {
   font-size: 1.25rem;
 }
 .different-types-description {
-  @apply pb-[10px] md:pb-[20px] mb-[30px] md:mb-[60px];
+  @apply pb-2.5 md:pb-[20px] mb-[30px] md:mb-[60px];
 }
 .different-type-list-description p {
   font-size: 18px;
@@ -838,7 +838,7 @@ select:valid {
   margin: 20px 0;
 }
 .penetration-testing-form-description p {
-  @apply text-[1.5rem] pb-[10px] mb-[30px];
+  @apply text-[1.5rem] pb-2.5 mb-[30px];
 }
 .penetration-testing-form-description ul p {
   padding-bottom: 0;

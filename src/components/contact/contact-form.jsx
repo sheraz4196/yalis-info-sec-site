@@ -167,7 +167,7 @@ export default function ContactForm() {
           <button
             type="button"
             disabled
-            className="w-[135px] mx-auto flex items-center justify-center text-[20px] py-[12px] px-[32px] bg-primary2 hover:bg-[#ef1532] text-white rounded-[2px] font-[800] transition-[background-color 150ms ease-in-out]"
+            className="w-[135px] mx-auto flex items-center justify-center text-xl py-3 px-8 bg-primary2 hover:bg-[#ef1532] text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             <div role="status">
               <svg
@@ -193,7 +193,7 @@ export default function ContactForm() {
         ) : (
           <button
             type="submit"
-            className="text-[20px] py-[12px] px-[32px] bg-primary2 hover:bg-[#ef1532] text-white rounded-[2px] font-[800] transition-[background-color 150ms ease-in-out]"
+            className="text-xl py-3 px-8 bg-primary2 hover:bg-[#ef1532] text-white rounded-sm font-extrabold transition-[background-color 150ms ease-in-out]"
           >
             Submit
           </button>

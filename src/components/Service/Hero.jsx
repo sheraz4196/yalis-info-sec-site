@@ -47,7 +47,7 @@ export default function Hero({ data }) {
           </div>
           <div class="w-full lg:w-[44%]">
             <div class="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-[8px] p-[20px] md:p-[30px]">
-              <h3 class="text-primary2 font-[800] leading-[1.3] text-center mb-[20px]">
+              <h3 class="text-primary2 font-extrabold leading-[1.3] text-center mb-[20px]">
                 {data?.formTitle}
               </h3>
               <form
@@ -61,7 +61,7 @@ export default function Hero({ data }) {
                     initialFormData
                   );
                 }}
-                class="flex flex-wrap gap-[10px]"
+                class="flex flex-wrap gap-2.5"
               >
                 <input
                   type="text"
@@ -167,7 +167,7 @@ export default function Hero({ data }) {
                   <button
                     type="button"
                     disabled
-                    className="w-full flex items-center justify-center text-[20px] py-[12px] px-[32px] bg-blue text-white rounded-[2px] font-[800]"
+                    className="w-full flex items-center justify-center text-xl py-3 px-8 bg-blue text-white rounded-sm font-extrabold"
                   >
                     <div role="status">
                       <svg
@@ -194,7 +194,7 @@ export default function Hero({ data }) {
                   <input
                     type="submit"
                     value={data?.formButtonText}
-                    class="text-[20px] py-[12px] px-[32px] bg-blue text-white rounded-[2px] font-[800] cursor-pointer"
+                    class="text-xl py-3 px-8 bg-blue text-white rounded-sm font-extrabold cursor-pointer"
                   />
                 )}
               </form>
