@@ -26,7 +26,7 @@ export default function Hero({ data }) {
         <div className="py-16 my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-12">
           <div className="w-full lg:w-[55%]">
             <h1 className="mb-5 text-white">{data?.title}</h1>
-            <p className="textgray-cement text-2xl mb-8 leading-[1.5]">
+            <p className="text-gray-cement text-2xl mb-8 leading-[1.5]">
               {data?.description}
             </p>
           </div>
