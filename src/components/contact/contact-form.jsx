@@ -18,17 +18,22 @@ export default function ContactForm() {
     howDidYouHear: "",
     info: "",
     check: false,
-    recaptcha: false,
+    recaptcha: true,
   };
   const [formData, setFormData] = useState(initialFormData);
   const [loading, setLoading] = useState(false);
   const [showRegexError, setShowRegexError] = useState(null);
   async function submitForm() {
+    console.log("sending....", formData);
+    setLoading(true);
     const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nServices: ${formData.service}\nHow did you hear about us: ${formData.howDidYouHear}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
     const res = await sendMail({
       subject: "New Form Submission",
-      text: sendMail,
+      text: mailText,
     });
+    if (res.messageId) {
+      console.log("Mail Sent");
+    }
   }
   const handleChange = (event) => {
     setFormData((prevState) => ({
@@ -40,8 +45,9 @@ export default function ContactForm() {
   return (
     <form
       id="form"
-      onSubmit={(e) => {
+      onSubmit={async (e) => {
         e.preventDefault();
+        await submitForm();
         handleSubmit(
           setLoading,
           setShowRegexError,
