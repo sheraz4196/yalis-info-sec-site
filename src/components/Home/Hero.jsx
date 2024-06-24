@@ -10,17 +10,15 @@ export default function Hero({ data }) {
       className={`bg-gray-cement relative`}
     >
       {data?.bgImage?.fields?.file?.url && (
-        <picture>
-          <Image
-            src={"https:" + data?.bgImage?.fields?.file?.url}
-            alt="background-image"
-            width={1500}
-            height={1500}
-            priority
-            unoptimized
-            className="absolute z-0 top-0 object-cover object-center w-full h-full"
-          />
-        </picture>
+        <Image
+          src={"https:" + data?.bgImage?.fields?.file?.url}
+          alt="background-image"
+          width={1500}
+          height={1500}
+          priority
+          unoptimized
+          className="absolute z-0 top-0 object-cover object-center w-full h-full"
+        />
       )}
       <div className="relative z-[1] max-container pt-20 md:pt-24 lg:pt-5">
         <div className="py-16 my-5 lg:my-16 flex flex-col lg:flex-row items-start justify-between gap-12">
