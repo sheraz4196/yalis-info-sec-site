@@ -1,6 +1,5 @@
 import { z } from "zod";
 
-// Define the schema for the "image" field
 const ImageSchema = z.object({
   metadata: z.object({
     tags: z.array(z.string()).default([]),
@@ -15,8 +14,8 @@ const ImageSchema = z.object({
     }),
     id: z.string(),
     type: z.literal("Asset"),
-    createdAt: z.string(), // Consider using z.date() if it's a date string
-    updatedAt: z.string(), // Consider using z.date() if it's a date string
+    createdAt: z.string(),
+    updatedAt: z.string(),
     environment: z.object({
       sys: z.object({
         id: z.string(),
@@ -45,7 +44,6 @@ const ImageSchema = z.object({
   }),
 });
 
-// Define the schema for the "links" field
 const LinkSchema = z.object({
   links: z.array(
     z.object({
@@ -57,7 +55,6 @@ const LinkSchema = z.object({
   title: z.string(),
 });
 
-// Define the schema for the "socialMedia" field
 const SocialMediaSchema = z.array(
   z.object({
     icon: z.string(),
@@ -65,7 +62,6 @@ const SocialMediaSchema = z.array(
   })
 );
 
-// Define the schema for the "copyright" field
 const CopyrightSchema = z.object({
   nodeType: z.string(),
   data: z.object({}),
@@ -85,8 +81,7 @@ const CopyrightSchema = z.object({
   ),
 });
 
-// Define the main schema for the entire entry
-const EntrySchema = z.object({
+export const EntrySchema = z.object({
   metadata: z.object({
     tags: z.array(z.string()).default([]),
   }),
@@ -100,8 +95,8 @@ const EntrySchema = z.object({
     }),
     id: z.string(),
     type: z.literal("Entry"),
-    createdAt: z.string(), // Consider using z.date() if it's a date string
-    updatedAt: z.string(), // Consider using z.date() if it's a date string
+    createdAt: z.string(),
+    updatedAt: z.string(),
     environment: z.object({
       sys: z.object({
         id: z.string(),
@@ -128,4 +123,65 @@ const EntrySchema = z.object({
   }),
 });
 
-export default EntrySchema;
+export const AuthorSchema = z.object({
+  sys: z.object({
+    id: z.string(),
+  }),
+  fields: z.object({
+    name: z.string().optional(),
+    bio: z.string().optional(),
+  }),
+});
+
+export const TagSchema = z.object({
+  sys: z.object({
+    id: z.string(),
+  }),
+  fields: z.object({
+    name: z.string({ message: "TagSchema Error" }).optional(),
+  }),
+});
+
+export const BlogPostSchema = z.object({
+  metadata: z.object(
+    {
+      tags: z.array(z.object({})).optional(),
+    },
+    { message: "Metadata is Invalid" }
+  ),
+
+  sys: z.object({
+    id: z.string(),
+    createdAt: z.string(),
+    updatedAt: z.string(),
+  }),
+  fields: z.object({
+    title: z.string().optional(),
+    slug: z.string().optional(),
+    image: z.object({
+      metadata: z.object(
+        {
+          tags: z.array(z.object({})).optional(),
+        },
+        { message: "Metadata is Invalid" }
+      ),
+      sys: z
+        .object({
+          id: z.string(),
+          createdAt: z.string(),
+          updatedAt: z.string(),
+          space: z.object({}).optional(),
+        })
+        .optional(),
+      fields: z.object({
+        url: z.string().optional(),
+        details: z.object({}).optional(),
+      }),
+    }),
+    tableOfContent: z.any().optional(),
+    description: z.any().optional(),
+    authors: z.array(AuthorSchema).optional(),
+    tags: z.array(TagSchema).optional(),
+    seo: z.any().optional(),
+  }),
+});
