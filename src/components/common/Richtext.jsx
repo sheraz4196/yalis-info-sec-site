@@ -2,6 +2,7 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 import Link from "next/link";
+import CopyButton from "./copyButton";
 
 export default function Richtext({ data }) {
   console.log("START", data, "END");
@@ -10,9 +11,15 @@ export default function Richtext({ data }) {
       [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
       [MARKS.CODE]: (text) => {
         return (
-          <pre className="mb-6">
-            <code>{text}</code>
-          </pre>
+          <div className="mb-6 relative">
+            <pre>
+              <code>{text}</code>
+            </pre>
+            <CopyButton
+              text={text?.props?.children || text || ""}
+              className={"top-1 absolute text-white right-2"}
+            />
+          </div>
         );
       },
     },
