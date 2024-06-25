@@ -1044,3 +1044,6 @@ select:valid {
     transform: translate3d(var(--scrollmax), 0, 0);
   }
 }
+.mb-6.max-w-full iframe {
+  margin-bottom: 24px;
+}

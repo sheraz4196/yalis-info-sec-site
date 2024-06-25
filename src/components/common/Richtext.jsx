@@ -8,6 +8,13 @@ export default function Richtext({ data }) {
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
+      [MARKS.CODE]: (text) => {
+        return (
+          <pre className="mb-6">
+            <code>{text}</code>
+          </pre>
+        );
+      },
     },
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
@@ -74,20 +81,15 @@ export default function Richtext({ data }) {
 
         return <div className="mb-6">{styledChildren}</div>;
       },
-      [BLOCKS.CODE]: (node, children) => {
-        return <code>{children}</code>;
-      },
     },
   };
 
   return (
     data &&
-    data?.content?.map((rtNode, index) => {
-      return (
-        <React.Fragment key={index}>
-          {documentToReactComponents(rtNode, options)}
-        </React.Fragment>
-      );
-    })
+    data?.content?.map((rtNode, index) => (
+      <React.Fragment key={index}>
+        {documentToReactComponents(rtNode, options)}
+      </React.Fragment>
+    ))
   );
 }
