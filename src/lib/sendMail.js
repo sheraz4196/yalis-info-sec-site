@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 "use server";
 import nodemailer from "nodemailer";
 const NEXT_PUBLIC_SMTP_HOST = process.env.NEXT_PUBLIC_SMTP_HOST;

@@ -1,6 +1,8 @@
+/* eslint-disable no-undef */
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 import { BlogPostSchema } from "@/schemas/zodSchema";
+// eslint-disable-next-line no-undef
 const client = require("contentful").createClient({
   space: spaceId,
   accessToken: accessToken,
