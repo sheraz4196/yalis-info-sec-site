@@ -18,9 +18,9 @@ export default function TargetDefenceSection({ data }) {
         <div className="w-full lg:w-1/2">
           <h4 className="text-primary2">Our staff are:</h4>
           <ul className="pl-8 mb-4 list-disc">
-            {data?.staffList?.map((item) => {
-              return <li>{item}</li>;
-            })}
+            {data?.staffList?.map((item, index) => (
+              <li key={index}>{item}</li>
+            ))}
           </ul>
         </div>
         <div className="w-full lg:w-1/2">
