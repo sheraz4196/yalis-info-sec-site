@@ -5,6 +5,7 @@ import { handleSubmit } from "@/components/common/handleSubmit";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { sendMail } from "@/lib/sendMail";
+import React from "react";
 export default function QuoteForm({ data }) {
   function onChange(value) {
     setFormData({ ...formData, recaptcha: value });
@@ -34,7 +35,7 @@ export default function QuoteForm({ data }) {
   };
   async function submitForm() {
     setLoading(true);
-    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\nCheck: ${formData.check}`;
     const res = await sendMail({
       subject: `${data.formTitle} form submission`,
       text: mailText,

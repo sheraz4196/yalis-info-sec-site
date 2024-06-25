@@ -4,6 +4,7 @@ import Link from "next/link";
 import { useState } from "react";
 import { handleSubmit } from "../../common/handleSubmit";
 import { toast } from "react-toastify";
+import React from "react";
 import { sendMail } from "@/lib/sendMail";
 export default function CyberForm({ data }) {
   function onChange(value) {
@@ -33,7 +34,7 @@ export default function CyberForm({ data }) {
   };
   async function submitForm() {
     setLoading(true);
-    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\nCheck: ${formData.check}`;
     const res = await sendMail({
       subject: `${data.formTitle} form submission`,
       text: mailText,
