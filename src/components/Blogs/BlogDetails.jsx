@@ -103,10 +103,11 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                 <p>{author?.fields?.bio}</p>
                 {author?.fields?.socialMedia && (
                   <div className="flex items-center gap-3 mt-3">
-                    {author?.fields?.socialMedia?.map((item) => {
+                    {author?.fields?.socialMedia?.map((item, index) => {
                       return (
                         <Link
                           href={item?.link}
+                          key={index}
                           target="_blank"
                           className="hover:text-link-hover"
                         >

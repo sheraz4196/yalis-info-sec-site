@@ -1,6 +1,6 @@
 import Link from "next/link";
 import { calculateReadingTime } from "../common/calculateReadingTime";
-
+import React from "react";
 export default function BlogCards({ data, relatedBlogs }) {
   return (
     <section
@@ -9,7 +9,7 @@ export default function BlogCards({ data, relatedBlogs }) {
       <div className={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>
         {relatedBlogs && <h2 className="text-primary2 mb-8">Related Posts</h2>}
         <div className="blogs-cards">
-          {data?.map((item) => {
+          {data?.map((item, index) => {
             const date = item?.sys?.createdAt;
             const dateObject = new Date(date);
             const formattedDate = dateObject.toLocaleDateString("en-US", {
@@ -18,7 +18,7 @@ export default function BlogCards({ data, relatedBlogs }) {
               day: "2-digit",
             });
             return (
-              <Link href={`/blog/${item?.fields?.slug}`}>
+              <Link href={`/blog/${item?.fields?.slug}`} key={index}>
                 {item?.fields?.image?.fields?.file?.url && (
                   <img
                     src={item?.fields?.image?.fields?.file?.url}
