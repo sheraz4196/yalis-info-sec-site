@@ -19,6 +19,7 @@ export const createContetnful = async (entryData, contentTypeId) => {
 
     // console.log("Entry created", entry.sys.id);
     if (entry) {
+      // eslint-disable-next-line no-unused-vars
       const pub = await entry.publish();
       toast.success("Form is submitted");
       return entry.sys.id;

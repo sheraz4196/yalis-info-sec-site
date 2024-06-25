@@ -1,7 +1,6 @@
 import React from "react";
 import ContactForm from "../contact/contact-form";
 
-// eslint-disable-next-line react/prop-types
 export default function QuoteSection({ title, description }) {
   return (
     <section className="bg-muted-red-brown" id="getQuote">
