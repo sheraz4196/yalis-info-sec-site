@@ -1,6 +1,4 @@
-"use client";
 import Link from "next/link";
-import React from "react";
 import { calculateReadingTime } from "../common/calculateReadingTime";
 
 export default function BlogCards({ data, relatedBlogs }) {
