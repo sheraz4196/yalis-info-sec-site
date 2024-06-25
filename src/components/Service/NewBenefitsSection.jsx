@@ -34,20 +34,18 @@ export default function BenefitsSection({ data }) {
     <section ref={ref} className="max-container py-8 md:py-16 my-2.5 md:my-5">
       <h2 className="text-blue text-center pb-5 mb-16">{data?.title}</h2>
       <div className={`flex flex-wrap bemefits-list ${isVisible ? "on" : ""}`}>
-        {data?.cardsData?.map((item, i) => {
-          return (
-            <div
-              className="benefits-list-item"
-              key={i}
-              style={{ transitionDelay: `${i * 0.2}s` }}
-            >
-              <div>
-                <h5 className="text-brown-40 mb-1.5">{item?.title}</h5>
-                <p>{item?.description}</p>
-              </div>
+        {data?.cardsData?.map((item, index) => (
+          <div
+            className="benefits-list-item"
+            key={index}
+            style={{ transitionDelay: `${index * 0.2}s` }}
+          >
+            <div>
+              <h5 className="text-brown-40 mb-1.5">{item?.title}</h5>
+              <p>{item?.description}</p>
             </div>
-          );
-        })}
+          </div>
+        ))}
       </div>
     </section>
   );
