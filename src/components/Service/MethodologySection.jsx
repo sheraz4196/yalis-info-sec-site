@@ -1,44 +1,35 @@
 "use client";
-import React, { useEffect, useRef, useState } from "react";
+import React, { useRef, useState } from "react";
 import Richtext from "../common/Richtext";
 import Image from "next/image";
 
 export default function MethodologySection({ data }) {
   const liRefs = useRef([]);
   const [isVisible, setIsVisible] = useState([]);
-
-  useEffect(() => {
-    const observers = [];
-
-    const handleIntersection = (entries, observer) => {
-      entries.forEach((entry) => {
-        const index = liRefs.current.indexOf(entry.target);
-        if (entry.isIntersecting && !isVisible[index]) {
-          setIsVisible((prevState) => {
-            const updatedVisibility = [...prevState];
-            updatedVisibility[index] = true;
-            return updatedVisibility;
-          });
-        }
-      });
-    };
-
-    liRefs.current.forEach((ref, index) => {
-      if (ref) {
-        const observer = new IntersectionObserver(handleIntersection, {
-          root: null,
-          rootMargin: "0px",
-          threshold: 0.3,
+  const handleIntersection = (entries) => {
+    entries.forEach((entry) => {
+      const index = liRefs.current.indexOf(entry.target);
+      if (entry.isIntersecting && !isVisible[index]) {
+        setIsVisible((prevState) => {
+          const updatedVisibility = [...prevState];
+          updatedVisibility[index] = true;
+          return updatedVisibility;
         });
-        observer.observe(ref);
-        observers.push(observer);
       }
     });
-
-    return () => {
-      observers.forEach((observer) => observer.disconnect());
-    };
-  }, [data?.list, isVisible]);
+  };
+  const setRef = (element, index) => {
+    if (element) {
+      liRefs.current[index] = element;
+      const observer = new IntersectionObserver(handleIntersection, {
+        root: null,
+        rootMargin: "0px",
+        threshold: 0.3,
+      });
+      observer.observe(element);
+      return () => observer.unobserve(element);
+    }
+  };
 
   return (
     <section className="max-container py-8 md:py-16">
@@ -46,11 +37,11 @@ export default function MethodologySection({ data }) {
       {data?.list?.length > 0 && (
         <div className="methodology-list relative px-5 lg:px-0">
           <ol>
-            {data?.list?.map((item, i) => (
+            {data?.list?.map((item, index) => (
               <li
-                ref={(el) => (liRefs.current[i] = el)}
-                key={i}
-                className={`${isVisible[i] ? "on" : ""}`}
+                ref={(el) => setRef(el, index)}
+                key={index}
+                className={`${isVisible[index] ? "on" : ""}`}
               >
                 <div>
                   {item?.fields?.icon?.fields?.file?.url && (
