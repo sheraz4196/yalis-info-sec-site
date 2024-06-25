@@ -2,6 +2,7 @@ import { toast } from "react-toastify";
 
 export const createContetnful = async (entryData, contentTypeId) => {
   try {
+    // eslint-disable-next-line no-undef
     const contentful = require("contentful-management");
     const client = contentful.createClient({
       accessToken: "CFPAT-heLRj5SMpdOHozePkY0Ok5aMUHXUp2KJx788sFGiDUc",

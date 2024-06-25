@@ -1,3 +1,4 @@
+/* eslint-disable no-unsafe-optional-chaining */
 import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";

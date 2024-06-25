@@ -1,3 +1,4 @@
+/* eslint-disable no-undef */
 import React from "react";
 // import ReCAPTCHA from "react-google-recaptcha";
 import dynamic from "next/dynamic";

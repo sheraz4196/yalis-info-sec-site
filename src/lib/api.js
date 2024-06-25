@@ -2,12 +2,9 @@
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
 import { BlogPostSchema } from "@/schemas/zodSchema";
-// eslint-disable-next-line no-undef
 const client = require("contentful").createClient({
   space: spaceId,
   accessToken: accessToken,
-  // accessToken: "cWP_gTbGR8lQ_a0f7DmN4GFZCkHPk0d36RCqgT-je7c",
-  // host: "preview.contentful.com",
 });
 
 export const getPagesData = async (contentType, setData) => {

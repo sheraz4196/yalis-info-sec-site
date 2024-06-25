@@ -21,9 +21,9 @@ export default function QualificationsSection({ data }) {
         {data?.images1?.length > 0 && (
           <div className="horizontal-scrolling">
             <div className="horizontal-scrolling-inner">
-              {data?.images1?.map((item) => {
+              {data?.images1?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -33,9 +33,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images1?.map((item) => {
+              {data?.images1?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -51,9 +51,9 @@ export default function QualificationsSection({ data }) {
         {data?.images2?.length > 0 && (
           <div className="horizontal-scrolling horizontal-scrolling-reverse">
             <div className="horizontal-scrolling-inner">
-              {data?.images2?.map((item) => {
+              {data?.images2?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -63,9 +63,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images2?.map((item) => {
+              {data?.images2?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -81,9 +81,9 @@ export default function QualificationsSection({ data }) {
         {data?.images3?.length > 0 && (
           <div className="horizontal-scrolling">
             <div className="horizontal-scrolling-inner">
-              {data?.images3?.map((item) => {
+              {data?.images3?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -93,9 +93,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images3?.map((item) => {
+              {data?.images3?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}

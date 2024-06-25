@@ -1,10 +1,10 @@
 import Richtext from "./common/Richtext";
 import { getPagesData } from "../lib/api";
 import Link from "next/link";
-import { useEffect, useState } from "react";
+import React, { useEffect, useState } from "react";
 import Image from "next/image";
 
-export default function Footer({ logo, serviceLinks }) {
+export default function Footer({ serviceLinks }) {
   const [data, setData] = useState(null);
   const [policiesData, setPoliciesData] = useState([]);
 
@@ -37,7 +37,6 @@ export default function Footer({ logo, serviceLinks }) {
 
   const {
     image,
-    description,
     links,
     addressTitle,
     address,

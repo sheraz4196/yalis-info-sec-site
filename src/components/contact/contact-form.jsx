@@ -5,6 +5,7 @@ import GoogleRecaptcha from "../common/GoogleRecaptcha";
 import { handleSubmit } from "../common/handleSubmit";
 import { sendMail } from "@/lib/sendMail";
 import { toast } from "react-toastify";
+import React from "react";
 export default function ContactForm() {
   function onChange(value) {
     setFormData({ ...formData, recaptcha: value });
@@ -26,7 +27,7 @@ export default function ContactForm() {
   const [showRegexError, setShowRegexError] = useState(null);
   async function submitForm() {
     setLoading(true);
-    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nServices: ${formData.service}\nHow did you hear about us: ${formData.howDidYouHear}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nServices: ${formData.service}\nHow did you hear about us: ${formData.howDidYouHear}\nInfo: ${formData.info}\nCheck: ${formData.check}`;
     const res = await sendMail({
       subject: "New Form Submission",
       text: mailText,

@@ -1,5 +1,5 @@
 import QuoteForm from "./forms/quote-form";
-
+import React from "react";
 export default function QuoteFormSection({ data }) {
   return (
     <section id="getQuote" className="bg-zinc-50 py-8 md:py-16">

@@ -1,10 +1,7 @@
-"use client";
 import React from "react";
-import { useState } from "react";
-import Link from "next/link";
-import { handleSubmit } from "./handleSubmit";
 import ContactForm from "../contact/contact-form";
 
+// eslint-disable-next-line react/prop-types
 export default function QuoteSection({ title, description }) {
   return (
     <section className="bg-muted-red-brown" id="getQuote">
