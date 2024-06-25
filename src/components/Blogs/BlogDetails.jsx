@@ -15,10 +15,10 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
   const author = data?.fields?.author;
   const pathname = `/blog/${slug}`;
   const siteUrl = "https://astro-stefan-ade.vercel.app";
-
+  console.log("Here is data", data.fields);
   return (
     <>
-      <section className="bg-light py-8 md:py-16">
+      <section className="py-8 md:py-16">
         <div className="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img

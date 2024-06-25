@@ -2,6 +2,7 @@ import { BLOCKS, MARKS, INLINES } from "@contentful/rich-text-types";
 import { documentToReactComponents } from "@contentful/rich-text-react-renderer";
 import React from "react";
 import Link from "next/link";
+
 export default function Richtext({ data }) {
   console.log("START", data, "END");
   const options = {
@@ -23,30 +24,21 @@ export default function Richtext({ data }) {
         </Link>
       ),
       [BLOCKS.PARAGRAPH]: (node, children) => {
-        const containsIframe = /<iframe.*<\/iframe>/i.test(children[0]);
-        if (containsIframe && typeof document !== "undefined") {
-          const iframeHTML = children[0];
-          const embedElement = document.querySelector("#Embed");
-          if (embedElement) {
-            embedElement.innerHTML = iframeHTML;
-            embedElement.classList.add("max-w-full");
-          }
-          if (typeof children[0] === "string") {
-            return (
-              <div className="mb-6 max-w-full">
-                <div id="Embed" className="max-w-full"></div>
-              </div>
-            );
-          } else {
-            return <p>{children}</p>;
-          }
+        const content = node.content.map((child) => child.value).join("");
+        const containsIframe = /<iframe.*<\/iframe>/i.test(content);
+
+        if (containsIframe) {
+          return (
+            <div
+              className="mb-6 max-w-full"
+              dangerouslySetInnerHTML={{ __html: content }}
+            />
+          );
         }
 
         const paragraphContent = children.reduce((acc, child) => {
-          // Add each part to the accumulator array
           if (typeof child === "string") {
             const parts = child.split(/(<\/?br\s*\/?>|<c>.*?<\/c>)/);
-            // Add each part to the accumulator array
             acc.push(...parts);
           } else {
             acc.push(child);
@@ -56,11 +48,8 @@ export default function Richtext({ data }) {
 
         const styledChildren = paragraphContent.map((part, index) => {
           if (typeof part === "string") {
-            // Check if the part is enclosed in <c> tags
             if (part.startsWith("<c>") && part.endsWith("</c>")) {
-              // Extract the text within <c> tags
               const text = part.substring(3, part.length - 4);
-              // Apply CSS styling to the text
               return (
                 <span
                   key={index}
@@ -69,7 +58,6 @@ export default function Richtext({ data }) {
                   {text}
                 </span>
               );
-              s;
             } else if (
               part === "<br>" ||
               part === "<br/>" ||
@@ -77,22 +65,21 @@ export default function Richtext({ data }) {
             ) {
               return <br key={index} />;
             } else {
-              // If not enclosed in <c> tags, render the text as-is
               return <span key={index}>{part}</span>;
             }
           } else {
-            // If the part is not a string, render it as-is
             return part;
           }
         });
 
         return <div className="mb-6">{styledChildren}</div>;
       },
-      [BLOCKS.code]: (node, children) => {
+      [BLOCKS.CODE]: (node, children) => {
         return <code>{children}</code>;
       },
     },
   };
+
   return (
     data &&
     data?.content?.map((rtNode, index) => {
