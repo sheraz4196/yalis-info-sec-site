@@ -37,6 +37,37 @@ export default function Richtext({ data }) {
           {children}
         </Link>
       ),
+      [BLOCKS.EMBEDDED_ASSET]: (node) => {
+        const { file, title } = node?.data?.target?.fields;
+        const fileType = file.contentType.split("/")[0];
+        switch (fileType) {
+          case "video":
+            return (
+              <video controls className="my- 10">
+                <source src={`https://${file?.url}`} type={file.contentType} />
+                Your browser does not support the video tag.
+              </video>
+            );
+          case "image":
+            return (
+              <img
+                src={`https://${file?.url}`}
+                alt={title}
+                className="my-5"
+                loading="lazy"
+              />
+            );
+          case "audio":
+            return (
+              <audio controls className="my-10">
+                <source src={`https://${file?.url}`} type={file.contentType} />
+                Your browser does not support the audio tag.
+              </audio>
+            );
+          default:
+            return <p>Unsupported file type</p>;
+        }
+      },
       [BLOCKS.PARAGRAPH]: (node, children) => {
         const content = node.content.map((child) => child.value).join("");
         const containsIframe = /<iframe.*<\/iframe>/i.test(content);
