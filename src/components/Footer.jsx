@@ -6,26 +6,28 @@ import Image from "next/image";
 
 export default function Footer({ logo, serviceLinks }) {
   const [data, setData] = useState(null);
-  const [policiesData, setPolociesData] = useState([]);
+  const [policiesData, setPoliciesData] = useState([]);
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const d = await getPagesData("footer");
-        setData(d?.items?.[0]?.fields);
+        const footerData = await getPagesData("footer");
+        setData(footerData?.items?.[0]?.fields || null);
       } catch (error) {
         console.error("Error fetching footer data:", error);
       }
     };
-    fetchData();
+
     const fetchPoliciesData = async () => {
       try {
         const policies = await getPagesData("policies");
-        setPolociesData(policies?.items);
+        setPoliciesData(policies?.items || []);
       } catch (error) {
         console.error("Error fetching Policies data:", error);
       }
     };
+
+    fetchData();
     fetchPoliciesData();
   }, []);
 
@@ -51,10 +53,10 @@ export default function Footer({ logo, serviceLinks }) {
         <div className="footer flex items-start flex-wrap justify-between gap-8 max-w-full w-full">
           <div className="w-full lg:w-[calc(30%-15px)] max-w-full lg:max-w-[calc(30%-15px)]">
             <div className="max-w-80">
-              {image?.fields?.file.url && (
+              {image?.fields?.file?.url && (
                 <Link href="/">
                   <Image
-                    src={"https:" + image?.fields?.file.url}
+                    src={"https:" + image.fields.file.url}
                     alt="logo"
                     width={350}
                     height={100}
@@ -62,68 +64,62 @@ export default function Footer({ logo, serviceLinks }) {
                   />
                 </Link>
               )}
-              {/* <p className="mt-5 text-white text-sm">{description}</p> */}
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-8 items-start justify-between w-full lg:w-[calc(65%-15px)] max-w-full lg:max-w-[calc(65%-15px)]">
-            {links?.map((item, index) => {
-              return (
-                <div className="w-full" key={index}>
-                  <h5>{item?.title}</h5>
-                  <div className="flex flex-col max-w-full">
-                    {(item?.title === "Services"
-                      ? serviceLinks
-                      : item?.links
-                    )?.map((link, index) => {
-                      return (
-                        <Link
-                          href={link?.link || ""}
-                          target={link?.target || "_self"}
-                          className="w-full md:max-w-64 block"
-                          key={index}
-                        >
-                          {link?.text}
-                        </Link>
-                      );
-                    })}
-                  </div>
+            {links?.map((item, index) => (
+              <div className="w-full" key={index}>
+                <h5>{item?.title}</h5>
+                <div className="flex flex-col max-w-full">
+                  {(item?.title === "Services"
+                    ? serviceLinks
+                    : item?.links
+                  )?.map((link, index) => (
+                    <Link
+                      href={link?.link || ""}
+                      target={link?.target || "_self"}
+                      className="w-full md:max-w-64 block"
+                      key={index}
+                    >
+                      {link?.text}
+                    </Link>
+                  ))}
                 </div>
-              );
-            })}
-            {policiesData?.length > 0 && (
+              </div>
+            ))}
+            {policiesData.length > 0 && (
               <div className="w-full">
                 <h5>Policies</h5>
                 <div className="flex flex-col max-w-full">
-                  {policiesData?.map((item, index) => {
-                    return (
-                      <Link
-                        href={item?.fields?.slug || ""}
-                        className="w-full md:max-w-64 block"
-                        key={index}
-                      >
-                        {item?.fields?.heroTitle}
-                      </Link>
-                    );
-                  })}
+                  {policiesData.map((item, index) => (
+                    <Link
+                      href={item?.fields?.slug || ""}
+                      className="w-full md:max-w-64 block"
+                      key={index}
+                    >
+                      {item?.fields?.heroTitle}
+                    </Link>
+                  ))}
                 </div>
               </div>
             )}
             <div className="w-full text-white">
               <h5>{addressTitle}</h5>
               <div className="flex flex-col gap-2">
+                {address && <p>{address}</p>}
+                {phoneNumber && <p>{phoneNumber}</p>}
+                {mailId && <p>{mailId}</p>}
                 <div className="flex items-center gap-3 mt-3">
-                  {socialMedia?.map((item, index) => {
-                    return (
-                      <Link
-                        href={item?.link}
-                        target="_blank"
-                        aria-label={item?.icon || "social media link"}
-                        key={index}
-                      >
-                        <i className={`${item?.icon} text-2xl`} />
-                      </Link>
-                    );
-                  })}
+                  {socialMedia?.map((item, index) => (
+                    <Link
+                      href={item?.link}
+                      target="_blank"
+                      aria-label={item?.icon || "social media link"}
+                      key={index}
+                    >
+                      <i className={`${item?.icon} text-2xl`} />
+                    </Link>
+                  ))}
                 </div>
               </div>
             </div>
