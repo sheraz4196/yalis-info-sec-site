@@ -527,7 +527,7 @@ select:valid {
 .faq:hover {
   box-shadow: 0 11px 42px rgba(0, 0, 0, 0.15), 0 0 0 5px rgba(228, 16, 44, 0.3);
 }
-.faq-qestion {
+.faq-question {
   -webkit-tap-highlight-color: transparent;
   color: #31373c;
   cursor: pointer;
@@ -537,10 +537,10 @@ select:valid {
   position: relative;
   transition: all 0.25s ease;
 }
-.faq:hover .faq-qestion {
+.faq:hover .faq-question {
   color: #e4102c;
 }
-.faq-qestion::after {
+.faq-question::after {
   content: "\f107";
   display: inline-block;
   position: absolute;
