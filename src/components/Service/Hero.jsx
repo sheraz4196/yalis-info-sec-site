@@ -1,5 +1,5 @@
 import FastQuoteForm from "./forms/fast-quote-form";
-
+import React from "react";
 export default function Hero({ data }) {
   return (
     <section

@@ -1,6 +1,6 @@
 import Richtext from "../common/Richtext";
 import ServiceForm from "./forms/service-form";
-
+import React from "react";
 export default function GetAFastQuoteForm({ data }) {
   return (
     <section className="bg-slate-40 text-white py-8 md:py-16">
@@ -16,7 +16,7 @@ export default function GetAFastQuoteForm({ data }) {
               </div>
             </div>
           )}
-          {data?.showForm && <ServiceForm />}
+          {data?.showForm && <ServiceForm data={data} />}
         </div>
       </div>
     </section>

@@ -8,9 +8,12 @@ export default function WhyChoose({ data }) {
           {data?.title}
         </h2>
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-5">
-          {data?.cards?.map((item) => {
+          {data?.cards?.map((item, key) => {
             return (
-              <div className="w-full bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg text-center p-8 h-full">
+              <div
+                key={key}
+                className="w-full bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg text-center p-8 h-full"
+              >
                 {item?.fields?.image?.fields?.file?.url && (
                   <Image
                     src={item?.fields?.image?.fields?.file?.url}

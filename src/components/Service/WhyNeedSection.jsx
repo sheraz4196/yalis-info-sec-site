@@ -1,6 +1,6 @@
 import React from "react";
 import Richtext from "../common/Richtext";
-
+import Image from "next/image";
 export default function WhyNeedSection({ data }) {
   return (
     <section className="max-container py-8 md:py-16 my-8 md:my-16">

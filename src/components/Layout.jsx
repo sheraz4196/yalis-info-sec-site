@@ -21,7 +21,6 @@ export default function Layout({ children, headerData, serviceEntries }) {
     buttonTarget: headerData?.buttonTarget,
     buttonText: headerData?.buttonText,
   };
-  const topNavLinks = headerData?.topBarLinks;
   return (
     <>
       {!hideHeaderAndFotter && (

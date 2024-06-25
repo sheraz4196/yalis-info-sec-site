@@ -19,9 +19,9 @@ export default function TypesSection({ data }) {
         </div>
       )}
       <div className="flex flex-col md:hidden gap-10">
-        {data?.list?.map((item) => {
+        {data?.list?.map((item, index) => {
           return (
-            <div className="type-list-item-wrap">
+            <div className="type-list-item-wrap" key={index}>
               <h3 className="text-2xl text-center text-blue mb-2.5">
                 {item?.fields?.title}
               </h3>

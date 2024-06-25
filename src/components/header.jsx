@@ -25,7 +25,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
       menuWrapRef.current.style.height = "0";
     } else {
       const height = Array.from(menuRef.current.children).reduce(
-        (acc, child, index) => {
+        (acc, child) => {
           return acc + child.clientHeight;
         },
         0

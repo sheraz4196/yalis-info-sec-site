@@ -1,5 +1,6 @@
 "use client";
 import Link from "next/link";
+import React from "react";
 import { useState } from "react";
 import GoogleRecaptcha from "@/components/common/GoogleRecaptcha";
 import { handleSubmit } from "@/components/common/handleSubmit";
@@ -33,7 +34,7 @@ export default function ServiceQuoteForm({ data }) {
   };
   async function submitForm() {
     setLoading(true);
-    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\nCheck: ${formData.check}`;
     const res = await sendMail({
       subject: `${data.formTitle} form submission`,
       text: mailText,

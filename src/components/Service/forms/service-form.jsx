@@ -5,7 +5,8 @@ import GoogleRecaptcha from "@/components/common/GoogleRecaptcha";
 import { useState } from "react";
 import { toast } from "react-toastify";
 import { sendMail } from "@/lib/sendMail";
-export default function ServiceForm() {
+import React from "react";
+export default function ServiceForm({ data }) {
   function onChange(value) {
     setFormData({ ...formData, recaptcha: value });
   }
@@ -33,7 +34,7 @@ export default function ServiceForm() {
   };
   async function submitForm() {
     setLoading(true);
-    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\mCheck: ${formData.check}`;
+    const mailText = `Name: ${formData.name}\nEmail: ${formData.email}\nPhone Number: ${formData.phone}\nCompany: ${formData.company}\nService Required: ${formData.service}\nInfo: ${formData.info}\nCheck: ${formData.check}`;
     const res = await sendMail({
       subject: `${data.formTitle} form submission`,
       text: mailText,
