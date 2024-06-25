@@ -1,11 +1,10 @@
 import React from "react";
-import Image from "next/image";
 export default function TargetDefenceSection({ data }) {
   return (
     <section className="max-container py-10 md:py-16">
       <div className="mb-5">
         <h2 className="text-primary2 text-center">{data?.title}</h2>
-        <p className="">{data?.description}</p>
+        <p>{data?.description}</p>
       </div>
       <div className="flex flex-col md:flex-row items-start">
         {/* <div className="w-full lg:w-[31.25%] mr-[3.125%]">

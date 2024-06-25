@@ -28,11 +28,11 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
             />
           )}
           <div className="flex items-center gap-4 mb-2.5">
-            <p className="">
+            <p>
               <i className="fa-regular fa-calendar mr-1"></i>
               {formattedDate}
             </p>
-            <p className="">
+            <p>
               <i className="fa-solid fa-stopwatch mr-1"></i>{" "}
               {calculateReadingTime(data?.fields?.description?.content)} min
               read
