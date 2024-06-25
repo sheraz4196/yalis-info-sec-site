@@ -3,23 +3,25 @@ import Richtext from "../common/Richtext";
 import GetSectionList from "./GetSectionList";
 import Link from "next/link";
 import Image from "next/image";
+
 export default function GetSection({ data }) {
+  const hasList = data?.list?.length > 0;
+
   return (
     <section className="max-container py-8 md:py-16 my-2.5 md:my-5">
       <h2 className="text-secondary text-center pb-5 mb-16">{data?.title}</h2>
-      {data?.list?.length > 0 && (
-        <div className="hidden md:block">
-          <GetSectionList data={data?.list} />
-        </div>
-      )}
-      {data?.list?.length > 0 && (
-        <div className="flex flex-col-reverse gap-10 md:hidden get-section-list">
-          {data?.list?.map((item, index) => {
-            return (
+
+      {hasList && (
+        <>
+          <div className="hidden md:block">
+            <GetSectionList data={data.list} />
+          </div>
+          <div className="flex flex-col-reverse gap-10 md:hidden get-section-list">
+            {data.list.map((item, index) => (
               <div className="get-section-list-item" key={index}>
                 {item?.fields?.icon?.fields?.file?.url && (
                   <Image
-                    src={item?.fields?.icon?.fields?.file?.url}
+                    src={item.fields.icon.fields.file.url}
                     alt="icon"
                     width={140}
                     height={140}
@@ -37,13 +39,11 @@ export default function GetSection({ data }) {
                 </div>
                 {item?.fields?.list?.length > 0 && (
                   <ul className="list-checked types-list mb-5">
-                    {item?.fields?.list?.map((listItem, index) => {
-                      return (
-                        <li className="text-lg" key={index}>
-                          {listItem}
-                        </li>
-                      );
-                    })}
+                    {item.fields.list.map((listItem, listIndex) => (
+                      <li className="text-lg" key={listIndex}>
+                        {listItem}
+                      </li>
+                    ))}
                   </ul>
                 )}
                 {item?.buttonText && (
@@ -58,9 +58,9 @@ export default function GetSection({ data }) {
                   </div>
                 )}
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        </>
       )}
     </section>
   );
