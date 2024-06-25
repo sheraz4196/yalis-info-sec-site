@@ -1,7 +1,8 @@
 import CyberSecuritySection from "@/components/About/CyberSecuritySection";
 import Hero from "@/components/About/Hero";
-import InnovatingSection from "@/components/About/InnovatingSection";
-import SecuritySection from "@/components/About/SecuritySection";
+import React from "react";
+// import InnovatingSection from "@/components/About/InnovatingSection";
+// import SecuritySection from "@/components/About/SecuritySection";
 import TargetDefenceSection from "@/components/About/TargetDefenceSection";
 import QuoteSection from "@/components/common/QuoteSection";
 import { getPagesData } from "@/lib/api";

@@ -1,7 +1,7 @@
 import QuoteSection from "@/components/common/QuoteSection";
 import { getPagesData } from "@/lib/api";
 import { notFound } from "next/navigation";
-
+import React from "react";
 export async function generateMetadata() {
   const data = await getPagesData("contact");
   const { seo } = data?.items?.[0]?.fields || {};
