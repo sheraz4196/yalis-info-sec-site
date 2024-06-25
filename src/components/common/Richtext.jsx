@@ -3,7 +3,7 @@ import { documentToReactComponents } from "@contentful/rich-text-react-renderer"
 import React from "react";
 import Link from "next/link";
 import CopyButton from "./copyButton";
-
+import getHeadingString from "@/utils/get-heading-string";
 export default function Richtext({ data }) {
   console.log("START", data, "END");
   const options = {
@@ -118,6 +118,54 @@ export default function Richtext({ data }) {
         });
 
         return <div className="mb-6">{styledChildren}</div>;
+      },
+      [BLOCKS.HEADING_1]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h1 id={headingId} className="mb-r mt-20">
+            {children}
+          </h1>
+        );
+      },
+      [BLOCKS.HEADING_2]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h2 id={headingId} className="mb-6">
+            {children}
+          </h2>
+        );
+      },
+      [BLOCKS.HEADING_3]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h3 id={headingId} className="mb-5">
+            {children}
+          </h3>
+        );
+      },
+      [BLOCKS.HEADING_4]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h4 id={headingId} className="mb-4">
+            {children}
+          </h4>
+        );
+      },
+      [BLOCKS.HEADING_5]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h5 id={headingId} className="mb-3">
+            {children}
+          </h5>
+        );
+      },
+      [BLOCKS.HEADING_6]: (node, children) => {
+        const headingId = getHeadingString(children[0]);
+        return (
+          <h6 id={headingId} className="mb-2">
+            {children}
+          </h6>
+        );
       },
     },
   };
