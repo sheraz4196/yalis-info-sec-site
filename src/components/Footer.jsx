@@ -66,9 +66,9 @@ export default function Footer({ logo, serviceLinks }) {
             </div>
           </div>
           <div className="flex flex-col md:flex-row gap-8 items-start justify-between w-full lg:w-[calc(65%-15px)] max-w-full lg:max-w-[calc(65%-15px)]">
-            {links?.map((item) => {
+            {links?.map((item, index) => {
               return (
-                <div className="w-full">
+                <div className="w-full" key={index}>
                   <h5>{item?.title}</h5>
                   <div className="flex flex-col max-w-full">
                     {(item?.title === "Services"

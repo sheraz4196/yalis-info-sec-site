@@ -10,14 +10,7 @@ export default function Richtext({ data }) {
     renderNode: {
       [BLOCKS.EMBEDDED_ASSET]: (node) => {
         const { file, title } = node?.data?.target?.fields;
-        return (
-          <img
-            src={`https://${file?.url}`}
-            alt={title}
-            className=""
-            loading="lazy"
-          />
-        );
+        return <img src={`https://${file?.url}`} alt={title} loading="lazy" />;
       },
       [INLINES.HYPERLINK]: ({ data }, children) => (
         <Link
@@ -38,8 +31,12 @@ export default function Richtext({ data }) {
   };
   return (
     data &&
-    data?.content?.map((rtNode) => {
-      return <>{documentToReactComponents(rtNode, options)}</>;
+    data?.content?.map((rtNode, index) => {
+      return (
+        <React.Fragment key={index}>
+          {documentToReactComponents(rtNode, options)}
+        </React.Fragment>
+      );
     })
   );
 }
