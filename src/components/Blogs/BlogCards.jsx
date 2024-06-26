@@ -3,7 +3,6 @@ import { calculateReadingTime } from "../common/calculateReadingTime";
 import React from "react";
 import { convertDate } from "@/utils/convert-data";
 export default function BlogCards({ data, relatedBlogs }) {
-  console.log("Image URL", data[0].fields.image);
   return (
     <section className={`${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}>
       <div className={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>

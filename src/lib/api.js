@@ -1,6 +1,7 @@
 /* eslint-disable no-undef */
 const accessToken = process.env.NEXT_PUBLIC_CONTENTFUL_ACCESS_TOKEN;
 const spaceId = process.env.NEXT_PUBLIC_CONTENTFUL_SPACE_ID;
+import { BlogPostSchema } from "@/schemas/zodSchema";
 const client = require("contentful").createClient({
   space: spaceId,
   accessToken: accessToken,
@@ -34,7 +35,8 @@ export async function getFilteredBlogsData(id) {
     "fields.tag.sys.id": id,
   });
   if (post.items) {
-    return post.items;
+    const validatePost = post.items.map((post) => BlogPostSchema.parse(post));
+    return validatePost;
   }
   console.log(`Error getting post for ${contentType.name}.`);
 }

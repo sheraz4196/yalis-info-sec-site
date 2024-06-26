@@ -174,8 +174,12 @@ export const BlogPostSchema = z.object({
         })
         .optional(),
       fields: z.object({
-        url: z.string().optional(),
-        details: z.object({}).optional(),
+        file: z.object({
+          url: z.string(),
+          fileName: z.string(),
+          details: z.object({}),
+          contentType: z.string(),
+        }),
       }),
     }),
     tableOfContent: z.any().optional(),
