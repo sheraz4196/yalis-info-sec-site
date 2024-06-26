@@ -5,9 +5,7 @@ import { convertDate } from "@/utils/convert-data";
 export default function BlogCards({ data, relatedBlogs }) {
   console.log("Image URL", data[0].fields.image);
   return (
-    <section
-      className={`bg-light ${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}
-    >
+    <section className={`${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}>
       <div className={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>
         {relatedBlogs && <h2 className="text-primary2 mb-8">Related Posts</h2>}
         <div className="blogs-cards">
