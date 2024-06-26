@@ -20,7 +20,7 @@ export default function Navbar({
                   return (
                     <div
                       key={i}
-                      className={`pb-2 border-b text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list border-transparent`}
+                      className={`pb-1 border-b text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list border-transparent`}
                     >
                       <span className="flex items-center gap-1">
                         {item?.text === "Home" && (
@@ -61,7 +61,7 @@ export default function Navbar({
                       key={i}
                       href={item?.link || ""}
                       target={item?.target || "_self"}
-                      className={`hover:text-white transition-colors duration-150 ease-in-out pb-2 border-b border-transparent ${
+                      className={`hover:text-white transition-colors duration-150 ease-in-out pb-1 border-b border-transparent ${
                         item?.link ? "hover:underline" : ""
                       } ${
                         pathName.includes(item?.link)
