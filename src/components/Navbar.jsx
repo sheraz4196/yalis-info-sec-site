@@ -46,7 +46,7 @@ export default function Navbar({
                                   href={listItem?.link || ""}
                                   className={
                                     pathName === listItem?.link
-                                      ? "text-primary"
+                                      ? "text-primary !underline"
                                       : ""
                                   }
                                 >
@@ -70,8 +70,12 @@ export default function Navbar({
                         item?.link ? "hover:underline" : ""
                       } ${
                         pathName.includes(item?.link)
-                          ? "!text-primary"
+                          ? "!text-primary !underline"
                           : "!text-gray-light"
+                      } ${
+                        item.link === "/" && pathName !== "/"
+                          ? "!no-underline"
+                          : ""
                       }`}
                     >
                       <span className="flex items-center gap-1">
@@ -86,7 +90,7 @@ export default function Navbar({
                         <span
                           className={
                             item?.text === "Home" && pathName !== "/"
-                              ? "text-gray-light"
+                              ? "text-gray-light !no-underline"
                               : ""
                           }
                         >
