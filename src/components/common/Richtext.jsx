@@ -6,7 +6,6 @@ import Link from "next/link";
 import CopyButton from "./copyButton";
 import getHeadingString from "@/utils/get-heading-string";
 export default function Richtext({ data }) {
-  console.log("START", data, "END");
   const options = {
     renderMark: {
       [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,

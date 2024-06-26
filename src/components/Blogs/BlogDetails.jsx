@@ -12,7 +12,6 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
   const author = data?.fields?.author;
   const pathname = `/blog/${slug}`;
   const siteUrl = "https://astro-stefan-ade.vercel.app";
-  console.log("Here is data", data.fields);
   return (
     <>
       <section className="py-8 md:py-16">
