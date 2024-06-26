@@ -12,14 +12,19 @@ export default function Richtext({ data }) {
       [MARKS.BOLD]: (text) => <b className="font-bold">{text}</b>,
       [MARKS.CODE]: (text) => {
         return (
-          <div className="mb-6 relative">
+          <div className="CodeBlockClass my-6">
+            <div className="carbon">
+              <div className="red"></div>
+              <div className="yellow"></div>
+              <div className="green"></div>
+            </div>
+            <CopyButton
+              code={text?.props?.children || text || ""}
+              className={"absolute top-2 right-2 text-white"}
+            />
             <pre>
               <code>{text}</code>
             </pre>
-            <CopyButton
-              text={text?.props?.children || text || ""}
-              className={"top-1 absolute text-white right-2"}
-            />
           </div>
         );
       },
