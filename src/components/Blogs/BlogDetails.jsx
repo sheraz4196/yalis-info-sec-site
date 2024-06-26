@@ -3,15 +3,12 @@ import BlogCards from "./BlogCards";
 import Richtext from "../common/Richtext";
 import Link from "next/link";
 import { calculateReadingTime } from "../common/calculateReadingTime";
+import { convertDate } from "@/utils/convert-data";
 
 export default function BlogDetails({ data, relatedBlogs, slug }) {
   const date = data?.sys?.createdAt;
   const dateObject = new Date(date);
-  const formattedDate = dateObject.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
+  const formattedDate = convertDate(dateObject);
   const author = data?.fields?.author;
   const pathname = `/blog/${slug}`;
   const siteUrl = "https://astro-stefan-ade.vercel.app";

@@ -1,7 +1,9 @@
 import Link from "next/link";
 import { calculateReadingTime } from "../common/calculateReadingTime";
 import React from "react";
+import { convertDate } from "@/utils/convert-data";
 export default function BlogCards({ data, relatedBlogs }) {
+  console.log("Image URL", data[0].fields.image);
   return (
     <section
       className={`bg-light ${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}
@@ -12,11 +14,7 @@ export default function BlogCards({ data, relatedBlogs }) {
           {data?.map((item, index) => {
             const date = item?.sys?.createdAt;
             const dateObject = new Date(date);
-            const formattedDate = dateObject.toLocaleDateString("en-US", {
-              year: "numeric",
-              month: "2-digit",
-              day: "2-digit",
-            });
+            const formattedDate = convertDate(dateObject);
             return (
               <Link href={`/blog/${item?.fields?.slug}`} key={index}>
                 {item?.fields?.image?.fields?.file?.url && (
