@@ -17,7 +17,7 @@ export default function WhatSection({ data }) {
           </div>
         )}
         <div className="w-full md:w-[calc(59%-25px)]">
-          <h2 className="text-primary2 mb-8">{data?.title}</h2>
+          <h2 className="text-primary-dark mb-8">{data?.title}</h2>
           {data?.description && (
             <div className="rich-text">
               <Richtext data={data?.description} />

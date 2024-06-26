@@ -15,7 +15,7 @@ export default function QuoteFormSection({ data }) {
           )}
           <div className="w-full h-full">
             <div className="bg-white p-8 md:p-16">
-              <h2 className="text-primary2">{data?.title}</h2>
+              <h2 className="text-primary-dark">{data?.title}</h2>
               <p className="my-8">{data?.description}</p>
               {data?.showQuoteSectionForm && <ServiceQuoteForm data={data} />}
             </div>

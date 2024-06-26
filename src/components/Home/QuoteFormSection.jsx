@@ -13,7 +13,7 @@ export default function QuoteFormSection({ data }) {
           ></div>
           <div className="w-full h-full">
             <div className="bg-white p-5 md:p-16">
-              <h2 className="text-primary2 text-center md:text-left">
+              <h2 className="text-primary-dark text-center md:text-left">
                 {data?.formTitle}
               </h2>
               <p className="my-8 text-center md:text-left">

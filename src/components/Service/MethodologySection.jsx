@@ -33,7 +33,9 @@ export default function MethodologySection({ data }) {
 
   return (
     <section className="max-container py-8 md:py-16">
-      <h2 className="text-primary2 mb-8 lg:mb-16 text-center">{data?.title}</h2>
+      <h2 className="text-primary-dark mb-8 lg:mb-16 text-center">
+        {data?.title}
+      </h2>
       {data?.list?.length > 0 && (
         <div className="methodology-list relative px-5 lg:px-0">
           <ol>

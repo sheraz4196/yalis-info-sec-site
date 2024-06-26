@@ -10,7 +10,7 @@ export default function QualificationsSection({ data }) {
       className="bg-light bg-[center_bottom] bg-no-repeat py-8 md:py-16"
     >
       <div className="max-container my-2.5 md:my-5 text-center">
-        <h2 className="mb-8 text-primary2">{data?.title}</h2>
+        <h2 className="mb-8 text-primary-dark">{data?.title}</h2>
         <div className="pb-5 mb-16 text-xl font-light">
           <div className="rich-text">
             <Richtext data={data?.description} />

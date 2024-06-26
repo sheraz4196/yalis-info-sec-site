@@ -13,7 +13,9 @@ export default function FaqSection({ data }) {
 
   return (
     <section className="max-container py-8 md:py-16 my-2.5 md:my-5">
-      <h2 className="text-primary2 text-center pb-5 mb-16">{data?.title}</h2>
+      <h2 className="text-primary-dark text-center pb-5 mb-16">
+        {data?.title}
+      </h2>
       <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
         {Array.from({ length: 2 }).map((_, colIndex) => (
           <div key={colIndex} className="flex flex-col gap-5">

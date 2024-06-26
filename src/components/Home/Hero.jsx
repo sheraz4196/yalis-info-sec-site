@@ -31,7 +31,7 @@ export default function Hero({ data }) {
           </div>
           <div className="w-full lg:w-[44%]">
             <div className="bg-white shadow-[0px_15px_52px_rgba(50,68,80,0.14)] rounded-lg p-5 md:p-8">
-              <h3 className="text-primary2 font-extrabold leading-[1.3] text-center mb-5">
+              <h3 className="text-primary-dark font-extrabold leading-[1.3] text-center mb-5">
                 {data?.formTitle}
               </h3>
               <CyberForm data={data} />

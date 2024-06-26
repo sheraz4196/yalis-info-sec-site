@@ -14,7 +14,7 @@ export default function SecureSection({ data }) {
         />
       </div>
       <div className="w-full">
-        <h2 className="mb-8 text-primary2">{data?.title}</h2>
+        <h2 className="mb-8 text-primary-dark">{data?.title}</h2>
         <p className="leading-[1.5]">{data?.description}</p>
       </div>
     </section>

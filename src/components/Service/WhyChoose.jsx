@@ -2,7 +2,7 @@ import React from "react";
 import Image from "next/image";
 export default function WhyChoose({ data }) {
   return (
-    <section className="bg-primary-rgb py-8 md:py-16">
+    <section className="bg-primary-light py-8 md:py-16">
       <div className="max-container my-2.5 md:my-5">
         <h2 className="text-white text-center pb-2.5 md:pb-5 mb-8 md:mb-16">
           {data?.title}

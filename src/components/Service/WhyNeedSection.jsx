@@ -6,7 +6,7 @@ export default function WhyNeedSection({ data }) {
     <section className="max-container py-8 md:py-16 my-8 md:my-16">
       <div className="flex flex-col-reverse lg:flex-row items-center justify-center gap-8 lg:gap-[4%]">
         <div className="w-full text-center md:text-left">
-          <h2 className="text-primary2 mb-8">{data?.title}</h2>
+          <h2 className="text-primary-dark mb-8">{data?.title}</h2>
           {data?.description && (
             <div className="rich-text list-checked">
               <Richtext data={data?.description} />

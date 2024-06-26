@@ -6,7 +6,9 @@ export default function BlogCards({ data, relatedBlogs }) {
   return (
     <section className={`${relatedBlogs ? "pb-8 md:pb-16" : "py-8 md:py-16"}`}>
       <div className={`max-container ${relatedBlogs ? "" : "my-2.5 md:my-5"}`}>
-        {relatedBlogs && <h2 className="text-primary2 mb-8">Related Posts</h2>}
+        {relatedBlogs && (
+          <h2 className="text-primary-dark mb-8">Related Posts</h2>
+        )}
         <div className="blogs-cards">
           {data?.map((item, index) => {
             const date = item?.sys?.createdAt;
@@ -21,7 +23,7 @@ export default function BlogCards({ data, relatedBlogs }) {
                   />
                 )}
                 <div>
-                  <h3 className="text-primary2 mb-2.5">
+                  <h3 className="text-primary-dark mb-2.5">
                     {item?.fields?.title}
                   </h3>
                   <div className="flex items-center gap-4">

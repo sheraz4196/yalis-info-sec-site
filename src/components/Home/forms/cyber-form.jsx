@@ -149,7 +149,7 @@ export default function CyberForm({ data }) {
       <div className="w-full">
         {loadRecaptcha && <GoogleRecaptcha onChange={onChange} />}
       </div>
-      {showRegexError && <p className="text-primary2">{showRegexError}</p>}
+      {showRegexError && <p className="text-primary-dark">{showRegexError}</p>}
       {loading ? (
         <button
           type="button"

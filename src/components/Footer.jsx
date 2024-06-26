@@ -124,7 +124,7 @@ export default function Footer({ serviceLinks }) {
             </div>
           </div>
         </div>
-        <div className="mt-8 copyright text-gray-dark text-xs">
+        <div className="mt-8 copyright text-gray-primary-dark text-xs">
           <Richtext data={copyright} />
         </div>
       </div>

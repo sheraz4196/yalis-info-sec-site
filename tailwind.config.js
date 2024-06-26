@@ -8,9 +8,11 @@ module.exports = {
   theme: {
     extend: {
       colors: {
-        primary: "#b60d23",
-        "primary-rgb": "rgb(228, 16, 44)",
-        primary2: "#e4102c",
+        primary: {
+          light: "rgb(228, 16, 44)",
+          DEFAULT: "#b60d23",
+          dark: "#e4102c",
+        },
         secondary: "rgb(27, 161, 230)",
         light: "rgb(250,250,250)",
         "link-hover": "#b60d23",
@@ -20,7 +22,7 @@ module.exports = {
         gold: "#ffd700",
         "sea-blue": "#93ABBB",
         "gray-medium": "#bcbcbc",
-        "gray-dark": "#7d909c",
+        "gray-primary-dark": "#7d909c",
         "gray-light": "#8e9fa9",
         "gray-cement": "#a2b7c5",
         "half-black": "rgba(34,39,42,1)",
