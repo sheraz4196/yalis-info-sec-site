@@ -1,7 +1,8 @@
 import CyberSecuritySection from "@/components/About/CyberSecuritySection";
 import Hero from "@/components/About/Hero";
-import InnovatingSection from "@/components/About/InnovatingSection";
-import SecuritySection from "@/components/About/SecuritySection";
+import React from "react";
+// import InnovatingSection from "@/components/About/InnovatingSection";
+// import SecuritySection from "@/components/About/SecuritySection";
 import TargetDefenceSection from "@/components/About/TargetDefenceSection";
 import QuoteSection from "@/components/common/QuoteSection";
 import { getPagesData } from "@/lib/api";
@@ -48,17 +49,17 @@ export default async function About() {
       <main>
         <Hero data={heroData} />
         <TargetDefenceSection data={targetDefenceData} />
-        {/* <hr class="text-[#bcbcbc]" /> */}
+        {/* <hr className="text-gray-medium" /> */}
         {/* <SecuritySection
           title={aboutData?.securitySectionTitle}
           description={aboutData?.securitySectionDescription}
         /> */}
-        {/* <hr class="text-[#bcbcbc]" />
+        {/* <hr className="text-gray-medium" />
         <InnovatingSection
           title={aboutData?.innovatingSectionTitle}
           description={aboutData?.innovatingSectionDescription}
         /> */}
-        {/* <hr class="text-[#bcbcbc]" /> */}
+        {/* <hr className="text-gray-medium" /> */}
         <CyberSecuritySection
           title={aboutData?.cyberSecuritySectionTitle}
           description={aboutData?.cyberSecuritySectionDescription}

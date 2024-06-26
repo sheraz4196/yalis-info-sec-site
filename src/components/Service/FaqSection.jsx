@@ -4,63 +4,48 @@ import Richtext from "../common/Richtext";
 
 export default function FaqSection({ data }) {
   const [showQuestion, setShowQuestion] = useState(null);
+
   const handleShowQuestion = (id) => {
-    if (showQuestion === id) {
-      setShowQuestion(null);
-    } else {
-      setShowQuestion(id);
-    }
+    setShowQuestion(showQuestion === id ? null : id);
   };
+
+  const midIndex = Math.ceil(data?.faqs?.length / 2);
+
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px]">
-      <h2 class="text-primary2 text-center pb-[20px] mb-[60px]">
+    <section className="max-container py-8 md:py-16 my-2.5 md:my-5">
+      <h2 className="text-primary-dark text-center pb-5 mb-16">
         {data?.title}
       </h2>
-      <div class="grid grid-cols-1 lg:grid-cols-2 gap-[20px]">
-        <div className="flex flex-col gap-[20px]">
-          {data?.faqs?.map((item, i) => {
-            if (i <= Math.ceil((data?.faqs?.length - 1) / 2))
-              return (
-                <div className={`faq`}>
-                  <h4
-                    className="faq-qestion"
-                    onClick={() => handleShowQuestion(i)}
-                  >
-                    {item?.fields?.question}
-                  </h4>
-                  <div
-                    className={`faq-answer ${
-                      showQuestion === i ? "show-answer" : ""
-                    }`}
-                  >
-                    <Richtext data={item?.fields?.answer} />
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+        {Array.from({ length: 2 }).map((_, colIndex) => (
+          <div key={colIndex} className="flex flex-col gap-5">
+            {data?.faqs
+              ?.slice(
+                colIndex === 0 ? 0 : midIndex,
+                colIndex === 0 ? midIndex : data?.faqs?.length
+              )
+              .map((item, index) => {
+                const actualIndex = colIndex === 0 ? index : index + midIndex;
+                return (
+                  <div className="faq" key={actualIndex}>
+                    <h4
+                      className="faq-question"
+                      onClick={() => handleShowQuestion(actualIndex)}
+                    >
+                      {item?.fields?.question}
+                    </h4>
+                    <div
+                      className={`faq-answer ${
+                        showQuestion === actualIndex ? "show-answer" : ""
+                      }`}
+                    >
+                      <Richtext data={item?.fields?.answer} />
+                    </div>
                   </div>
-                </div>
-              );
-          })}
-        </div>
-        <div className="flex flex-col gap-[20px]">
-          {data?.faqs?.map((item, i) => {
-            if (i > Math.ceil((data?.faqs?.length - 1) / 2))
-              return (
-                <div className={`faq`}>
-                  <h4
-                    className="faq-qestion"
-                    onClick={() => handleShowQuestion(i)}
-                  >
-                    {item?.fields?.question}
-                  </h4>
-                  <div
-                    className={`faq-answer ${
-                      showQuestion === i ? "show-answer" : ""
-                    }`}
-                  >
-                    <Richtext data={item?.fields?.answer} />
-                  </div>
-                </div>
-              );
-          })}
-        </div>
+                );
+              })}
+          </div>
+        ))}
       </div>
     </section>
   );

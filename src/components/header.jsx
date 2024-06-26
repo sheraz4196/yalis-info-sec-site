@@ -25,7 +25,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
       menuWrapRef.current.style.height = "0";
     } else {
       const height = Array.from(menuRef.current.children).reduce(
-        (acc, child, index) => {
+        (acc, child) => {
           return acc + child.clientHeight;
         },
         0
@@ -37,7 +37,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
 
   return (
     <div className="max-container absolute z-10 bg-transparent top-[57px] left-1/2 -translate-x-1/2">
-      <div className="py-[20px] flex items-center justify-between lg:justify-center gap-[30px] header max-w-full relative">
+      <div className="py-5 flex items-center justify-between lg:justify-center gap-8 header max-w-full relative">
         <div>
           <Link href="/" className="block w-max mx-auto">
             <Image
@@ -45,21 +45,21 @@ const Header = ({ logo, headerList, serviceLinks }) => {
               alt="logo"
               width={300}
               height={84}
-              className="max-w-[160px] md:max-w-full hidden md:block"
+              className="max-w-40 md:max-w-full hidden md:block"
             />
             <Image
               src={"https:" + logo}
               alt="logo"
               width={160}
               height={40}
-              className="max-w-[160px] md:hidden"
+              className="max-w-40 md:hidden"
             />
           </Link>
         </div>
         <button
           onClick={() => setShowMenu(!showMenu)}
           aria-label="menu"
-          className="bg-[#465f6f] p-[10px] rounded-[4px] relative cursor-pointer lg:hidden"
+          className="bg-gray-cement p-2.5 rounded relative cursor-pointer lg:hidden"
         >
           <span className="menu-icon">
             <span className="menu-icon-span"></span>
@@ -80,15 +80,15 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                 return (
                   <div className="block" key={i}>
                     <button
-                      className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-white/10 ${
                         i === 0 ? "border-none" : ""
-                      } p-[10px] text-left w-full`}
+                      } p-2.5 text-left w-full`}
                       onClick={() => handleMenuDropDowns(i)}
                     >
                       {item?.text}
                     </button>
                     {showDropDowns.includes(i) && (
-                      <div className="flex flex-col bg-[#3c5160] pl-[10px]">
+                      <div className="flex flex-col bg-slate-40 pl-2.5">
                         {(item?.text === "Services"
                           ? serviceLinks
                           : item?.children
@@ -98,7 +98,7 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                               target={listItem?.target || "_self"}
                               href={listItem?.link || ""}
                               key={index}
-                              className="p-[10px] text-white"
+                              className="p-2.5 text-white"
                               onClick={() => setShowMenu(false)}
                             >
                               {listItem?.text}
@@ -119,9 +119,9 @@ const Header = ({ logo, headerList, serviceLinks }) => {
                     onClick={() => setShowMenu(false)}
                   >
                     <button
-                      className={`border-t-[1px] border-[rgba(255,255,255,0.1)] ${
+                      className={`border-t border-white/10 ${
                         i === 0 ? "border-none" : ""
-                      } p-[10px] text-left w-full`}
+                      } p-2.5 text-left w-full`}
                     >
                       {item?.text}
                     </button>

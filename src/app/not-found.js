@@ -10,23 +10,19 @@ const NotFoundPage = () => (
       style={{ backgroundImage: `url(${bgImg?.src})` }}
       className={`bg-cover bg-center bg-no-repeat min-h-screen flex items-center justify-center`}
     >
-      <main className="max-container text-center py-[100px] md:pt-[150px] text-white">
-        <h1 className="mb-[20px]">
-          The page you were looking for doesn't exist
-        </h1>
-        <p className="text-[#93ABBB] mb-[10px] text-[18px] md:text-[24px]">
+      <main className="max-container text-center py-24 md:pt-36 text-white">
+        <h1 className="mb-5">The page you were looking for doesn't exist</h1>
+        <p className="text-sea-blue mb-2.5 text-lg md:text-2xl">
           You may have mistyped the address or the page may have moved.
         </p>
-        <p className="text-[#93ABBB] mb-[10px] text-[18px] md:text-[24px]">
+        <p className="text-sea-blue mb-2.5 text-lg md:text-2xl">
           Choose a link below to get to back Yalis.
         </p>
-        <div className="flex items-center justify-center w-full gap-[40px] text-[18px] md:text-[24px] underline my-[20px]">
+        <div className="flex items-center justify-center w-full gap-10 text-lg md:text-2xl underline my-5">
           <Link href="/">Home</Link>
           <Link href="/contact">Contact</Link>
         </div>
-        <p className="text-[#93ABBB]">
-          © Yalis.com. All rights reserved.
-        </p>
+        <p className="text-sea-blue">© Yalis.com. All rights reserved.</p>
       </main>
     </section>
   </>

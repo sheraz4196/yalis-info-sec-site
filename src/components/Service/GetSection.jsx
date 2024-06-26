@@ -2,65 +2,65 @@ import React from "react";
 import Richtext from "../common/Richtext";
 import GetSectionList from "./GetSectionList";
 import Link from "next/link";
+import Image from "next/image";
 
 export default function GetSection({ data }) {
+  const hasList = data?.list?.length > 0;
+
   return (
-    <section class="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px]">
-      <h2 class="text-secondary text-center pb-[20px] mb-[60px]">
-        {data?.title}
-      </h2>
-      {data?.list?.length > 0 && (
-        <div class="hidden md:block">
-          <GetSectionList data={data?.list} />
-        </div>
-      )}
-      {data?.list?.length > 0 && (
-        <div class="flex flex-col-reverse gap-[40px] md:hidden get-section-list">
-          {data?.list?.map((item) => {
-            return (
-              <div class="get-section-list-item">
+    <section className="max-container py-8 md:py-16 my-2.5 md:my-5">
+      <h2 className="text-secondary text-center pb-5 mb-16">{data?.title}</h2>
+
+      {hasList && (
+        <>
+          <div className="hidden md:block">
+            <GetSectionList data={data.list} />
+          </div>
+          <div className="flex flex-col-reverse gap-10 md:hidden get-section-list">
+            {data.list.map((item, index) => (
+              <div className="get-section-list-item" key={index}>
                 {item?.fields?.icon?.fields?.file?.url && (
-                  <img
-                    src={item?.fields?.icon?.fields?.file?.url}
+                  <Image
+                    src={item.fields.icon.fields.file.url}
                     alt="icon"
                     width={140}
                     height={140}
-                    class="mx-auto mb-[30px]"
+                    className="mx-auto mb-8"
                   />
                 )}
-                <h3 class="text-blue text-[24px] leading-[1.4] text-center">
+                <h3 className="text-blue text-2xl text-center">
                   {item?.fields?.title}
                 </h3>
-                <p class="text-[#324450] text-[24px] mb-[10px] leading-[1.4] font-[800] text-center">
+                <p className="text-slate-40 text-2xl mb-2.5 font-extrabold text-center">
                   {item?.fields?.subHeading}
                 </p>
-                <div class="rich-text mb-[10px] text-[18px]">
+                <div className="rich-text mb-2.5 text-lg">
                   <Richtext data={item?.fields?.description} />
                 </div>
                 {item?.fields?.list?.length > 0 && (
-                  <ul class="list-checked types-list mb-[20px]">
-                    {item?.fields?.list?.map((listItem, i) => {
-                      return (
-                        <li class="text-[18px] leading-[2.0]">{listItem}</li>
-                      );
-                    })}
+                  <ul className="list-checked types-list mb-5">
+                    {item.fields.list.map((listItem, listIndex) => (
+                      <li className="text-lg" key={listIndex}>
+                        {listItem}
+                      </li>
+                    ))}
                   </ul>
                 )}
                 {item?.buttonText && (
-                  <div class="text-center">
+                  <div className="text-center">
                     <Link
                       href={item?.buttonLink || ""}
                       target={item?.buttonTarget || "_self"}
-                      class="btn1"
+                      className="btn1"
                     >
                       {item?.buttonText}
                     </Link>
                   </div>
                 )}
               </div>
-            );
-          })}
-        </div>
+            ))}
+          </div>
+        </>
       )}
     </section>
   );

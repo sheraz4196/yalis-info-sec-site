@@ -21,8 +21,11 @@ import DescriptionSection from "@/components/Privacy/DescriptionSection";
 export async function generateMetadata({ params }) {
   const slug = params?.service;
 
-  const data = await getSlugPagData("services", slug);
-  const policiesData = await getSlugPagData("policies", slug);
+  const [data, policiesData] = await Promise.all([
+    getSlugPagData("services", slug),
+    getSlugPagData("policies", slug),
+  ]);
+
   const { seo } = data[0]?.fields || policiesData[0]?.fields || {};
   return {
     title: seo?.fields?.title,
@@ -38,8 +41,10 @@ export async function generateMetadata({ params }) {
 
 export default async function Service({ params }) {
   const slug = params?.service;
-  const data = await getSlugPagData("services", slug);
-  const policiesData = await getSlugPagData("policies", slug);
+  const [data, policiesData] = await Promise.all([
+    getSlugPagData("services", slug),
+    getSlugPagData("policies", slug),
+  ]);
   if (!data[0]?.fields && !policiesData[0]?.fields) {
     notFound();
   }

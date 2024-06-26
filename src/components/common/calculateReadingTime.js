@@ -11,8 +11,8 @@ export const calculateReadingTime = (content) => {
       case "heading-4":
       case "heading-5":
       case "heading-6":
-      case "blockquote":
-        // Extract text from paragraph, headings, blockquotes
+      case "blockquote": // Extract text from paragraph, headings, blockquotes
+      {
         const nodeText = node.content
           .map((child) => {
             if (child.nodeType === "text") {
@@ -28,6 +28,7 @@ export const calculateReadingTime = (content) => {
         const words = nodeText.trim().split(/\s+/);
         totalWords += words.length;
         break;
+      }
       case "list-item":
         // For list items, count words in nested paragraphs
         node.content.forEach((childNode) => countWords(childNode));

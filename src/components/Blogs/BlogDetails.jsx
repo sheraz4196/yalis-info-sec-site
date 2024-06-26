@@ -3,85 +3,82 @@ import BlogCards from "./BlogCards";
 import Richtext from "../common/Richtext";
 import Link from "next/link";
 import { calculateReadingTime } from "../common/calculateReadingTime";
+import { convertDate } from "@/utils/convert-data";
 
 export default function BlogDetails({ data, relatedBlogs, slug }) {
   const date = data?.sys?.createdAt;
   const dateObject = new Date(date);
-  const formattedDate = dateObject.toLocaleDateString("en-US", {
-    year: "numeric",
-    month: "2-digit",
-    day: "2-digit",
-  });
+  const formattedDate = convertDate(dateObject);
   const author = data?.fields?.author;
   const pathname = `/blog/${slug}`;
   const siteUrl = "https://astro-stefan-ade.vercel.app";
-
+  console.log("Here is data", data.fields);
   return (
-    <div>
-      <section class="bg-light py-[30px] md:py-[60px]">
-        <div class="max-w-[1024px] mx-auto my-[10px] md:my-[20px] px-[20px]">
+    <>
+      <section className="py-8 md:py-16">
+        <div className="max-w-screen-lg mx-auto my-2.5 md:my-5 px-5">
           {data?.fields?.image?.fields?.file?.url && (
             <img
               src={data?.fields?.image?.fields?.file?.url}
               alt={data?.fields?.image?.fields?.title}
-              class="max-h-[100%] md:max-h-[500px] w-full mb-[30px] object-cover"
+              className="max-h-full md:max-h-[500px] w-full mb-8 object-cover"
             />
           )}
-          <div className="flex items-center gap-4 mb-[10px]">
-            <p class="">
-              <i class="fa-regular fa-calendar mr-1"></i>
+          <div className="flex items-center gap-4 mb-2.5">
+            <p>
+              <i className="fa-regular fa-calendar mr-1"></i>
               {formattedDate}
             </p>
-            <p className="">
-              <i class="fa-solid fa-stopwatch mr-1"></i>{" "}
+            <p>
+              <i className="fa-solid fa-stopwatch mr-1"></i>{" "}
               {calculateReadingTime(data?.fields?.description?.content)} min
               read
             </p>
           </div>
-          <div class="rich-text blog-description">
+          <div className="rich-text blog-description">
             <Richtext data={data?.fields?.description} />
           </div>
-          <div class="mt-[30px] flex items-center gap-4">
+          <div className="mt-8 flex items-center gap-4">
             <h4>Share Post:</h4>
-            <a
+            <Link
               href={`https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-facebook text-[24px] hover:text-link-hover"
+              className="share-button-facebook text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-facebook"></i>
-            </a>
-            <a
+              <i className="fa-brands fa-facebook"></i>
+            </Link>
+            <Link
               href={`https://twitter.com/intent/tweet?url=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-twitter text-[24px] hover:text-link-hover"
+              className="share-button-twitter text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-twitter"></i>
-            </a>
-            <a
+              <i className="fa-brands fa-twitter"></i>
+            </Link>
+            <Link
               href={`http://www.linkedin.com/shareArticle?mini=true&url=${encodeURIComponent(
                 `${siteUrl}${pathname}`
               )}`}
               target="_blank"
               rel="noopener noreferrer"
-              class="share-button-linkedin text-[24px] hover:text-link-hover"
+              className="share-button-linkedin text-2xl hover:text-link-hover"
             >
-              <i class="fa-brands fa-linkedin"></i>
-            </a>
+              <i className="fa-brands fa-linkedin"></i>
+            </Link>
           </div>
           {data?.fields?.tag?.length > 0 && (
-            <div className="flex flex-wrap items-center gap-4 mt-[30px]">
-              {data?.fields?.tag?.map((item, i) => {
+            <div className="flex flex-wrap items-center gap-4 mt-8">
+              {data?.fields?.tag?.map((item, index) => {
                 return (
                   <Link
                     href={`/tag/${item?.fields?.slug}`}
-                    className="bg-primary2 hover:bg-[#ef1532] text-white font-[700] px-[20px] py-[5px] rounded-full"
-                    key={i}
+                    className="bg-primary-dark hover:bg-muted-red text-white font-bold px-5 py-1.5 rounded-full"
+                    key={index}
                   >
                     {item?.fields?.title}
                   </Link>
@@ -90,12 +87,12 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
             </div>
           )}
           {author && (
-            <div class="flex flex-col mt-[30px] gap-[20px]">
+            <div className="flex flex-col mt-8 gap-5">
               {author?.fields?.avatar?.fields?.file?.url && (
                 <img
                   src={author?.fields?.avatar?.fields?.file?.url}
                   alt="avatar"
-                  class="w-[100px] rounded-full"
+                  className="w-24 rounded-full"
                 />
               )}
               <div>
@@ -103,15 +100,16 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
                 <p>{author?.fields?.bio}</p>
                 {author?.fields?.socialMedia && (
                   <div className="flex items-center gap-3 mt-3">
-                    {author?.fields?.socialMedia?.map((item) => {
+                    {author?.fields?.socialMedia?.map((item, index) => {
                       return (
-                        <a
+                        <Link
                           href={item?.link}
+                          key={index}
                           target="_blank"
                           className="hover:text-link-hover"
                         >
-                          <i className={`${item?.icon} text-[24px]`} />
-                        </a>
+                          <i className={`${item?.icon} text-2xl`} />
+                        </Link>
                       );
                     })}
                   </div>
@@ -122,6 +120,6 @@ export default function BlogDetails({ data, relatedBlogs, slug }) {
         </div>
       </section>
       {relatedBlogs && <BlogCards data={relatedBlogs} relatedBlogs={true} />}
-    </div>
+    </>
   );
 }

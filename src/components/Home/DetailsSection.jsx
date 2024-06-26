@@ -3,15 +3,15 @@ import React from "react";
 
 export default function DetailsSection({ data }) {
   return (
-    <section className="max-container py-[30px] md:py-[60px] my-[10px] md:my-[20px] flex flex-col gap-[30px] md:gap-[60px]">
+    <section className="max-container py-8 md:py-16 my-2.5 md:my-5 flex flex-col gap-8 md:gap-16">
       {data?.map((item, i) => {
         return (
           <div
             key={i}
-            className="flex flex-col-reverse md:flex-row even:md:flex-row-reverse items-center justify-between gap-[30px] md:gap-[60px]"
+            className="flex flex-col-reverse md:flex-row even:md:flex-row-reverse items-center justify-between gap-8 md:gap-16"
           >
-            <div className="w-full md:max-w-[50%]">
-              <h2 className="mb-[30px] text-primary2">{item?.fields?.title}</h2>
+            <div className="w-full md:max-w-1/2">
+              <h2 className="mb-8 text-primary-dark">{item?.fields?.title}</h2>
               <p>{item?.fields?.description}</p>
             </div>
             {item?.fields?.image?.fields?.file?.url && (

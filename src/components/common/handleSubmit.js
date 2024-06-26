@@ -9,7 +9,7 @@ export const handleSubmit = async (
 ) => {
   setLoading(true);
   var validEmailRegex =
-    /^([a-z A-Z 0-9 \. _]+)@([a-z A-Z]{2,15}).([a-z A-Z]{2,6})(.[a-z]{2,6})?$/;
+    /^([a-z A-Z 0-9 . _]+)@([a-z A-Z]{2,15}).([a-z A-Z]{2,6})(.[a-z]{2,6})?$/;
   var validPhoneRegex = /^[0-9]{10}$/;
   if (formData.recaptcha) {
     if (!validEmailRegex.test(formData.email)) {

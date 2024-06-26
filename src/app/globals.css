@@ -247,7 +247,7 @@ input,
 select,
 textarea {
   outline: none;
-  border: 1px solid #eaeaea;
+  border: 1px solid #eaeaea !important;
   border-radius: 2px;
   color: #434343;
   display: block;
@@ -258,7 +258,7 @@ select:invalid {
   color: #8e9fa9 !important;
 }
 select:valid {
-  color: #434343;
+  color: #434343 !important;
 }
 
 .menu-icon-span {
@@ -457,7 +457,7 @@ select:valid {
 }
 
 .btn1 {
-  @apply text-[20px] py-[10px] md:py-[12px] px-[22px] md:px-[32px] bg-primary2 hover:bg-[#ef1532] text-white;
+  @apply text-xl md:py-3 px-5 md:px-8 bg-primary-dark hover:bg-muted-red text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -468,7 +468,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn2 {
-  @apply px-[24px] py-[8px] bg-primary2 hover:bg-[#ef1532] text-white;
+  @apply lg:px-6 px-2 bg-primary-dark hover:bg-muted-red text-white;
   border-radius: 2px;
   border: 0;
   display: inline-block;
@@ -479,7 +479,7 @@ select:valid {
   white-space: nowrap;
 }
 .btn3 {
-  @apply text-[20px] w-max mx-auto px-[32px] py-[12px] bg-primary2 hover:bg-[#ef1532] text-white rounded-[2px] font-[800];
+  @apply text-xl w-max mx-auto px-8 py-3 bg-primary-dark hover:bg-muted-red text-white rounded-sm font-extrabold;
 }
 
 .type-list-item-wrap {
@@ -500,7 +500,7 @@ select:valid {
   width: 100%;
 }
 .quote {
-  @apply text-[1.125rem] lg:text-[1.25rem] pt-[2.5rem] md:pt-0 md:pl-[5.25rem] relative;
+  @apply text-lg lg:text-xl pt-10 md:pt-0 md:pl-20 relative;
 }
 .quote::before {
   color: #1ba1e6;
@@ -527,7 +527,7 @@ select:valid {
 .faq:hover {
   box-shadow: 0 11px 42px rgba(0, 0, 0, 0.15), 0 0 0 5px rgba(228, 16, 44, 0.3);
 }
-.faq-qestion {
+.faq-question {
   -webkit-tap-highlight-color: transparent;
   color: #31373c;
   cursor: pointer;
@@ -537,10 +537,10 @@ select:valid {
   position: relative;
   transition: all 0.25s ease;
 }
-.faq:hover .faq-qestion {
+.faq:hover .faq-question {
   color: #e4102c;
 }
-.faq-qestion::after {
+.faq-question::after {
   content: "\f107";
   display: inline-block;
   position: absolute;
@@ -825,7 +825,7 @@ select:valid {
   font-size: 1.25rem;
 }
 .different-types-description {
-  @apply pb-[10px] md:pb-[20px] mb-[30px] md:mb-[60px];
+  @apply pb-2.5 md:pb-5 mb-8 md:mb-16;
 }
 .different-type-list-description p {
   font-size: 18px;
@@ -838,7 +838,7 @@ select:valid {
   margin: 20px 0;
 }
 .penetration-testing-form-description p {
-  @apply text-[1.5rem] pb-[10px] mb-[30px];
+  @apply text-2xl pb-2.5 mb-8;
 }
 .penetration-testing-form-description ul p {
   padding-bottom: 0;
@@ -1043,4 +1043,45 @@ select:valid {
   100% {
     transform: translate3d(var(--scrollmax), 0, 0);
   }
+}
+.mb-6.max-w-full iframe {
+  margin-bottom: 24px;
+}
+.CodeBlockClass {
+  position: relative;
+  @apply p-4 pt-8 border border-white/10 bg-black dark:bg-white dark:text-black !max-w-full;
+}
+
+.CodeBlockClass pre {
+  background: inherit !important;
+  @apply bg-black/40 dark:bg-white text-gray-100 dark:text-black w-full;
+}
+
+.CopyButtonClass {
+  position: absolute;
+  top: 10px;
+  right: 10px;
+  cursor: pointer;
+}
+.carbon {
+  position: absolute;
+  top: 0px;
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 7px;
+}
+.carbon > div {
+  margin: 0.5em 0.375em 0.5em 0;
+  width: 0.75em;
+  height: 0.75em;
+  border-radius: 50%;
+}
+.carbon .red {
+  background-color: #ff5f56;
+}
+.carbon .yellow {
+  background-color: #ffbd2e;
+}
+.carbon .green {
+  background-color: #27c93f;
 }

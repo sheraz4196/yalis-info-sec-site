@@ -7,23 +7,23 @@ export default function QualificationsSection({ data }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg.src})` }}
-      class="bg-light bg-[center_bottom] bg-no-repeat py-[30px] md:py-[60px]"
+      className="bg-light bg-[center_bottom] bg-no-repeat py-8 md:py-16"
     >
-      <div class="max-container my-[10px] md:my-[20px] text-center">
-        <h2 class="mb-[30px] text-primary2">{data?.title}</h2>
-        <div class="pb-[20px] mb-[60px] text-[1.25rem] font-[300]">
-          <div class="rich-text">
+      <div className="max-container my-2.5 md:my-5 text-center">
+        <h2 className="mb-8 text-primary-dark">{data?.title}</h2>
+        <div className="pb-5 mb-16 text-xl font-light">
+          <div className="rich-text">
             <Richtext data={data?.description} />
           </div>
         </div>
       </div>
-      <div class="flex flex-col gap-[30px]">
+      <div className="flex flex-col gap-8">
         {data?.images1?.length > 0 && (
-          <div class="horizontal-scrolling">
-            <div class="horizontal-scrolling-inner">
-              {data?.images1?.map((item) => {
+          <div className="horizontal-scrolling">
+            <div className="horizontal-scrolling-inner">
+              {data?.images1?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -33,9 +33,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images1?.map((item) => {
+              {data?.images1?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -49,11 +49,11 @@ export default function QualificationsSection({ data }) {
           </div>
         )}
         {data?.images2?.length > 0 && (
-          <div class="horizontal-scrolling horizontal-scrolling-reverse">
-            <div class="horizontal-scrolling-inner">
-              {data?.images2?.map((item) => {
+          <div className="horizontal-scrolling horizontal-scrolling-reverse">
+            <div className="horizontal-scrolling-inner">
+              {data?.images2?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -63,9 +63,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images2?.map((item) => {
+              {data?.images2?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -79,11 +79,11 @@ export default function QualificationsSection({ data }) {
           </div>
         )}
         {data?.images3?.length > 0 && (
-          <div class="horizontal-scrolling">
-            <div class="horizontal-scrolling-inner">
-              {data?.images3?.map((item) => {
+          <div className="horizontal-scrolling">
+            <div className="horizontal-scrolling-inner">
+              {data?.images3?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}
@@ -93,9 +93,9 @@ export default function QualificationsSection({ data }) {
                   </div>
                 );
               })}
-              {data?.images3?.map((item) => {
+              {data?.images3?.map((item, index) => {
                 return (
-                  <div>
+                  <div key={index}>
                     <Image
                       src={"https:" + item?.fields?.file?.url}
                       alt={item?.fields?.title || "image"}

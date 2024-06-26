@@ -9,7 +9,6 @@ export default function Hero({ title, bgImg }) {
   const pathname = usePathname();
   const [search, setSearch] = useState("");
   const [blogsList, setBlogsList] = useState([]);
-
   useEffect(() => {
     const handleSearch = async () => {
       const data = await searchBlogsData(search);
@@ -24,13 +23,13 @@ export default function Hero({ title, bgImg }) {
   return (
     <section
       style={{ backgroundImage: `url(${bgImg?.fields?.file?.url})` }}
-      class={`bg-center bg-no-repeat bg-cover bg-[#324450]`}
+      className={`bg-center bg-no-repeat bg-cover bg-gray-cement`}
     >
-      <div class="max-container pt-[80px] md:pt-[100px] lg:pt-[70px]">
-        <div class="pt-[20px] pb-[50px] md:py-[150px] relative text-center">
-          <h1 class="text-white">{title}</h1>
+      <div className="max-container pt-20 md:pt-24 lg:pt-16">
+        <div className="pt-5 pb-12 md:py-36 relative text-center">
+          <h1 className="text-white lg:text-8xl">{title}</h1>
           {pathname === "/blog" && (
-            <div className="relative max-w-[400px] mx-auto mt-[30px]">
+            <div className="relative max-w-lg mx-auto mt-8">
               <div className="w-full relative">
                 <input
                   type="text"
@@ -45,20 +44,20 @@ export default function Hero({ title, bgImg }) {
                       setSearch("");
                       setBlogsList([]);
                     }}
-                    className="absolute right-2 top-1/2 -translate-y-1/2 text-[20px]"
+                    className="absolute right-2 top-1/2 -translate-y-1/2 text-xl"
                   >
-                    <i class="fa-solid fa-circle-xmark"></i>
+                    <i className="fa-solid fa-circle-xmark"></i>
                   </button>
                 )}
               </div>
               {(blogsList?.length > 0 || search?.length > 0) && (
                 <div className="absolute top-[45px] left-0 w-full bg-white h-max">
                   {search?.length > 0 && blogsList?.length === 0 ? (
-                    <div className="w-full h-[100px] flex items-center justify-center">
+                    <div className="w-full h-24 flex items-center justify-center">
                       <p>No search results found.</p>
                     </div>
                   ) : (
-                    <div className="flex flex-col gap-2 px-[20px] py-[5px] max-h-[250px] overflow-y-auto">
+                    <div className="flex flex-col gap-2 px-5 py-1.5 max-h-64 overflow-y-auto">
                       {blogsList?.map((item, i) => {
                         return (
                           <Link
@@ -68,7 +67,7 @@ export default function Hero({ title, bgImg }) {
                               setBlogsList([]);
                             }}
                             href={`/blog/${item?.fields?.slug}`}
-                            className="text-left py-[5px] border-b-[1px] last:border-none hover:text-link-hover"
+                            className="text-left py-1.5 border-b last:border-none hover:text-link-hover"
                           >
                             {item?.fields?.title}
                           </Link>

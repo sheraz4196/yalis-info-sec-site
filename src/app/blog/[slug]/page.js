@@ -2,7 +2,7 @@ import BlogDetails from "@/components/Blogs/BlogDetails";
 import Hero from "@/components/Blogs/Hero";
 import { getPagesData, getSlugPagData } from "@/lib/api";
 import { notFound } from "next/navigation";
-
+import React from "react";
 export async function generateMetadata({ params }) {
   const slug = params?.slug;
 

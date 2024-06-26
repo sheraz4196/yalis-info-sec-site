@@ -2,6 +2,7 @@ import BlogCards from "@/components/Blogs/BlogCards";
 import Hero from "@/components/Blogs/Hero";
 import { getPagesData } from "@/lib/api";
 import { notFound } from "next/navigation";
+import React from "react";
 
 export async function generateMetadata() {
   return {
@@ -11,8 +12,11 @@ export async function generateMetadata() {
 }
 
 export default async function Blogs() {
-  const data = await getPagesData("post");
-  const pageData = await getPagesData("mainBlogPage");
+  const [data, pageData] = await Promise.all([
+    getPagesData("post"),
+    getPagesData("mainBlogPage"),
+  ]);
+
   if (!data?.items) {
     notFound();
   }
