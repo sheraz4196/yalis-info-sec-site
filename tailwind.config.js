@@ -34,6 +34,6 @@ module.exports = {
   plugins: [],
   purge: {
     mode: "all",
-    preserveHtmlElements: false,
+    preserveHtmlElements: false
   },
 };
