@@ -20,7 +20,7 @@ export default function Navbar({
                   return (
                     <div
                       key={i}
-                      className="text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list"
+                      className={`pb-2 border-b text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list border-transparent`}
                     >
                       <span className="flex items-center gap-1">
                         {item?.text === "Home" && (
@@ -44,11 +44,6 @@ export default function Navbar({
                                 <Link
                                   target={listItem?.target || "_self"}
                                   href={listItem?.link || ""}
-                                  className={
-                                    pathName === listItem?.link
-                                      ? "text-primary !underline"
-                                      : ""
-                                  }
                                 >
                                   {listItem?.text}
                                 </Link>
@@ -66,15 +61,15 @@ export default function Navbar({
                       key={i}
                       href={item?.link || ""}
                       target={item?.target || "_self"}
-                      className={`hover:text-white transition-colors duration-150 ease-in-out ${
+                      className={`hover:text-white transition-colors duration-150 ease-in-out pb-2 border-b border-transparent ${
                         item?.link ? "hover:underline" : ""
                       } ${
                         pathName.includes(item?.link)
-                          ? "!text-primary !underline"
+                          ? "!text-primary border-primary"
                           : "!text-gray-light"
                       } ${
                         item.link === "/" && pathName !== "/"
-                          ? "!no-underline"
+                          ? "border-none"
                           : ""
                       }`}
                     >
@@ -90,7 +85,7 @@ export default function Navbar({
                         <span
                           className={
                             item?.text === "Home" && pathName !== "/"
-                              ? "text-gray-light !no-underline"
+                              ? "text-gray-light !border-none"
                               : ""
                           }
                         >
