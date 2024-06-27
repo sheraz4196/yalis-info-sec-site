@@ -8,7 +8,7 @@ import QuoteFormSection from "@/components/Home/QuoteFormSection";
 import QualificationsSection from "@/components/common/QualificationsSection";
 import { notFound } from "next/navigation";
 import GetSection from "@/components/Service/GetSection";
-
+import React from "react";
 export async function generateMetadata() {
   const homeData = await getPagesData("home");
   const { seo } = homeData?.items?.[0]?.fields || {};
