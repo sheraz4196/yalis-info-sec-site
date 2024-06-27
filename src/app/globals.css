@@ -1085,3 +1085,6 @@ select:valid {
 .carbon .green {
   background-color: #27c93f;
 }
+select {
+  @apply h-12;
+}
