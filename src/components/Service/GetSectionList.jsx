@@ -23,7 +23,7 @@ export default function GetSectionList({ data }) {
                 className={`${
                   selectedId === index
                     ? "bg-blue cursor-default"
-                    : "cursor-pointer bg-zinc-200"
+                    : "cursor-pointer bg-zinc-50"
                 } w-full text-white rounded-t flex flex-col justify-center items-center text-lg min-h-16 p-2.5 text-center transition-[background-color_0.15s_ease-out]`}
                 style={{
                   boxShadow:
