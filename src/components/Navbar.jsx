@@ -2,12 +2,13 @@ import Link from "next/link";
 import React from "react";
 import favicon from "../../public/images/favicon-withoutbg.png";
 import Image from "next/image";
-
+import { usePathname } from "next/navigation";
 export default function Navbar({
   headerList = [],
   serviceLinks = [],
   button = {},
 }) {
+  const pathName = usePathname();
   return (
     <nav style={{ display: "unset" }}>
       <div className="sticky top-0 z-50 bg-neutral-900 py-3 shadow-[0_15px_14px_0_rgba(20,24,25,0.1)] top-nav max-h-14 flex items-center">
@@ -19,7 +20,7 @@ export default function Navbar({
                   return (
                     <div
                       key={i}
-                      className="text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list"
+                      className={`pb-1 border-b text-gray-light hover:text-white transition-colors duration-150 ease-in-out header-list border-transparent`}
                     >
                       <span className="flex items-center gap-1">
                         {item?.text === "Home" && (
@@ -60,8 +61,16 @@ export default function Navbar({
                       key={i}
                       href={item?.link || ""}
                       target={item?.target || "_self"}
-                      className={`text-gray-light hover:text-white transition-colors duration-150 ease-in-out ${
+                      className={`hover:text-white transition-colors duration-150 ease-in-out pb-1 border-b border-transparent ${
                         item?.link ? "hover:underline" : ""
+                      } ${
+                        pathName.includes(item?.link)
+                          ? "!text-primary border-primary"
+                          : "!text-gray-light"
+                      } ${
+                        item.link === "/" && pathName !== "/"
+                          ? "border-none"
+                          : ""
                       }`}
                     >
                       <span className="flex items-center gap-1">
@@ -73,7 +82,15 @@ export default function Navbar({
                             height={40}
                           />
                         )}
-                        {item?.text}
+                        <span
+                          className={
+                            item?.text === "Home" && pathName !== "/"
+                              ? "text-gray-light !border-none"
+                              : ""
+                          }
+                        >
+                          {item?.text}
+                        </span>
                       </span>
                     </Link>
                   );
